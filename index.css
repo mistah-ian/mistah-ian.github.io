@@ -1,17 +1,23 @@
 body {
     margin: 0;
-    background-color: white;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #f2f7ff;
+    font-family: 'Montserrat', sans-serif;
     color: black;
 }
 
 header {
-    background-color: black;
+    background-color: navy;
     text-align: center;
     position: sticky;
     color: white;
     top: 0;  
-    z-index: 1000;           
+    z-index: 1000;          
+}
+
+button {
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
 }
 
 .logo {
@@ -94,6 +100,70 @@ article {
     padding-bottom: 0;
     padding-top: 10px;
     margin-top: 0;
+}
+
+.read-more-one, .read-more-two, .read-more-three {
+    color: blue;
+}
+
+.read-more-one, .read-more-two {
+    border-bottom: 1px solid navy; 
+}
+
+.read-more-one span, .read-more-two span {
+    margin-bottom: 15px;
+}
+
+.read-more-one span, .read-more-two span, .read-more-three span {
+    display: inline-block;
+}
+
+.read-more-one span:hover, .read-more-two span:hover, .read-more-three span:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    transform: scale(1.05) translateX(2px);
+}
+
+.recommended-text {
+    text-decoration: none;
+    margin-bottom: 5px;
+    color: navy;
+    margin-top: 40px;
+    border-bottom: 1px solid navy; 
+}
+
+.under-recommended-text {
+    height: 1px;
+    border: none;
+    background-color: navy;
+    margin-top: 0;
+}
+
+.recommended-articles button {
+    width: 100%;
+    text-align: left;
+    border: none;
+    background-color: #f2f7ff;
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+
+.recommended-articles button h3 {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 5px;
+}
+
+.recommended-articles button p {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 5px;
+}
+
+.recommended-articles button h3:hover {
+    color: blue;
+    cursor: pointer;
+    transform: scale(1.05) translateX(18px);
 }
 
 @media screen and (min-width: 991px) {
