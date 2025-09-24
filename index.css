@@ -28,7 +28,7 @@ header {
     color: white;
     position: sticky;
     top: 0;  
-    z-index: 1000;
+    z-index: 100000;
 }
 
 .header-left {
@@ -80,8 +80,8 @@ header button:hover {
 }
 
 .search-box button svg {
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     fill: white;
 }
 
@@ -378,6 +378,10 @@ footer {
     header {
         padding-top: 10px;
         padding-bottom: 10px;
+    }
+    .hamburger-menu .about-contact-advertise button {
+        width: auto;        
+        display: inline-block;
     }
     article {
         width: 98%;
