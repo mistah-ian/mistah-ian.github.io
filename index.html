@@ -11,7 +11,7 @@
     <meta name="author" content="Dr. Ian"> 
     <meta http-equiv="refresh" content="300">
 
-    <title>Health articles: Medical, health, nutrition, and fitness information</title>
+    <title>Healtharticles: Medical, health, nutrition, and fitness information</title>
 
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -19,6 +19,51 @@
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4226418454910857"
      crossorigin="anonymous"></script>
+
+    <script>
+
+      function toggleMenu() {
+        const menu = document.getElementById("hamburger-menu");
+        const btn = document.getElementById("hamburger-button");
+
+        menu.classList.toggle("active");
+
+        if (menu.classList.contains("active")) {
+          btn.innerHTML = "&#10005;"; 
+        } else {
+          btn.innerHTML = "&#9776;"; 
+        }
+      }
+
+      function openSearchMenu() {
+        const menu = document.getElementById("hamburger-menu");
+        const btn = document.getElementById("hamburger-button");
+
+        if (!menu.classList.contains("active")) {
+          menu.classList.add("active");
+          btn.innerHTML = "&#10005;"; 
+        }
+
+        document.querySelector("#hamburger-menu input").focus();
+      }
+
+      document.addEventListener("click", function(event) {
+        const menu = document.getElementById("hamburger-menu");
+        const btn = document.getElementById("hamburger-button");
+        const searchBtn = document.getElementById("search-button");
+
+        if (
+          menu.classList.contains("active") &&
+          !menu.contains(event.target) &&
+          !btn.contains(event.target) &&   
+          !searchBtn.contains(event.target) 
+        ) {
+          menu.classList.remove("active");
+          btn.innerHTML = "&#9776;";
+        }
+      });
+
+    </script>
 
   </head>
 
@@ -29,23 +74,31 @@
       <div class="header-left">
         
         <div class="hamburger">
-          <button>&#9776;</button>
+          <button id="hamburger-button" onclick="toggleMenu()">&#9776;</button>
         </div>
 
         <div class="header-logo">
           <button>
-            <a href="">healtharticles</a>
+            <a href="#">healtharticles</a>
           </button>
         </div>
 
       </div>
 
+      <div class="header-centre">
+        <button><a href="#">Health Conditions</a></button>
+        <button><a href="#">Nutrition</a></button>
+        <button><a href="#">Vitamins & Supplements</a></button>
+        <button><a href="#">Skin Care</a></button>
+        <button><a href="#">Hair & Beauty Products</a></button>
+      </div>
+
       <div class="header-right">
         
         <div class="search-box">
-          <button aria-label="Search">
+          <button id="search-button" aria-label="Search" onclick="openSearchMenu()">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M10 2a8 8 0 015.29 13.71l5 5a1 1 0 01-1.42 1.42l-5-5A8 8 0 1110 2zm0 2a6 6 0 100 12 6 6 0 000-12z"/>
+              <path d="M10 2a8 8 0 015.29 13.71l5 5a1 1 0 01-1.42 1.42l-5-5A8 8 0 1110 2zm0 2a6 6 0 100 12 6 6 0 000-12z"/>
             </svg>
           </button>
         </div>
@@ -53,10 +106,174 @@
         <div class="header-subscribe">
           <button>Subscribe</button>
         </div>
-        
+
       </div>
 
     </header>
+
+    <div class="hamburger-menu" id="hamburger-menu" aria-label="Main menu">
+
+      <div>
+        <input type="text" placeholder="Search Healtharticles">
+      </div>
+      <hr style="border: none; height: 1px; background-color: black">
+
+      <div>
+          <a href="#">
+            <div>Home</div>
+          </a>
+      </div>
+      <hr style="border: none; height: 1px; background-color: black">
+
+      <div>
+          <a href="#">
+            <div>Health Conditions</div>
+            <div>&gt;</div>
+          </a>
+      </div>
+      <hr style="border: none; height: 1px; background-color: black">
+
+      <div>
+          <a href="#">
+            <div>Nutrition</div>
+            <div>&gt;</div>
+          </a>
+      </div>
+      <hr style="border: none; height: 1px; background-color: black">
+
+      <div>
+          <a href="#">
+            <div>Fitness</div>
+            <div>&gt;</div>
+          </a>
+      </div>
+      <hr style="border: none; height: 1px; background-color: black">
+
+      <div>
+          <a href="#">
+            <div>Vitamins & supplements</div>
+            <div>&gt;</div>
+          </a>
+      </div>
+      <hr style="border: none; height: 1px; background-color: black">
+
+      <div>
+          <a href="#">
+            <div>Skin Care</div>
+            <div>&gt;</div>
+          </a>
+      </div>
+      <hr style="border: none; height: 1px; background-color: black">
+
+      <div>
+          <a href="#">
+            <div>Hair & Beauty Products</div>
+            <div>&gt;</div>
+          </a>
+      </div>
+      <hr style="border: none; height: 1px; background-color: black">
+
+      <div>
+          <a href="#">
+            <div>Overcoming Addictions</div>
+            <div>&gt;</div>
+          </a>
+      </div>
+      <hr style="border: none; height: 1px; background-color: black">
+
+      <div>
+          <a href="#">
+            <div>Product Reviews</div>
+            <div>&gt;</div>
+          </a>
+      </div>
+      <hr style="border: none; height: 1px; background-color: black">
+
+      <div>
+          <a href="#">
+            <div>Cold & Flu Management</div>
+            <div>&gt;</div>
+          </a>
+      </div>
+      <hr style="border: none; height: 1px; background-color: black">
+
+      <div>
+          <a href="#">
+            <div>Mental Health</div>
+            <div>&gt;</div>
+          </a>
+      </div>
+      <hr style="border: none; height: 1px; background-color: black">
+
+      <div>
+          <a href="#">
+            <div>Sexual Health</div>
+            <div>&gt;</div>
+          </a>
+      </div>
+      <hr style="border: none; height: 1px; background-color: black">
+
+      <div class="about-contact-advertise">
+          <button><a href="#">About Us</a></button>
+          <button><a href="#">Contact Us</a></button>
+          <button><a href="#">For Advertisers</a></button>
+      </div>
+
+      <div class="follow-us-on">
+
+        <div class="follow-us-on-text">
+          Follow<button><a href="#">healtharticles</a></button>on Social Media
+        </div>
+
+        <div class="follow-us-on-icons">
+
+          <button>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://healtharticles.shop/article1.html" class="facebook" target="_blank" title="Share on Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </button>
+
+          <button>
+            <a href="https://twitter.com/intent/tweet?url=https://healtharticles.shop/article1.html&text=Check%20out%20this%20article" class="twitter" target="_blank" title="Share on Twitter">
+              <i class="fab fa-x-twitter"></i>
+            </a>
+          </button>
+
+          <button>
+            <a href="https://www.instagram.com/YourPageHere" class="instagram" target="_blank" title="Visit us on Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </button>
+
+          <button>
+            <a href="https://www.tiktok.com/@YourUsernameHere" class="tiktok" target="_blank" title="Visit us on TikTok">
+              <i class="fab fa-tiktok"></i>
+            </a>
+          </button>
+
+          <button>
+            <a href="https://pinterest.com/pin/create/button/?url=https://healtharticles.shop/article1.html&description=Check%20out%20this%20article" class="pinterest" target="_blank" title="Share on Pinterest">
+              <i class="fab fa-pinterest-p"></i>
+            </a>
+          </button>
+
+          <button>
+            <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20article%20https://healtharticles.shop/article1.html" class="whatsapp" target="_blank" title="Share on WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </button>
+
+          <button>
+            <a href="https://www.reddit.com/submit?url=https://healtharticles.shop/article1.html&title=Check%20out%20this%20article" class="reddit" target="_blank" title="Share on Reddit">
+              <i class="fab fa-reddit-alien"></i>
+            </a>
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
 
     <article>
 
