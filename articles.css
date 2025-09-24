@@ -178,8 +178,8 @@ header {
 }
 
 .share-this-article i, .copy {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -200,34 +200,34 @@ header {
 
 .share-this-article .email { 
     background: none;
-    font-size: 38px;
+    font-size: x-large;
     margin-right: 10px;
 }       
 .share-this-article .facebook { 
     background: none;
-    font-size: 35px;
+    font-size: x-large;
     margin-right: 10px;
 }
 .share-this-article .twitter { 
     background: none;
-    font-size: 35px;
+    font-size: x-large;
     margin-right: 10px;
 }
 .share-this-article .whatsapp { 
     background: none;
-    font-size: 40px;
+    font-size: x-large;
     margin-right: 10px;
 }
 .copy { 
     background: none;
-    font-size: 35px;
+    font-size: large;
     border: none;
     margin-right: 5px;
 }
 
 .copied {
     margin-top: 10px;
-    font-size: 14px;
+    font-size: x-small;
     color: black;
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -324,10 +324,6 @@ footer {
 
 }
 
-.follow-us-on-text {
-    color: white;
-}
-
 .follow-us-on-logo { 
     text-decoration: none;  
     color: white;
@@ -338,6 +334,13 @@ footer {
 .follow-us-on-logo:hover {
     transform: scale(1.05);
     text-decoration: underline;
+}
+
+.follow-us-on-text {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    color: white;
 }
 
 .follow-us-on-icons a {
@@ -385,12 +388,6 @@ footer {
     display: flex;
     gap: 10px;
     justify-content: center;
-}
-
-.follow-us-on-text {
-    display: flex;
-    justify-content: center;
-    font-size: 20px;
 }
 
 .line-separator {
