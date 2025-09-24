@@ -22,8 +22,8 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     background-color: navy;
     color: white;
 }
@@ -32,6 +32,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    gap: 10px;
     margin-left: 2.5%;
 }
 
@@ -39,7 +40,25 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    gap: 10px;
     margin-right: 2.5%;
+}
+
+.header-centre {
+    display: none;
+}
+
+.header-centre button {
+    border: none;
+    max-width: 130px;
+}
+
+.header-centre button a {
+    font-size: 15px;
+}
+
+header button:hover {
+    color: orange;
 }
 
 .hamburger button {
@@ -48,7 +67,7 @@ header {
 }
 
 .header-logo button {
-    font-size: 25px;
+    font-size: inherit;
     font-weight: bold;
     border: none;
 }
@@ -58,8 +77,8 @@ header {
 }
 
 .search-box button svg {
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     fill: white;
 }
 
@@ -70,14 +89,99 @@ header {
 .header-subscribe button {
     border-color: white;
     border-radius: 30%;
-    font-size: 18px;
+    font-size: 10px;
 }
 
 .header-subscribe button:hover {
     border-color: orange;
+}
+
+.hamburger-menu {
+    position: fixed;
+    left: -10000000000px; 
+    width: 80%;
+    height: 100%;
+    background-color: #dde9fc;
+    z-index: 1000;
+    overflow-y: auto;     
+    overflow-x: hidden;
+}
+
+.hamburger-menu.active {
+    left: 0; 
+}
+
+.hamburger-menu div {
+    margin-left: 2%;
+    margin-right: 2%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.hamburger-menu div a {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.hamburger-menu .about-contact-advertise {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+
+.hamburger-menu .about-contact-advertise button {
+    font-size: inherit;
+    border-color: black;
+    border-radius: 20%;
+}
+
+.hamburger-menu .about-contact-advertise button:hover {
+    color: orange;
+    border-color: orange;
+}
+
+.hamburger-menu .about-contact-advertise button a {
+    font-weight: normal;
+}
+
+.hamburger-menu .follow-us-on {
+    margin-bottom: 80px;
+}
+
+.hamburger-menu .follow-us-on-text {
+    display: flex;
+    justify-content: center;
+}
+
+.hamburger-menu .follow-us-on-text a:hover {
     color: orange;
 }
 
+.hamburger-menu .follow-us-on-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.hamburger-menu .follow-us-on-text button {
+    border: none;
+    font-size: inherit;
+}
+
+.hamburger-menu .follow-us-on-icons a:hover {
+    color: orange;
+    transform: scale(1.15);
+}
+
+.hamburger-menu .follow-us-on-icons button {
+    display: inline-block;
+    font-size: 30px;
+    color: black;
+    transition: all 0.3s ease;
+    border: none;
+}
+    
 article {
     min-height: 100vh;
     margin: 0 auto;
@@ -206,8 +310,52 @@ footer {
 
 @media screen and (min-width: 991px) {
     header {
-        padding-top: 20px;
-        padding-bottom: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; 
+    }
+    .header-left {
+        display: flex;
+        align-items: center;
+    }
+    .header-centre {
+        display: flex;      
+        flex: 1;          
+        justify-content: center; 
+    }
+    .header-right {
+        display: flex;
+        align-items: center;
+    }
+    .hamburger button {
+        font-size: 30px;
+    }
+    .search-box button svg {
+        width: 25px;
+        height: 25px;
+    }
+    .header-subscribe button {
+        font-size: 20px;
+    }
+    .hamburger-menu {
+        width: 50%;
+    }
+    .hamburger-menu .follow-us-on-icons button {
+        font-size: 50px;
+    }
+    .hamburger-menu .follow-us-on-text {
+        font-size: 25px;
+    }
+    .hamburger-menu .follow-us-on-icons {
+        gap: 10px;
+    }
+    .hamburger-menu div a div {
+        font-size: x-large;
+    }
+    .about-contact-advertise a {
+        font-size: large;
     }
     article {
         width: 82%;
