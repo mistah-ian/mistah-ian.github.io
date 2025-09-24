@@ -174,7 +174,7 @@ header {
 .share-this-article-text {
     font-size: small;
     margin-right: 10px;
-    margin-left: 50px;
+    margin-left: 25px;
 }
 
 .share-this-article i, .copy {
@@ -189,45 +189,21 @@ header {
     transition: all 0.3s ease;
 }
 
-.share-this-article a {
-    text-decoration: none;
-}
-
 .share-this-article i:hover {
     color: navy;
     transform: scale(1.15);
 }
 
-.share-this-article .email { 
+.share-this-article a {
+    text-decoration: none;
     background: none;
     font-size: x-large;
     margin-right: 10px;
-}       
-.share-this-article .facebook { 
-    background: none;
-    font-size: x-large;
-    margin-right: 10px;
-}
-.share-this-article .twitter { 
-    background: none;
-    font-size: x-large;
-    margin-right: 10px;
-}
-.share-this-article .whatsapp { 
-    background: none;
-    font-size: x-large;
-    margin-right: 10px;
-}
-.copy { 
-    background: none;
-    font-size: large;
-    border: none;
-    margin-right: 5px;
 }
 
 .copied {
     margin-top: 10px;
-    font-size: x-small;
+    font-size: small;
     color: black;
     opacity: 0;
     transition: opacity 0.3s ease;
