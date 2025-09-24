@@ -380,8 +380,8 @@ footer {
         padding-bottom: 10px;
     }
     .hamburger-menu .about-contact-advertise button {
-        width: auto;        
-        display: inline-block;
+        border: none;
+        text-decoration: underline;
     }
     article {
         width: 98%;
