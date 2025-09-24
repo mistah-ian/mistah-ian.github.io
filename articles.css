@@ -198,7 +198,13 @@ header {
     text-decoration: none;
     background: none;
     font-size: x-large;
-    margin-right: 10px;
+    margin-right: 7.5px;
+}
+
+.copy { 
+    background: none;
+    border: none;
+    font-size: 26px;
 }
 
 .copied {
