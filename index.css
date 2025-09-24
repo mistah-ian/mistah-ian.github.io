@@ -1,8 +1,13 @@
 body {
     margin: 0;
-    background-color: #FFFFFF;
+    background-color: white;
     font-family: 'Montserrat', sans-serif;
     color: black;
+}
+
+article {
+    min-height: 100vh;
+    margin: 0 auto;
 }
 
 a {
@@ -175,60 +180,79 @@ body.no-scroll {
 
 .hamburger-menu .follow-us-on-icons button {
     display: inline-block;
-    font-size: 30px;
+    font-size: x-large;
     color: black;
     transition: all 0.3s ease;
     border: none;
 }
-    
-article {
-    min-height: 100vh;
-    margin: 0 auto;
+
+.follow-us-on {
+    background-color: #dde9fc;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.follow-us-on-text {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+.follow-us-on-icons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.follow-us-on-icons a:hover {
+    color: orange;
+    transform: scale(1.15);
+}
+
+.follow-us-on-icons button {
+    display: inline-block;
+    font-size: xx-large;
+    color: black;
+    transition: all 0.3s ease;
+    border: none;
 }
 
 footer {
-    background-color: black;
-    padding-bottom: 10px;
+    background-color: navy;
+    padding-bottom: 40px;
     color: white;
+    padding-top: 30px;
 }
 
-.thumbnail {
-    width: 100%;
-    height: 500px;
+footer button {
+    border: none;
 }
 
-.social-media-icons {
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;
+footer button:hover {
+    color: orange;
 }
 
-.share-this-page {
-    background-color: beige;
-    text-align: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
+footer .footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-bottom: 30px;
 }
 
-.social-media-icons:hover {
-    opacity: 0.5;
+footer .about-contact-advertise {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
-.copyright-text {
-    text-align: center;
+footer .footer-logo button {
+    font-size: xx-large;
 }
 
-.footer-logo {
-    text-align: center;
-    padding-top: 25px;
-    padding-bottom: 15px;
-    font-size: 40px;
-}
-
-.underline-line {
-    height: 3px;
-    width: 100%;
-    background-color: black;
+footer .about-contact-advertise button {
+    font-size: large;
+    text-decoration: underline;
 }
 
 .this-just-in {
