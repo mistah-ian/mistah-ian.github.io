@@ -188,8 +188,8 @@ body.no-scroll {
 
 .follow-us-on {
     background-color: #dde9fc;
-    padding-top: 20px;
-    padding-bottom: 40px;
+    padding-top: 10px;
+    padding-bottom: 30px;
     padding-left: 5%;
     padding-right: 5%;
 }
@@ -197,7 +197,7 @@ body.no-scroll {
 .follow-us-on-text {
     display: flex;
     justify-content: center;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
 }
 
 .follow-us-on-icons {
@@ -247,11 +247,12 @@ footer .about-contact-advertise {
 }
 
 footer .footer-logo button {
-    font-size: xx-large;
+    font-size: large;
+    font-weight: bold;
 }
 
 footer .about-contact-advertise button {
-    font-size: large;
+    font-size: medium;
     text-decoration: underline;
 }
 
@@ -332,6 +333,9 @@ footer .about-contact-advertise button {
 }
 
 @media screen and (min-width: 991px) {
+    article {
+        width: 82%;
+    }
     header {
         padding-top: 10px;
         padding-bottom: 10px;
@@ -385,8 +389,27 @@ footer .about-contact-advertise button {
     .about-contact-advertise a {
         font-size: large;
     }
-    article {
-        width: 82%;
+    .follow-us-on-icons {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+    }
+    .follow-us-on-icons button {
+        font-size: 40px;
+    }   
+    footer {
+        display: flex;
+        justify-content: space-around; 
+        align-items: center;
+        padding-bottom: 10px;
+        padding-top: 10px;
+    }
+    footer .about-contact-advertise {
+        gap: 5rem;
+    }
+    footer .footer-logo button {
+        font-size: 35px;
+        padding-top: 10px;
     }
     .actual-content-this-just-in {
         display: grid;
@@ -399,6 +422,9 @@ footer .about-contact-advertise button {
 }
 
 @media screen and (max-width: 990px) {
+    article {
+        width: 98%;
+    }
     header {
         padding-top: 10px;
         padding-bottom: 10px;
@@ -406,9 +432,6 @@ footer .about-contact-advertise button {
     .hamburger-menu .about-contact-advertise button {
         border: none;
         text-decoration: underline;
-    }
-    article {
-        width: 98%;
     }
     .this-just-in {
         font-size: 20px;
