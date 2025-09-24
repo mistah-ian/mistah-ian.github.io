@@ -174,7 +174,7 @@ header {
 .share-this-article-text {
     font-size: small;
     margin-right: 10px;
-    margin-left: 25px;
+    margin-left: 15px;
 }
 
 .share-this-article i, .copy {
@@ -198,7 +198,7 @@ header {
     text-decoration: none;
     background: none;
     font-size: x-large;
-    margin-right: 7.5px;
+    margin-right: 5px;
 }
 
 .copy { 
