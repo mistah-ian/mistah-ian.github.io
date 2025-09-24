@@ -65,12 +65,12 @@ header button:hover {
 }
 
 .hamburger button {
-    font-size: large;
+    font-size: x-large;
     border: none;
 }
 
 .header-logo button {
-    font-size: large;
+    font-size: x-large;
     font-weight: bold;
     border: none;
 }
@@ -92,11 +92,16 @@ header button:hover {
 .header-subscribe button {
     border-color: white;
     border-radius: 30%;
-    font-size: medium;
+    font-size: small;
 }
 
 .header-subscribe button:hover {
     border-color: orange;
+}
+
+body.no-scroll {
+  overflow: hidden;
+  height: 100vh;
 }
 
 .hamburger-menu {
@@ -135,7 +140,7 @@ header button:hover {
 }
 
 .hamburger-menu .about-contact-advertise button {
-    font-size: medium;
+    font-size: small;
     border-color: black;
     border-radius: 20%;
 }
@@ -170,7 +175,7 @@ header button:hover {
 
 .hamburger-menu .follow-us-on-icons button {
     display: inline-block;
-    font-size: 25px;
+    font-size: 30px;
     color: black;
     transition: all 0.3s ease;
     border: none;
