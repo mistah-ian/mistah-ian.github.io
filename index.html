@@ -32,6 +32,7 @@
         if (menu.classList.contains("active")) {
           btn.innerHTML = "&#10005;"; 
           body.classList.add("no-scroll"); 
+          menu.scrollTop = 0;
         } else {
           btn.innerHTML = "&#9776;"; 
           body.classList.remove("no-scroll"); 
@@ -47,6 +48,7 @@
           menu.classList.add("active");
           btn.innerHTML = "&#10005;";
           body.classList.add("no-scroll"); 
+          menu.scrollTop = 0;
         }
 
         document.querySelector("#hamburger-menu input").focus();
@@ -72,6 +74,24 @@
 
     </script>
 
+    <script>
+
+      function adjustMenuHeight() {
+        const header = document.querySelector("header");
+        const menu = document.querySelector(".hamburger-menu");
+
+        if (header && menu) {
+          const headerHeight = header.offsetHeight;
+          menu.style.top = headerHeight + "px";
+          menu.style.height = `calc(100% - ${headerHeight}px)`;
+        }
+      }
+
+      window.addEventListener("load", adjustMenuHeight);
+      window.addEventListener("resize", adjustMenuHeight);
+
+    </script>
+
   </head>
 
   <body>
@@ -86,7 +106,7 @@
 
         <div class="header-logo">
           <button>
-            <a href="#">healtharticles</a>
+            <a href="index.html">healtharticles</a>
           </button>
         </div>
 
@@ -120,8 +140,9 @@
 
     <div class="hamburger-menu" id="hamburger-menu" aria-label="Main menu">
 
-      <div>
-        <input type="text" placeholder="Search Healtharticles">
+      <div class="search-bar">
+        <input type="text" id="searchInputMenu" placeholder="Search Healtharticles">
+        <button id="goBtnMenu">Go</button>
       </div>
       <hr style="border: none; height: 1px; background-color: black">
 
@@ -221,15 +242,15 @@
       <hr style="border: none; height: 1px; background-color: black">
 
       <div class="about-contact-advertise">
-          <button><a href="#">About</a></button>
+          <button><a href="#">About Us</a></button>
           <button><a href="#">Contact Us</a></button>
-          <button><a href="#">Advertise with us</a></button>
+          <button><a href="#">Advertise With Us</a></button>
       </div>
 
       <div class="follow-us-on">
 
         <div class="follow-us-on-text">
-          Follow us on Social Media
+          <p>Follow us on Social Media</p>
         </div>
 
         <div class="follow-us-on-icons">
@@ -507,13 +528,49 @@
       </div>
 
       <div class="about-contact-advertise">
-        <button><a href="#">About</a></button>
+        <button><a href="#">About Us</a></button>
         <button><a href="#">Contact Us</a></button>
-        <button><a href="#">Advertise with us</a></button>
+        <button><a href="#">Advertise With Us</a></button>
       </div>
 
     </footer>
 
+    <script>
+      const searchInputMenu = document.getElementById('searchInputMenu');
+      const goBtnMenu = document.getElementById('goBtnMenu');
+
+      function handleSearch() {
+        const query = searchInputMenu.value.trim();
+        if (query) {
+          window.location.href = `search-results.html?q=${encodeURIComponent(query)}&page=1`;
+        }
+      }
+
+      searchInputMenu.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') handleSearch();
+      });
+
+      goBtnMenu.addEventListener('click', handleSearch);
+    </script>
+
+    <script>
+      const searchInput = document.getElementById("searchInputMenu");
+      const goBtn = document.getElementById("goBtnMenu");
+
+      goBtn.addEventListener("click", () => {
+        const query = searchInput.value.trim();
+        if (query) {
+          window.location.href = `search-results.html?q=${encodeURIComponent(query)}`;
+        }
+      });
+
+      searchInput.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") goBtn.click();
+      });
+    </script>
+
   </body>
 
 </html>
+
+
