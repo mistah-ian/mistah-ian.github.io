@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Working towards providing better medical information regarding your health, nutrition, and fitness"> 
+    <meta name="keywords" content="Medicine, medical, health, nutrition, fitness"> 
+    <meta name="author" content="Dr. Ian"> 
+    <meta http-equiv="refresh" content="300">
+
+    <title>Search Results</title>
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4226418454910857"
+     crossorigin="anonymous"></script>
+
+    <script>
+
+      function toggleMenu() {
+        const menu = document.getElementById("hamburger-menu");
+        const btn = document.getElementById("hamburger-button");
+        const body = document.body;
+
+        menu.classList.toggle("active");
+
+        if (menu.classList.contains("active")) {
+          btn.innerHTML = "&#10005;"; 
+          body.classList.add("no-scroll"); 
+          menu.scrollTop = 0;
+        } else {
+          btn.innerHTML = "&#9776;"; 
+          body.classList.remove("no-scroll"); 
+        }
+      }
+
+      function openSearchMenu() {
+        const menu = document.getElementById("hamburger-menu");
+        const btn = document.getElementById("hamburger-button");
+        const body = document.body;
+
+        if (!menu.classList.contains("active")) {
+          menu.classList.add("active");
+          btn.innerHTML = "&#10005;";
+          body.classList.add("no-scroll"); 
+          menu.scrollTop = 0;
+        }
+
+        document.querySelector("#hamburger-menu input").focus();
+      }
+
+      document.addEventListener("click", function(event) {
+        const menu = document.getElementById("hamburger-menu");
+        const btn = document.getElementById("hamburger-button");
+        const searchBtn = document.getElementById("search-button");
+        const body = document.body;
+
+        if (
+          menu.classList.contains("active") &&
+          !menu.contains(event.target) &&
+          !btn.contains(event.target) &&   
+          !searchBtn.contains(event.target) 
+        ) {
+          menu.classList.remove("active");
+          btn.innerHTML = "&#9776;";
+          body.classList.remove("no-scroll"); 
+        }
+      });
+
+    </script>
+
+    <script>
+
+      function adjustMenuHeight() {
+        const header = document.querySelector("header");
+        const menu = document.querySelector(".hamburger-menu");
+
+        if (header && menu) {
+          const headerHeight = header.offsetHeight;
+          menu.style.top = headerHeight + "px";
+          menu.style.height = `calc(100% - ${headerHeight}px)`;
+        }
+      }
+
+      window.addEventListener("load", adjustMenuHeight);
+      window.addEventListener("resize", adjustMenuHeight);
+
+    </script>
+
+    <style> 
+      @media screen and (min-width: 991px) {
+        article {
+          width: 60%;
+          margin: auto;
+        }
+        article .search-bar { 
+          margin-top: 40px; 
+        }
+        article .search-bar button { 
+          font-size: x-large;
+        }
+        article .search-bar span {
+          right: 21%;
+        }
+      }
+      @media screen and (max-width: 990px) {
+        article .search-bar { 
+          margin-top: 30px;
+        }
+        article .search-bar button { 
+          font-size: large;
+        }
+        article .search-bar span {
+          right: 22%;
+        }
+      }
+      article .search-bar {
+        margin-bottom: 20px;
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        width: 100%;
+      }
+      article .search-bar input {
+        width: 80%; 
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 2.5%;
+        padding-right: 4%;
+        height: 35px;
+        font-size: x-large;
+      }
+      article .search-bar button {
+        height: 49px;
+        width: 20%;
+        background-color: rgb(2, 131, 141);
+      }
+      article .search-bar span {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        font-weight: bold;
+        font-size: x-large;
+        color: grey;
+      }
+      article .result-item { 
+        margin-bottom: 40px; 
+      }
+      article .result-item h3 {
+        color: rgb(2, 131, 141);
+        font-weight: normal;
+        margin-bottom: 5px;
+      }
+      article .result-item p {
+        color: grey;
+        margin-top: 0;
+        line-height: 1.5rem;
+      }
+      article .result-item h3 strong {
+        font-weight: bolder;
+        color: rgb(2, 131, 141);
+      }
+      article .result-item h3:hover {
+        font-weight: bold;
+      }
+      article .result-item p strong {
+        color: black;
+        font-weight: bold;
+      }
+      #pagination {
+        margin-top: 10px;
+        margin-bottom: 35px;
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        margin-left: 20%;
+        min-height: 40px;
+      }
+      .pagination-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: large;
+        font-weight: normal;
+        color: rgb(2, 131, 141);
+      }
+      .pagination-btn:hover:not(.active-page) {
+        text-decoration: underline;
+      }
+      .active-page {
+        background-color: rgb(4, 189, 202);
+        color: rgb(2, 131, 141);
+        font-weight: bolder;
+      }
+      .nav-btn {
+        color: rgb(2, 131, 141);
+      }
+    </style>
+
+  </head>
+
+  <body>
+    
+    <header>
+
+      <div class="header-left">
+        
+        <div class="hamburger">
+          <button id="hamburger-button" onclick="toggleMenu()">&#9776;</button>
+        </div>
+
+        <div class="header-logo">
+          <button>
+            <a href="index.html">healtharticles</a>
+          </button>
+        </div>
+
+      </div>
+
+      <div class="header-centre">
+        <button><a href="#">Health Conditions</a></button>
+        <button><a href="#">Nutrition</a></button>
+        <button><a href="#">Vitamins & Supplements</a></button>
+        <button><a href="#">Skin Care</a></button>
+        <button><a href="#">Hair & Beauty Products</a></button>
+      </div>
+
+      <div class="header-right">
+        
+        <div class="search-box">
+          <button id="search-button" aria-label="Search" onclick="openSearchMenu()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M10 2a8 8 0 015.29 13.71l5 5a1 1 0 01-1.42 1.42l-5-5A8 8 0 1110 2zm0 2a6 6 0 100 12 6 6 0 000-12z"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="header-subscribe">
+          <button>Subscribe</button>
+        </div>
+
+      </div>
+
+    </header>
+
+    <div class="hamburger-menu" id="hamburger-menu" aria-label="Main menu">
+
+      <div class="search-bar">
+        <input type="text" id="searchInputMenu" placeholder="Search Healtharticles">
+        <button id="goBtnMenu">Go</button>
+      </div>
+      <hr style="border: none; height: 1px; background-color: black">
+
+      <div>
+          <a href="#">
+            <div>Home</div>
+          </a>
+      </div>
+      <hr style="border: none; height: 1px; background-color: black">
+
+      <div>
+          <a href="#">
+            <div>Health Conditions</div>
+            <div>&gt;</div>
+          </a>
+      </div>
+      <hr style="border: none; height: 1px; background-color: black">
+
+      <div>
+          <a href="#">
+            <div>Nutrition</div>
+            <div>&gt;</div>
+          </a>
+      </div>
+      <hr style="border: none; height: 1px; background-color: black">
+
+      <div>
+          <a href="#">
+            <div>Fitness</div>
+            <div>&gt;</div>
+          </a>
+      </div>
+      <hr style="border: none; height: 1px; background-color: black">
+
+      <div>
+          <a href="#">
+            <div>Vitamins & supplements</div>
+            <div>&gt;</div>
+          </a>
+      </div>
+      <hr style="border: none; height: 1px; background-color: black">
+
+      <div>
+          <a href="#">
+            <div>Skin Care</div>
+            <div>&gt;</div>
+          </a>
+      </div>
+      <hr style="border: none; height: 1px; background-color: black">
+
+      <div>
+          <a href="#">
+            <div>Hair & Beauty Products</div>
+            <div>&gt;</div>
+          </a>
+      </div>
+      <hr style="border: none; height: 1px; background-color: black">
+
+      <div>
+          <a href="#">
+            <div>Overcoming Addictions</div>
+            <div>&gt;</div>
+          </a>
+      </div>
+      <hr style="border: none; height: 1px; background-color: black">
+
+      <div>
+          <a href="#">
+            <div>Product Reviews</div>
+            <div>&gt;</div>
+          </a>
+      </div>
+      <hr style="border: none; height: 1px; background-color: black">
+
+      <div>
+          <a href="#">
+            <div>Cold & Flu Management</div>
+            <div>&gt;</div>
+          </a>
+      </div>
+      <hr style="border: none; height: 1px; background-color: black">
+
+      <div>
+          <a href="#">
+            <div>Mental Health</div>
+            <div>&gt;</div>
+          </a>
+      </div>
+      <hr style="border: none; height: 1px; background-color: black">
+
+      <div>
+          <a href="#">
+            <div>Sexual Health</div>
+            <div>&gt;</div>
+          </a>
+      </div>
+      <hr style="border: none; height: 1px; background-color: black">
+
+      <div class="about-contact-advertise">
+          <button><a href="#">About Us</a></button>
+          <button><a href="#">Contact Us</a></button>
+          <button><a href="#">Advertise With Us</a></button>
+      </div>
+
+      <div class="follow-us-on">
+
+        <div class="follow-us-on-text">
+          <p>Follow us on Social Media</p>
+        </div>
+
+        <div class="follow-us-on-icons">
+
+          <button>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://healtharticles.shop/article1.html" class="facebook" target="_blank" title="Share on Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </button>
+
+          <button>
+            <a href="https://twitter.com/intent/tweet?url=https://healtharticles.shop/article1.html&text=Check%20out%20this%20article" class="twitter" target="_blank" title="Share on Twitter">
+              <i class="fab fa-x-twitter"></i>
+            </a>
+          </button>
+
+          <button>
+            <a href="https://www.instagram.com/YourPageHere" class="instagram" target="_blank" title="Visit us on Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </button>
+
+          <button>
+            <a href="https://www.tiktok.com/@YourUsernameHere" class="tiktok" target="_blank" title="Visit us on TikTok">
+              <i class="fab fa-tiktok"></i>
+            </a>
+          </button>
+
+          <button>
+            <a href="https://pinterest.com/pin/create/button/?url=https://healtharticles.shop/article1.html&description=Check%20out%20this%20article" class="pinterest" target="_blank" title="Share on Pinterest">
+              <i class="fab fa-pinterest-p"></i>
+            </a>
+          </button>
+
+          <button>
+            <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20article%20https://healtharticles.shop/article1.html" class="whatsapp" target="_blank" title="Share on WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </button>
+
+          <button>
+            <a href="https://www.reddit.com/submit?url=https://healtharticles.shop/article1.html&title=Check%20out%20this%20article" class="reddit" target="_blank" title="Share on Reddit">
+              <i class="fab fa-reddit-alien"></i>
+            </a>
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <article>
+
+      <div class="search-bar">
+        <input type="text" id="searchInputArticle" placeholder="Search Healtharticles">
+        <span id="clearSearchArticle">&#x2715;</span>
+        <button id="goBtnArticle">Go</button>
+      </div>
+
+      <div id="results"></div>
+
+      <div class="pagination" id="pagination"></div>
+
+    </article>
+
+    <div class="follow-us-on">
+
+      <div class="follow-us-on-text">
+        <p>Follow us on Social Media</p>
+      </div>
+
+      <div class="follow-us-on-icons">
+
+        <button>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://healtharticles.shop/article1.html" class="facebook" target="_blank" title="Share on Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+        </button>
+
+        <button>
+          <a href="https://twitter.com/intent/tweet?url=https://healtharticles.shop/article1.html&text=Check%20out%20this%20article" class="twitter" target="_blank" title="Share on Twitter">
+            <i class="fab fa-x-twitter"></i>
+          </a>
+        </button>
+
+        <button>
+          <a href="https://www.instagram.com/YourPageHere" class="instagram" target="_blank" title="Visit us on Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </button>
+
+        <button>
+          <a href="https://www.tiktok.com/@YourUsernameHere" class="tiktok" target="_blank" title="Visit us on TikTok">
+            <i class="fab fa-tiktok"></i>
+          </a>
+        </button>
+
+        <button>
+          <a href="https://pinterest.com/pin/create/button/?url=https://healtharticles.shop/article1.html&description=Check%20out%20this%20article" class="pinterest" target="_blank" title="Share on Pinterest">
+            <i class="fab fa-pinterest-p"></i>
+          </a>
+        </button>
+
+        <button>
+          <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20article%20https://healtharticles.shop/article1.html" class="whatsapp" target="_blank" title="Share on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </button>
+
+        <button>
+          <a href="https://www.reddit.com/submit?url=https://healtharticles.shop/article1.html&title=Check%20out%20this%20article" class="reddit" target="_blank" title="Share on Reddit">
+            <i class="fab fa-reddit-alien"></i>
+          </a>
+        </button>
+
+      </div>
+
+    </div>
+
+    <footer>
+
+      <div class="footer-logo">
+        <button>
+          <a href="index.html">healtharticles</a>
+        </button>
+      </div>
+
+      <div class="about-contact-advertise">
+        <button><a href="#">About Us</a></button>
+        <button><a href="#">Contact Us</a></button>
+        <button><a href="#">Advertise With Us</a></button>
+      </div>
+
+    </footer>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const query = params.get('q') || '';
+      let currentPage = parseInt(params.get('page')) || 1;
+      const resultsPerPage = 5;
+
+      const menuInput = document.getElementById('searchInputMenu');
+      const articleInput = document.getElementById('searchInputArticle');
+      const menuBtn = document.getElementById('goBtnMenu');
+      const articleBtn = document.getElementById('goBtnArticle');
+
+      if (articleInput) articleInput.value = query;
+
+      function triggerSearch(fromInput) {
+        const q = encodeURIComponent(fromInput.value.trim());
+        if (q) {
+          window.location.href = `search-results.html?q=${q}&page=1`;
+        }
+      }
+
+      if (menuInput && menuBtn) {
+        menuInput.addEventListener('keydown', e => {
+          if (e.key === 'Enter') triggerSearch(menuInput);
+        });
+        menuBtn.addEventListener('click', () => triggerSearch(menuInput));
+      }
+
+      if (articleInput && articleBtn) {
+        articleInput.addEventListener('keydown', e => {
+          if (e.key === 'Enter') triggerSearch(articleInput);
+        });
+        articleBtn.addEventListener('click', () => triggerSearch(articleInput));
+      }
+
+      fetch('articles.json')
+        .then(res => res.json())
+        .then(data => {
+          const filtered = data.filter(item =>
+            item.title.toLowerCase().includes(query.toLowerCase()) ||
+            item.description.toLowerCase().includes(query.toLowerCase())
+          );
+
+          const totalPages = Math.ceil(filtered.length / resultsPerPage);
+          const start = (currentPage - 1) * resultsPerPage;
+          const end = start + resultsPerPage;
+          const paginated = filtered.slice(start, end);
+
+          const resultsDiv = document.getElementById('results');
+          resultsDiv.innerHTML = '';
+
+          if (filtered.length === 0) {
+            resultsDiv.innerHTML = `<p>No results found for "<strong>${escapeHtml(query)}</strong>".</p>`;
+            return;
+          }
+
+          const highlight = text => {
+            if (!query) return text;
+            const regex = new RegExp(`(${escapeRegExp(query)})`, 'gi');
+            return text.replace(regex, '<strong>$1</strong>');
+          };
+
+          paginated.forEach(article => {
+            const div = document.createElement('div');
+            div.className = 'result-item';
+            div.innerHTML = `
+              <a href="${escapeHtmlAttr(article.url)}" class="search-result-link">
+                <h3>${highlight(escapeHtml(article.title))}</h3>
+                <p>${highlight(escapeHtml(article.description))}</p>
+              </a>
+            `;
+            resultsDiv.appendChild(div);
+          });
+
+          const paginationDiv = document.getElementById('pagination');
+          paginationDiv.innerHTML = '';
+
+          if (totalPages > 1) {
+            if (currentPage > 1) {
+              const prevBtn = document.createElement('button');
+              prevBtn.textContent = 'Prev';
+              prevBtn.classList.add('pagination-btn', 'nav-btn');
+              prevBtn.addEventListener('click', () => {
+                window.location.href = `search-results.html?q=${encodeURIComponent(query)}&page=${currentPage - 1}`;
+              });
+              paginationDiv.appendChild(prevBtn);
+            }
+
+            for (let i = 1; i <= totalPages; i++) {
+              const btn = document.createElement('button');
+              btn.textContent = i;
+              btn.classList.add('pagination-btn');
+              if (i === currentPage) btn.classList.add('active-page');
+              btn.addEventListener('click', () => {
+                window.location.href = `search-results.html?q=${encodeURIComponent(query)}&page=${i}`;
+              });
+              paginationDiv.appendChild(btn);
+            }
+
+            if (currentPage < totalPages) {
+              const nextBtn = document.createElement('button');
+              nextBtn.textContent = 'Next';
+              nextBtn.classList.add('pagination-btn', 'nav-btn');
+              nextBtn.addEventListener('click', () => {
+                window.location.href = `search-results.html?q=${encodeURIComponent(query)}&page=${currentPage + 1}`;
+              });
+              paginationDiv.appendChild(nextBtn);
+            }
+          }
+        })
+        .catch(err => {
+          console.error('Error loading JSON:', err);
+          document.getElementById('results').innerHTML = '<p>Error loading results.</p>';
+        });
+
+      function escapeHtml(str) {
+        if (!str) return '';
+        return str.replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));
+      }
+      function escapeHtmlAttr(str) {
+        return escapeHtml(str).replace(/"/g, '&quot;');
+      }
+      function escapeRegExp(str) {
+        return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      }
+    </script>
+
+    <script>
+      const input = document.getElementById('searchInputArticle');
+      const clearBtn = document.getElementById('clearSearchArticle');
+      const goBtn = document.getElementById('goBtnArticle');
+
+      clearBtn.addEventListener('click', () => {
+        input.value = '';
+        input.focus();
+      });
+
+      function handleSearch() {
+        const query = input.value.trim();
+        if (query) {
+          window.location.href = `search-results.html?q=${encodeURIComponent(query)}&page=1`;
+        }
+      }
+
+      input.addEventListener('keydown', e => {
+        if (e.key === 'Enter') handleSearch();
+      });
+
+      goBtn.addEventListener('click', handleSearch);
+    </script>
+
+  </body>
+
+</html>
+
+
