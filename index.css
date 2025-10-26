@@ -10,6 +10,10 @@ article {
     margin: 0 auto;
 }
 
+main, article, .content {
+  padding-top: 60px; 
+}
+
 a {
     text-decoration: none;
     cursor: pointer;
@@ -31,8 +35,10 @@ header {
     padding-bottom: 10px;
     background-color: navy;
     color: white;
-    position: sticky;
-    top: 0;  
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;  
     z-index: 100000;
 }
 
@@ -111,17 +117,40 @@ body.no-scroll {
 
 .hamburger-menu {
     position: fixed;
-    left: -10000000000px; 
+    left: -100%; 
     width: 80%;
     height: 100%;
     background-color: #dde9fc;
     z-index: 999;
     overflow-y: auto;     
     overflow-x: hidden;
+    transition: left 0.3s ease;
 }
 
 .hamburger-menu.active {
     left: 0; 
+}
+
+.hamburger-menu .search-bar {
+    display: flex;
+}
+
+.hamburger-menu .search-bar input {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 5px;
+    width: 60%;
+    height: 20px;
+    margin-left: 5%;
+}
+
+.hamburger-menu .search-bar button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 34px;
+    width: 20%;
+    margin-right: 5%;
+    background-color: rgb(2, 131, 141);
 }
 
 .hamburger-menu div {
@@ -166,6 +195,8 @@ body.no-scroll {
 .hamburger-menu .follow-us-on-text {
     display: flex;
     justify-content: center;
+    padding-bottom: 0;
+    padding-top: 0;
 }
 
 .hamburger-menu .follow-us-on-icons {
@@ -334,7 +365,7 @@ footer .about-contact-advertise button {
 
 @media screen and (min-width: 991px) {
     article {
-        width: 82%;
+        width: 70%;
     }
     header {
         padding-top: 10px;
@@ -374,6 +405,9 @@ footer .about-contact-advertise button {
     .header-logo button a {
         font-size: x-large;
     }
+    .hamburger-menu .search-bar input {
+        font-size: large;
+    }
     .hamburger-menu .follow-us-on-icons button {
         font-size: xx-large;
     }
@@ -408,8 +442,8 @@ footer .about-contact-advertise button {
         gap: 5rem;
     }
     footer .footer-logo button {
-        font-size: 35px;
-        padding-top: 10px;
+        font-size: xx-large;
+        padding-top: 30px;
     }
     .actual-content-this-just-in {
         display: grid;
@@ -423,7 +457,7 @@ footer .about-contact-advertise button {
 
 @media screen and (max-width: 990px) {
     article {
-        width: 98%;
+        width: 90%;
     }
     header {
         padding-top: 10px;
@@ -432,6 +466,9 @@ footer .about-contact-advertise button {
     .hamburger-menu .about-contact-advertise button {
         border: none;
         text-decoration: underline;
+    }
+    .hamburger-menu .search-bar input {
+        font-size: medium;
     }
     .this-just-in {
         font-size: 20px;
