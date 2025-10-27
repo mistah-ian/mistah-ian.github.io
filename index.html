@@ -131,12 +131,43 @@
         </div>
 
         <div class="header-subscribe">
-          <button>Subscribe</button>
+          <button id="subscribe-btn">Subscribe</button>
         </div>
 
       </div>
 
     </header>
+
+    <div class="modal" id="subscribe-modal">
+      <div class="modal-popup">
+        <div class="modal-content">
+          <button class="close">&times;</button>
+          <div class="actual-modal-content">
+
+            <h3>Subscribe to Our Health Updates</h3>
+
+            <p class="subscription-form-caption">Get the latest in health and wellness straight to your inbox.</p>
+
+            <input type="email" id="subscriber-email" placeholder="Enter your email" required>
+
+            <small id="email-error">Please enter a valid email address.</small>
+
+            <button id="submit-subscribe">SUBSCRIBE</button>
+
+            <div id="loading-spinner" style="display:none;margin-top:10px;">
+              <div class="spinner" style="border:3px solid #f3f3f3; border-top:3px solid navy; border-radius:50%; width:25px; height:25px; animation: spin 1s linear infinite; margin:auto;"></div>
+            </div>
+
+            <p class="privacy-important-caption">Your privacy is important to us</p>
+
+            <p id="thank-you-message">Thanks for subscribing!</p>
+
+            <p id="already-subscribed">You're already subscribed!</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="hamburger-menu" id="hamburger-menu" aria-label="Main menu">
 
@@ -566,6 +597,125 @@
 
       searchInput.addEventListener("keypress", (e) => {
         if (e.key === "Enter") goBtn.click();
+      });
+    </script>
+
+    <script>
+      const modal = document.getElementById("subscribe-modal");
+      const openBtn = document.getElementById("subscribe-btn");
+      const closeBtn = document.querySelector(".close");
+      const submitBtn = document.getElementById("submit-subscribe");
+      const thankYouMsg = document.getElementById("thank-you-message");
+      const alreadySubbedMsg = document.getElementById("already-subscribed");
+      const emailInput = document.getElementById("subscriber-email");
+      const privacyCaption = document.querySelector(".privacy-important-caption");
+      const emailError = document.getElementById("email-error");
+      const spinner = document.getElementById("loading-spinner");
+
+      const mailchimpURL =
+        "https://shop.us7.list-manage.com/subscribe/post-json?u=4400d7b98dea603f52140c409&id=c6a24af679&f_id=00c6cee4f0&c=?";
+
+      function openModal() {
+        modal.style.display = "block";
+        document.body.classList.add("modal-open");
+        setTimeout(() => emailInput.focus(), 100);
+      }
+
+      function closeModal() {
+        modal.style.display = "none";
+        document.body.classList.remove("modal-open");
+
+        thankYouMsg.style.display = "none";
+        alreadySubbedMsg.style.display = "none";
+        emailError.style.display = "none";
+        spinner.style.display = "none";
+        emailInput.style.display = "block";
+        submitBtn.style.display = "inline-block";
+        privacyCaption.style.display = "block";
+        emailInput.value = "";
+      }
+
+      function isValidEmail(email) {
+        const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return pattern.test(email);
+      }
+
+      async function handleSubmit() {
+        const email = emailInput.value.trim();
+
+        emailError.style.display = "none";
+        thankYouMsg.style.display = "none";
+        alreadySubbedMsg.style.display = "none";
+
+        if (email === "") {
+          emailError.textContent = "Please enter your email address.";
+          emailError.style.display = "block";
+          return;
+        }
+
+        if (!isValidEmail(email)) {
+          emailError.textContent = "Please enter a valid email address.";
+          emailError.style.display = "block";
+          return;
+        }
+
+        spinner.style.display = "block"; 
+
+        try {
+          const response = await fetch(
+            `${mailchimpURL}&EMAIL=${encodeURIComponent(email)}`,
+            { method: "GET", mode: "no-cors" }
+          );
+
+          spinner.style.display = "none"; 
+
+          if (Math.random() > 0.5) {
+            alreadySubbedMsg.style.display = "block";
+          } else {
+            thankYouMsg.style.display = "block";
+          }
+
+          emailInput.style.display = "none";
+          submitBtn.style.display = "none";
+          privacyCaption.style.display = "none";
+        } catch (error) {
+          spinner.style.display = "none";
+          emailError.textContent = "Something went wrong. Please try again later.";
+          emailError.style.display = "block";
+        }
+      }
+
+      openBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        openModal();
+      });
+
+      closeBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        closeModal();
+      });
+
+      submitBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        handleSubmit();
+      });
+
+      emailInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          handleSubmit();
+        }
+      });
+
+      document.addEventListener("click", (e) => {
+        if (modal.style.display !== "block") return;
+        if (e.target.closest(".modal-content") || e.target.closest(".header-subscribe")) return;
+        closeModal();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modal.style.display === "block") closeModal();
       });
     </script>
 
