@@ -170,7 +170,6 @@ header button:hover {
 .actual-modal-content input {
     width: 80%;
     padding: 10px;
-    font-size: large;
     border: 1px solid rgb(187, 187, 187);
     margin-bottom: 25px;
 }
@@ -494,6 +493,9 @@ footer .about-contact-advertise button {
         margin-top: 0;
         margin-bottom: 0;
     }
+    .actual-modal-content input {
+        font-size: large;
+    }
     header {
         padding-top: 10px;
         padding-bottom: 10px;
@@ -602,10 +604,13 @@ footer .about-contact-advertise button {
         height: 50%;
     }
     .modal-content .close {
-        margin-left: 87.5%;
+        margin-left: 85%;
         margin-top: 10px;
         margin-bottom: 0;
         height: 30px;
+    }
+    .actual-modal-content input {
+        font-size: medium;
     }
     .this-just-in {
         font-size: 20px;
