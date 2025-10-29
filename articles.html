@@ -755,9 +755,9 @@
         const text = window.location.href;
         navigator.clipboard.writeText(text).then(() => {
           const copiedText = document.getElementById("copiedText");
-          copiedText.style.display = "inline";
-          setTimeout(() => (copiedText.style.display = "none"), 2000);
-        });
+          copiedText.classList.add("show");       // use class to trigger opacity
+          setTimeout(() => copiedText.classList.remove("show"), 2000);
+        }).catch(err => console.error("Failed to copy:", err));
       }
 
       document.addEventListener("DOMContentLoaded", () => {
