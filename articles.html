@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Working towards providing better medical information regarding your health, nutrition, and fitness"> 
+    <meta name="keywords" content="Medicine, medical, health, nutrition, fitness"> 
+    <meta name="author" content="Dr. Ian"> 
+    <meta http-equiv="refresh" content="300">
+
+    <title>Healtharticles: Medical, health, nutrition, and fitness information</title>
+
+    <link rel="stylesheet" href="articles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4226418454910857"
+     crossorigin="anonymous"></script>
+
+    <script>
+
+      function toggleMenu() {
+        const menu = document.getElementById("hamburger-menu");
+        const btn = document.getElementById("hamburger-button");
+        const body = document.body;
+
+        menu.classList.toggle("active");
+
+        if (menu.classList.contains("active")) {
+          btn.innerHTML = "&#10005;"; 
+          body.classList.add("no-scroll"); 
+          menu.scrollTop = 0;
+        } else {
+          btn.innerHTML = "&#9776;"; 
+          body.classList.remove("no-scroll"); 
+        }
+      }
+
+      function openSearchMenu() {
+        const menu = document.getElementById("hamburger-menu");
+        const btn = document.getElementById("hamburger-button");
+        const body = document.body;
+
+        if (!menu.classList.contains("active")) {
+          menu.classList.add("active");
+          btn.innerHTML = "&#10005;";
+          body.classList.add("no-scroll"); 
+          menu.scrollTop = 0;
+        }
+
+        document.querySelector("#hamburger-menu input").focus();
+      }
+
+      document.addEventListener("click", function(event) {
+        const menu = document.getElementById("hamburger-menu");
+        const btn = document.getElementById("hamburger-button");
+        const searchBtn = document.getElementById("search-button");
+        const body = document.body;
+
+        if (
+          menu.classList.contains("active") &&
+          !menu.contains(event.target) &&
+          !btn.contains(event.target) &&   
+          !searchBtn.contains(event.target) 
+        ) {
+          menu.classList.remove("active");
+          btn.innerHTML = "&#9776;";
+          body.classList.remove("no-scroll"); 
+        }
+      });
+
+    </script>
+
+    <script>
+
+      function adjustMenuHeight() {
+        const header = document.querySelector("header");
+        const menu = document.querySelector(".hamburger-menu");
+
+        if (header && menu) {
+          const headerHeight = header.offsetHeight;
+          menu.style.top = headerHeight + "px";
+          menu.style.height = `calc(100% - ${headerHeight}px)`;
+        }
+      }
+
+      window.addEventListener("load", adjustMenuHeight);
+      window.addEventListener("resize", adjustMenuHeight);
+
+    </script>
+
+  </head>
+
+  <body>
+
+    <header>
+
+      <div class="header-left">
+        
+        <div class="hamburger">
+          <button id="hamburger-button" onclick="toggleMenu()">&#9776;</button>
+        </div>
+
+        <div class="header-logo">
+          <button>
+            <a href="index.html">healtharticles</a>
+          </button>
+        </div>
+
+      </div>
+
+      <div class="header-centre">
+        <button><a href="#">Health Conditions</a></button>
+        <button><a href="#">Nutrition</a></button>
+        <button><a href="#">Vitamins & Supplements</a></button>
+        <button><a href="#">Skin Care</a></button>
+        <button><a href="#">Hair & Beauty Products</a></button>
+      </div>
+
+      <div class="header-right">
+        
+        <div class="search-box">
+          <button id="search-button" aria-label="Search" onclick="openSearchMenu()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M10 2a8 8 0 015.29 13.71l5 5a1 1 0 01-1.42 1.42l-5-5A8 8 0 1110 2zm0 2a6 6 0 100 12 6 6 0 000-12z"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="header-subscribe">
+          <button id="subscribe-btn">Subscribe</button>
+        </div>
+
+      </div>
+
+    </header>
+
+    <div class="modal" id="subscribe-modal">
+      <div class="modal-popup">
+        <div class="modal-content">
+          <button class="close">&times;</button>
+          <div class="actual-modal-content">
+
+            <h3>Subscribe to Our Health Updates</h3>
+
+            <p class="subscription-form-caption">Get the latest in health and wellness straight into your inbox.</p>
+
+            <input type="email" id="subscriber-email" placeholder="Enter your email" required>
+
+            <small id="email-error">Please enter a valid email address.</small>
+
+            <button id="submit-subscribe">SUBSCRIBE</button>
+
+            <div id="loading-spinner" style="display:none;margin-top:10px;">
+              <div class="spinner" style="border:3px solid #f3f3f3; border-top:3px solid navy; border-radius:50%; width:25px; height:25px; animation: spin 1s linear infinite; margin:auto;"></div>
+            </div>
+
+            <p class="privacy-important-caption">Your privacy is important to us</p>
+
+            <p id="thank-you-message">Thanks for subscribing!</p>
+
+            <p id="already-subscribed">You're already subscribed!</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hamburger-menu" id="hamburger-menu" aria-label="Main menu">
+
+      <div class="search-bar">
+        <input type="text" id="searchInputMenu" placeholder="Search Healtharticles">
+        <button id="goBtnMenu">Go</button>
+      </div>
+      <hr style="border: none; height: 1px; background-color: black">
+
+      <div>
+          <a href="#">
+            <div>Home</div>
+          </a>
+      </div>
+      <hr style="border: none; height: 1px; background-color: black">
+
+      <div>
+          <a href="#">
+            <div>Health Conditions</div>
+            <div>&gt;</div>
+          </a>
+      </div>
+      <hr style="border: none; height: 1px; background-color: black">
+
+      <div>
+          <a href="#">
+            <div>Nutrition</div>
+            <div>&gt;</div>
+          </a>
+      </div>
+      <hr style="border: none; height: 1px; background-color: black">
+
+      <div>
+          <a href="#">
+            <div>Fitness</div>
+            <div>&gt;</div>
+          </a>
+      </div>
+      <hr style="border: none; height: 1px; background-color: black">
+
+      <div>
+          <a href="#">
+            <div>Vitamins & supplements</div>
+            <div>&gt;</div>
+          </a>
+      </div>
+      <hr style="border: none; height: 1px; background-color: black">
+
+      <div>
+          <a href="#">
+            <div>Skin Care</div>
+            <div>&gt;</div>
+          </a>
+      </div>
+      <hr style="border: none; height: 1px; background-color: black">
+
+      <div>
+          <a href="#">
+            <div>Hair & Beauty Products</div>
+            <div>&gt;</div>
+          </a>
+      </div>
+      <hr style="border: none; height: 1px; background-color: black">
+
+      <div>
+          <a href="#">
+            <div>Overcoming Addictions</div>
+            <div>&gt;</div>
+          </a>
+      </div>
+      <hr style="border: none; height: 1px; background-color: black">
+
+      <div>
+          <a href="#">
+            <div>Product Reviews</div>
+            <div>&gt;</div>
+          </a>
+      </div>
+      <hr style="border: none; height: 1px; background-color: black">
+
+      <div>
+          <a href="#">
+            <div>Cold & Flu Management</div>
+            <div>&gt;</div>
+          </a>
+      </div>
+      <hr style="border: none; height: 1px; background-color: black">
+
+      <div>
+          <a href="#">
+            <div>Mental Health</div>
+            <div>&gt;</div>
+          </a>
+      </div>
+      <hr style="border: none; height: 1px; background-color: black">
+
+      <div>
+          <a href="#">
+            <div>Sexual Health</div>
+            <div>&gt;</div>
+          </a>
+      </div>
+      <hr style="border: none; height: 1px; background-color: black">
+
+      <div class="about-contact-advertise">
+          <button><a href="#">About Us</a></button>
+          <button><a href="#">Contact Us</a></button>
+          <button><a href="#">Advertise With Us</a></button>
+      </div>
+
+      <div class="follow-us-on">
+
+        <div class="follow-us-on-text">
+          <p>Follow us on Social Media</p>
+        </div>
+
+        <div class="follow-us-on-icons">
+
+          <button>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://healtharticles.shop/article1.html" class="facebook" target="_blank" title="Share on Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </button>
+
+          <button>
+            <a href="https://twitter.com/intent/tweet?url=https://healtharticles.shop/article1.html&text=Check%20out%20this%20article" class="twitter" target="_blank" title="Share on Twitter">
+              <i class="fab fa-x-twitter"></i>
+            </a>
+          </button>
+
+          <button>
+            <a href="https://www.instagram.com/health_articles_254" class="instagram" target="_blank" title="Visit us on Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </button>
+
+          <button>
+            <a href="https://www.tiktok.com/@YourUsernameHere" class="tiktok" target="_blank" title="Visit us on TikTok">
+              <i class="fab fa-tiktok"></i>
+            </a>
+          </button>
+
+          <button>
+            <a href="https://pinterest.com/pin/create/button/?url=https://healtharticles.shop/article1.html&description=Check%20out%20this%20article" class="pinterest" target="_blank" title="Share on Pinterest">
+              <i class="fab fa-pinterest-p"></i>
+            </a>
+          </button>
+
+          <button>
+            <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20article%20https://healtharticles.shop/article1.html" class="whatsapp" target="_blank" title="Share on WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </button>
+
+          <button>
+            <a href="https://www.reddit.com/submit?url=https://healtharticles.shop/article1.html&title=Check%20out%20this%20article" class="reddit" target="_blank" title="Share on Reddit">
+              <i class="fab fa-reddit-alien"></i>
+            </a>
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <article>
+    </article>
+
+    <div class="share-this-article">
+
+      <p class="share-this-article-text"><strong>Share</strong></p>
+
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://healtharticles.shop/article1.html" class="facebook" target="_blank" title="Share on Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+
+      <a href="mailto:?subject=Check%20out%20this%20article&body=https://healtharticles.shop/article1.html" class="email" target="_blank" title="Share via Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+
+      <a href="https://twitter.com/intent/tweet?url=https://healtharticles.shop/article1.html&text=Check%20out%20this%20article" class="twitter" target="_blank" title="Share on Twitter">
+        <i class="fab fa-x-twitter"></i>
+      </a>
+
+      <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20article%20https://healtharticles.shop/article1.html" class="whatsapp" target="_blank" title="Share on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+
+      <button class="copy" onclick="copyLink()" title="Copy this link">
+        <i class="fas fa-copy"></i>
+      </button>
+      <span id="copiedText" class="copied">&#10003; copied</span>
+
+    </div>
+
+    <section class="recommended-articles">
+
+      <h2 class="recommended-text"><strong>RECOMMENDED</strong></h2>
+
+      <a href="#">
+        <button>
+          <h3><strong>This Is The First Recommended Article</strong></h3>
+          <p>Healthy am a very hapvhgdsv hjgxcesiyx gveg vxwjgyx jhgxysxg gxvd</p>
+          <p class="read-more-one"><span>Read more...</span></p>
+        </button>
+      </a>
+
+      <a href="#">
+        <button>
+          <h3><strong>This Is The First Related Article</strong></h3>
+          <p>Every am a very hapvhgdsv hjgxcesiyx gveg vxwjgyx jhgxysxg gxvd</p>
+          <p class="read-more-two"><span>Read more...</span></p>
+        </button>
+      </a>
+
+      <a href="#">
+        <button>
+          <h3><strong>This Is The First Related Article</strong></h3>
+          <p>What am a very hapvhgdsv hjgxcesiyx gveg vxwjgyx jhgxysxg gxvd</p>
+          <p class="read-more-three"><span>Read more...</span></p>
+        </button>
+      </a>
+
+    </section>
+
+    <section class="how-we-reviewed">
+      <h3>How we reviewed this article:</h3>
+      <p class="how-we-reviewed-notes">Our team continually monitors and updates articles whenever new information becomes available.</p>
+      <div class="written-by">
+        <p class="actual-text">Written By</p>
+        <p class="actual-name">The Healtharticles Editorial Team</p>
+      </div>
+      <div class="medically-reviewed-by">
+        <p class="actual-text">Medically Reviewed By</p>
+        <p class="actual-name">Ian Wanyoike, MD</p>
+      </div>
+    </section>
+
+    <div class="follow-us-on">
+
+      <div class="follow-us-on-text">
+        <p>Follow us on Social Media</p>
+      </div>
+
+      <div class="follow-us-on-icons">
+
+        <button>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://healtharticles.shop/article1.html" class="facebook" target="_blank" title="Share on Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+        </button>
+
+        <button>
+          <a href="https://twitter.com/intent/tweet?url=https://healtharticles.shop/article1.html&text=Check%20out%20this%20article" class="twitter" target="_blank" title="Share on Twitter">
+            <i class="fab fa-x-twitter"></i>
+          </a>
+        </button>
+
+        <button>
+          <a href="https://www.instagram.com/health_articles_254" class="instagram" target="_blank" title="Visit us on Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </button>
+
+        <button>
+          <a href="https://www.tiktok.com/@YourUsernameHere" class="tiktok" target="_blank" title="Visit us on TikTok">
+            <i class="fab fa-tiktok"></i>
+          </a>
+        </button>
+
+        <button>
+          <a href="https://pinterest.com/pin/create/button/?url=https://healtharticles.shop/article1.html&description=Check%20out%20this%20article" class="pinterest" target="_blank" title="Share on Pinterest">
+            <i class="fab fa-pinterest-p"></i>
+          </a>
+        </button>
+
+        <button>
+          <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20article%20https://healtharticles.shop/article1.html" class="whatsapp" target="_blank" title="Share on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </button>
+
+        <button>
+          <a href="https://www.reddit.com/submit?url=https://healtharticles.shop/article1.html&title=Check%20out%20this%20article" class="reddit" target="_blank" title="Share on Reddit">
+            <i class="fab fa-reddit-alien"></i>
+          </a>
+        </button>
+
+      </div>
+
+    </div>
+
+    <footer>
+
+      <div class="footer-logo">
+        <button>
+          <a href="index.html">healtharticles</a>
+        </button>
+      </div>
+
+      <div class="about-contact-advertise">
+        <button><a href="#">About Us</a></button>
+        <button><a href="#">Contact Us</a></button>
+        <button><a href="#">Advertise With Us</a></button>
+      </div>
+
+    </footer>
+
+    <script>
+      const searchInputMenu = document.getElementById('searchInputMenu');
+      const goBtnMenu = document.getElementById('goBtnMenu');
+
+      function handleSearch() {
+        const query = searchInputMenu.value.trim();
+        if (query) {
+          window.location.href = `search-results.html?q=${encodeURIComponent(query)}&page=1`;
+        }
+      }
+
+      searchInputMenu.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') handleSearch();
+      });
+
+      goBtnMenu.addEventListener('click', handleSearch);
+    </script>
+
+    <script>
+      const searchInput = document.getElementById("searchInputMenu");
+      const goBtn = document.getElementById("goBtnMenu");
+
+      goBtn.addEventListener("click", () => {
+        const query = searchInput.value.trim();
+        if (query) {
+          window.location.href = `search-results.html?q=${encodeURIComponent(query)}`;
+        }
+      });
+
+      searchInput.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") goBtn.click();
+      });
+    </script>
+
+    <script>
+      const modal = document.getElementById("subscribe-modal");
+      const openBtn = document.getElementById("subscribe-btn");
+      const closeBtn = document.querySelector(".close");
+      const submitBtn = document.getElementById("submit-subscribe");
+      const thankYouMsg = document.getElementById("thank-you-message");
+      const alreadySubbedMsg = document.getElementById("already-subscribed");
+      const emailInput = document.getElementById("subscriber-email");
+      const privacyCaption = document.querySelector(".privacy-important-caption");
+      const emailError = document.getElementById("email-error");
+      const spinner = document.getElementById("loading-spinner");
+
+      const mailchimpURL =
+        "https://shop.us7.list-manage.com/subscribe/post-json?u=4400d7b98dea603f52140c409&id=c6a24af679&f_id=00c6cee4f0&c=?";
+
+      function openModal() {
+        modal.style.display = "block";
+        document.body.classList.add("modal-open");
+        setTimeout(() => emailInput.focus(), 100);
+      }
+
+      function closeModal() {
+        modal.style.display = "none";
+        document.body.classList.remove("modal-open");
+
+        thankYouMsg.style.display = "none";
+        alreadySubbedMsg.style.display = "none";
+        emailError.style.display = "none";
+        spinner.style.display = "none";
+        emailInput.style.display = "block";
+        submitBtn.style.display = "inline-block";
+        privacyCaption.style.display = "block";
+        emailInput.value = "";
+      }
+
+      function isValidEmail(email) {
+        const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return pattern.test(email);
+      }
+
+      async function handleSubmit() {
+        const email = emailInput.value.trim();
+
+        emailError.style.display = "none";
+        thankYouMsg.style.display = "none";
+        alreadySubbedMsg.style.display = "none";
+
+        if (email === "") {
+          emailError.textContent = "Please enter your email address.";
+          emailError.style.display = "block";
+          return;
+        }
+
+        if (!isValidEmail(email)) {
+          emailError.textContent = "Please enter a valid email address.";
+          emailError.style.display = "block";
+          return;
+        }
+
+        spinner.style.display = "block"; 
+
+        try {
+          const response = await fetch(
+            `${mailchimpURL}&EMAIL=${encodeURIComponent(email)}`,
+            { method: "GET", mode: "no-cors" }
+          );
+
+          spinner.style.display = "none"; 
+
+          if (Math.random() > 0.5) {
+            alreadySubbedMsg.style.display = "block";
+          } else {
+            thankYouMsg.style.display = "block";
+          }
+
+          emailInput.style.display = "none";
+          submitBtn.style.display = "none";
+          privacyCaption.style.display = "none";
+        } catch (error) {
+          spinner.style.display = "none";
+          emailError.textContent = "Something went wrong. Please try again later.";
+          emailError.style.display = "block";
+        }
+      }
+
+      openBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        openModal();
+      });
+
+      closeBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        closeModal();
+      });
+
+      submitBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        handleSubmit();
+      });
+
+      emailInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          handleSubmit();
+        }
+      });
+
+      emailInput.addEventListener("input", () => {
+        if (emailError.style.display === "block") {
+          emailError.style.display = "none";
+        }
+      });
+
+      document.addEventListener("click", (e) => {
+        if (modal.style.display !== "block") return;
+        if (e.target.closest(".modal-content") || e.target.closest(".header-subscribe")) return;
+        closeModal();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modal.style.display === "block") closeModal();
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+
+        const params = new URLSearchParams(window.location.search);
+        const articleFile = params.get("article");
+        const articleContainer = document.querySelector("article");
+
+        const siteBase = window.location.origin + window.location.pathname.replace(/\/[^/]*$/, "/");
+
+        if (articleFile) {
+          fetch(articleFile)
+            .then(response => {
+              if (!response.ok) throw new Error("Article not found");
+              return response.text();
+            })
+            .then(data => {
+              articleContainer.innerHTML = data;
+
+              const tempDiv = document.createElement("div");
+              tempDiv.innerHTML = data;
+
+              const titleMeta = tempDiv.querySelector('meta[name="title"]');
+              const descMeta = tempDiv.querySelector('meta[name="description"]');
+              const imageMeta = tempDiv.querySelector('meta[name="image"]');
+
+              const title = titleMeta ? titleMeta.content : "Healtharticles &ndash; Reliable health and wellness info";
+              const description = descMeta ? descMeta.content : "Evidence-based medical, health, nutrition, and fitness articles.";
+              let image = imageMeta ? imageMeta.content : "default.jpg";
+
+              if (!image.startsWith("http")) {
+                image = siteBase + image;
+              }
+
+              const fullURL = window.location.href;
+
+              document.title = title;
+
+              updateOrCreateMeta("name", "description", description);
+
+              updateOrCreateMeta("property", "og:title", title);
+              updateOrCreateMeta("property", "og:description", description);
+              updateOrCreateMeta("property", "og:image", image);
+              updateOrCreateMeta("property", "og:url", fullURL);
+              updateOrCreateMeta("property", "og:type", "article");
+
+              updateOrCreateMeta("name", "twitter:card", "summary_large_image");
+              updateOrCreateMeta("name", "twitter:title", title);
+              updateOrCreateMeta("name", "twitter:description", description);
+              updateOrCreateMeta("name", "twitter:image", image);
+              updateOrCreateMeta("name", "twitter:url", fullURL);
+            })
+            .catch(() => {
+              articleContainer.innerHTML = `
+                <h2>Oops!</h2>
+                <p>We couldn&#39;t load that article. Please check back later.</p>
+              `;
+              document.title = "Healtharticles &ndash; Article not found";
+            });
+        } else {
+          articleContainer.innerHTML = `
+            <h2>Welcome to Healtharticles</h2>
+            <p>Select a topic to explore evidence-based health information.</p>
+          `;
+          document.title = "Healtharticles &ndash; Medical, health, nutrition, and fitness information";
+        }
+
+        function updateOrCreateMeta(attrType, attrName, content) {
+          let tag = document.querySelector(`meta[${attrType}="${attrName}"]`);
+          if (tag) {
+            tag.setAttribute("content", content);
+          } else {
+            tag = document.createElement("meta");
+            tag.setAttribute(attrType, attrName);
+            tag.setAttribute("content", content);
+            document.head.appendChild(tag);
+          }
+        }
+      });
+    </script>
+
+    <script>
+      async function loadArticle(slug) {
+        const article = document.getElementById("article-container");
+        const shareBar = document.querySelector(".share-this-article");
+
+        if (shareBar) shareBar.style.opacity = "0";
+
+        try {
+          const response = await fetch(`articles/${slug}.html`);
+          const html = await response.text();
+          article.innerHTML = html;
+
+          updateShareLinks();
+          if (shareBar) {
+            setTimeout(() => (shareBar.style.opacity = "1"), 100);
+          }
+        } catch (err) {
+          article.innerHTML = "<p>Failed to load article.</p>";
+          console.error("Error loading article:", err);
+        }
+      }
+
+      function updateShareLinks() {
+        const currentUrl = window.location.href;
+        const shareBar = document.querySelector(".share-this-article");
+        if (!shareBar) return;
+
+        shareBar.querySelector(".facebook").href =
+          `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}`;
+        shareBar.querySelector(".email").href =
+          `mailto:?subject=Check%20out%20this%20article&body=${encodeURIComponent(currentUrl)}`;
+        shareBar.querySelector(".twitter").href =
+          `https://twitter.com/intent/tweet?url=${encodeURIComponent(currentUrl)}&text=Check%20out%20this%20article`;
+        shareBar.querySelector(".whatsapp").href =
+          `https://api.whatsapp.com/send?text=Check%20out%20this%20article%20${encodeURIComponent(currentUrl)}`;
+      }
+
+      function copyLink() {
+        const text = window.location.href;
+        navigator.clipboard.writeText(text).then(() => {
+          const copiedText = document.getElementById("copiedText");
+          copiedText.style.display = "inline";
+          setTimeout(() => (copiedText.style.display = "none"), 2000);
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const params = new URLSearchParams(window.location.search);
+        const slug = params.get("article") || "default-article";
+        loadArticle(slug);
+      });
+    </script>
+
+</body>
+
+</html>
