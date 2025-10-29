@@ -451,8 +451,6 @@ footer .about-contact-advertise button {
 .share-this-article {
     display: flex;
     margin-top: 20px;
-    opacity: 0;
-    transition: opacity 0.5s ease;
 }
 
 .sources {
