@@ -8,27 +8,20 @@ body {
 article {
     min-height: 100vh;
     margin: 0 auto;
-}
-
-main, article, .content {
-  padding-top: 50px; 
-}
-
-h1, h2 {
-    text-decoration: underline;
-}
-
-button {
-    font-family: inherit;
-    color: inherit;
-    cursor: pointer;
-    background: none;
+    padding-top: 60px; 
 }
 
 a {
     text-decoration: none;
     cursor: pointer;
     color: inherit;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    color: inherit;
+    background: none;
 }
 
 header {
@@ -105,13 +98,130 @@ header button:hover {
 }
 
 .header-subscribe button {
-    border-color: white;
     border-radius: 30%;
+    border: 2px solid white; 
+    background-color: transparent; 
     font-size: small;
 }
 
 .header-subscribe button:hover {
     border-color: orange;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0,0,0,0.5);
+}
+
+.modal-popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 10px; 
+}
+
+.actual-modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    text-align: center;  
+}
+
+.actual-modal-content h3 {
+    font-size: x-large;
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+
+.actual-modal-content .subscription-form-caption {
+    margin-top: 10px;
+    font-size: large;
+    margin-bottom: 30px;
+}
+
+.modal-content .close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    color: grey;
+    border: none;
+}
+
+.actual-modal-content input {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid rgb(187, 187, 187);
+    margin-bottom: 25px;
+}
+
+.actual-modal-content #submit-subscribe {
+    background-color: navy;
+    color: white;
+    width: 80%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 2px solid navy; 
+    border-radius: 10px;
+}
+
+.actual-modal-content #thank-you-message {
+    display:none; 
+    color:navy; 
+    font-weight: bolder;
+    font-size: x-large;
+    margin-bottom: 40px;
+    margin-top: 0;
+}
+
+.actual-modal-content #already-subscribed {
+    display:none; 
+    color:navy; 
+    font-weight: bolder;
+    font-size: x-large;
+    margin-bottom: 40px;
+    margin-top: 0;
+}
+
+.actual-modal-content #email-error {
+    display: none; 
+    color: red;
+    font-size: small;
+    margin-top: -20px;
+    margin-bottom: 30px;
+}
+
+.actual-modal-content .privacy-important-caption {
+    margin-bottom: 30px;
+}
+
+.actual-modal-content #submit-subscribe:hover {
+    border-color: orange;
+    color: orange;
+}
+
+.modal-content .close:hover {
+    color: navy;
+}
+
+body.modal-open {
+  overflow: hidden;
 }
 
 body.no-scroll {
@@ -133,6 +243,28 @@ body.no-scroll {
 
 .hamburger-menu.active {
     left: 0; 
+}
+
+.hamburger-menu .search-bar {
+    display: flex;
+}
+
+.hamburger-menu .search-bar input {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 5px;
+    width: 60%;
+    height: 20px;
+    margin-left: 5%;
+}
+
+.hamburger-menu .search-bar button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 34px;
+    width: 20%;
+    margin-right: 5%;
+    background-color: rgb(2, 131, 141);
 }
 
 .hamburger-menu div {
@@ -319,6 +451,8 @@ footer .about-contact-advertise button {
 .share-this-article {
     display: flex;
     margin-top: 20px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
 .sources {
