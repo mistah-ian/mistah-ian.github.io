@@ -717,18 +717,33 @@
     <script>
       async function loadArticle(slug) {
         const article = document.getElementById("article-container");
-        const shareBar = document.querySelector(".share-this-article");
-
-        if (shareBar) shareBar.style.opacity = "0";
 
         try {
           const response = await fetch(`articles/${slug}.html`);
           const html = await response.text();
           article.innerHTML = html;
 
-          updateShareLinks();
+          const shareBar = document.querySelector(".share-this-article");
           if (shareBar) {
+            shareBar.style.opacity = "0"; 
+            updateShareLinks();
+
             setTimeout(() => (shareBar.style.opacity = "1"), 100);
+
+            const copyBtn = shareBar.querySelector(".copy");
+            const copiedMessage = shareBar.querySelector(".copied");
+            if (copyBtn) {
+              copyBtn.addEventListener("click", () => {
+                navigator.clipboard.writeText(window.location.href)
+                  .then(() => {
+                    if (copiedMessage) {
+                      copiedMessage.classList.add("show");
+                      setTimeout(() => copiedMessage.classList.remove("show"), 2000);
+                    }
+                  })
+                  .catch(err => console.error("Failed to copy:", err));
+              });
+            }
           }
         } catch (err) {
           article.innerHTML = "<p>Failed to load article.</p>";
@@ -741,23 +756,15 @@
         const shareBar = document.querySelector(".share-this-article");
         if (!shareBar) return;
 
-        shareBar.querySelector(".facebook").href =
-          `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}`;
-        shareBar.querySelector(".email").href =
-          `mailto:?subject=Check%20out%20this%20article&body=${encodeURIComponent(currentUrl)}`;
-        shareBar.querySelector(".twitter").href =
-          `https://twitter.com/intent/tweet?url=${encodeURIComponent(currentUrl)}&text=Check%20out%20this%20article`;
-        shareBar.querySelector(".whatsapp").href =
-          `https://api.whatsapp.com/send?text=Check%20out%20this%20article%20${encodeURIComponent(currentUrl)}`;
-      }
+        const facebook = shareBar.querySelector(".facebook");
+        const email = shareBar.querySelector(".email");
+        const twitter = shareBar.querySelector(".twitter");
+        const whatsapp = shareBar.querySelector(".whatsapp");
 
-      function copyLink() {
-        const text = window.location.href;
-        navigator.clipboard.writeText(text).then(() => {
-          const copiedText = document.getElementById("copiedText");
-          copiedText.classList.add("show");       
-          setTimeout(() => copiedText.classList.remove("show"), 2000);
-        }).catch(err => console.error("Failed to copy:", err));
+        if (facebook) facebook.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}`;
+        if (email) email.href = `mailto:?subject=Check%20out%20this%20article&body=${encodeURIComponent(currentUrl)}`;
+        if (twitter) twitter.href = `https://twitter.com/intent/tweet?url=${encodeURIComponent(currentUrl)}&text=Check%20out%20this%20article`;
+        if (whatsapp) whatsapp.href = `https://api.whatsapp.com/send?text=Check%20out%20this%20article%20${encodeURIComponent(currentUrl)}`;
       }
 
       document.addEventListener("DOMContentLoaded", () => {
