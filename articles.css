@@ -11,6 +11,11 @@ article {
     padding-top: 60px; 
 }
 
+i {
+    font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands", sans-serif;
+    font-weight: 900;
+}
+
 a {
     text-decoration: none;
     cursor: pointer;
@@ -438,6 +443,8 @@ footer .about-contact-advertise button {
 }
 
 .copied {
+    position: absolute;
+    right: -60px;
     margin-top: 10px;
     font-size: small;
     color: black;
@@ -451,6 +458,7 @@ footer .about-contact-advertise button {
 .share-this-article {
     display: flex;
     margin-top: 20px;
+    position: relative;
 }
 
 .sources {
