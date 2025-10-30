@@ -716,7 +716,7 @@
 
     <script>
       async function loadArticle(slug) {
-        const article = document.getElementById("article-container");
+        const article = document.getElementById("article");
 
         try {
           const response = await fetch(`articles/${slug}.html`);
@@ -725,26 +725,11 @@
 
           const shareBar = document.querySelector(".share-this-article");
           if (shareBar) {
-            shareBar.style.opacity = "0"; 
+            shareBar.style.opacity = "0";
             updateShareLinks();
-
             setTimeout(() => (shareBar.style.opacity = "1"), 100);
-
-            const copyBtn = shareBar.querySelector(".copy");
-            const copiedMessage = shareBar.querySelector(".copied");
-            if (copyBtn) {
-              copyBtn.addEventListener("click", () => {
-                navigator.clipboard.writeText(window.location.href)
-                  .then(() => {
-                    if (copiedMessage) {
-                      copiedMessage.classList.add("show");
-                      setTimeout(() => copiedMessage.classList.remove("show"), 2000);
-                    }
-                  })
-                  .catch(err => console.error("Failed to copy:", err));
-              });
-            }
           }
+
         } catch (err) {
           article.innerHTML = "<p>Failed to load article.</p>";
           console.error("Error loading article:", err);
@@ -767,10 +752,23 @@
         if (whatsapp) whatsapp.href = `https://api.whatsapp.com/send?text=Check%20out%20this%20article%20${encodeURIComponent(currentUrl)}`;
       }
 
+      function copyLink() {
+        const copiedMessage = document.getElementById("copiedText");
+        navigator.clipboard.writeText(window.location.href)
+          .then(() => {
+            copiedMessage.classList.add("show");
+            setTimeout(() => copiedMessage.classList.remove("show"), 2000);
+          })
+          .catch(err => console.error("Failed to copy:", err));
+      }
+
       document.addEventListener("DOMContentLoaded", () => {
         const params = new URLSearchParams(window.location.search);
         const slug = params.get("article") || "default-article";
         loadArticle(slug);
+
+        const copyBtn = document.querySelector(".copy");
+        if (copyBtn) copyBtn.addEventListener("click", copyLink);
       });
     </script>
 
