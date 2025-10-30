@@ -356,7 +356,7 @@
         <i class="fab fa-whatsapp"></i>
       </a>
 
-      <button class="copy" onclick="copyLink()" title="Copy this link">
+      <button class="copy" title="Copy this link">
         <i class="fas fa-copy"></i>
       </button>
       <span id="copiedText" class="copied">&#10003; copied</span>
@@ -754,6 +754,7 @@
 
       function copyLink() {
         const copiedMessage = document.getElementById("copiedText");
+
         navigator.clipboard.writeText(window.location.href)
           .then(() => {
             copiedMessage.classList.add("show");
