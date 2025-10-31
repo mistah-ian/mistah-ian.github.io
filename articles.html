@@ -644,142 +644,110 @@
     </script>
 
     <script>
-      document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function() {
 
-        const params = new URLSearchParams(window.location.search);
-        const articleFile = params.get("article");
-        const articleContainer = document.querySelector("article");
+      const params = new URLSearchParams(window.location.search);
+      const articleFile = params.get("article");
+      const articleContainer = document.querySelector("article");
+      const shareDiv = document.querySelector(".share-this-article");
+      const siteBase = window.location.origin + window.location.pathname.replace(/\/[^/]*$/, "/");
 
-        const siteBase = window.location.origin + window.location.pathname.replace(/\/[^/]*$/, "/");
+      shareDiv.style.display = "none";
 
-        if (articleFile) {
-          fetch(articleFile)
-            .then(response => {
-              if (!response.ok) throw new Error("Article not found");
-              return response.text();
-            })
-            .then(data => {
-              articleContainer.innerHTML = data;
-
-              const tempDiv = document.createElement("div");
-              tempDiv.innerHTML = data;
-
-              const titleMeta = tempDiv.querySelector('meta[name="title"]');
-              const descMeta = tempDiv.querySelector('meta[name="description"]');
-              const imageMeta = tempDiv.querySelector('meta[name="image"]');
-
-              const title = titleMeta ? titleMeta.content : "Healtharticles &ndash; Reliable health and wellness info";
-              const description = descMeta ? descMeta.content : "Evidence-based medical, health, nutrition, and fitness articles.";
-              let image = imageMeta ? imageMeta.content : "default.jpg";
-
-              if (!image.startsWith("http")) {
-                image = siteBase + image;
-              }
-
-              const fullURL = window.location.href;
-
-              document.title = title;
-
-              updateOrCreateMeta("name", "description", description);
-
-              updateOrCreateMeta("property", "og:title", title);
-              updateOrCreateMeta("property", "og:description", description);
-              updateOrCreateMeta("property", "og:image", image);
-              updateOrCreateMeta("property", "og:url", fullURL);
-              updateOrCreateMeta("property", "og:type", "article");
-
-              updateOrCreateMeta("name", "twitter:card", "summary_large_image");
-              updateOrCreateMeta("name", "twitter:title", title);
-              updateOrCreateMeta("name", "twitter:description", description);
-              updateOrCreateMeta("name", "twitter:image", image);
-              updateOrCreateMeta("name", "twitter:url", fullURL);
-            })
-            .catch(() => {
-              articleContainer.innerHTML = `
-                <h2>Oops!</h2>
-                <p>We couldn&#39;t load that article. Please check back later.</p>
-              `;
-              document.title = "Healtharticles &ndash; Article not found";
-            });
-        } else {
-          articleContainer.innerHTML = `
-            <h2>Welcome to Healtharticles</h2>
-            <p>Select a topic to explore evidence-based health information.</p>
-          `;
-          document.title = "Healtharticles &ndash; Medical, health, nutrition, and fitness information";
-        }
-
-        function updateOrCreateMeta(attrType, attrName, content) {
-          let tag = document.querySelector(`meta[${attrType}="${attrName}"]`);
-          if (tag) {
-            tag.setAttribute("content", content);
-          } else {
-            tag = document.createElement("meta");
-            tag.setAttribute(attrType, attrName);
-            tag.setAttribute("content", content);
-            document.head.appendChild(tag);
-          }
-        }
-      });
-    </script>
-
-    <script>
-      async function loadArticle(slug) {
-        const article = document.getElementById("article");
-
-        try {
-          const response = await fetch(`articles/${slug}.html`);
-          const html = await response.text();
-          article.innerHTML = html;
-
-          const shareBar = document.querySelector(".share-this-article");
-          if (shareBar) {
-            shareBar.style.opacity = "0";
-            updateShareLinks();
-            setTimeout(() => (shareBar.style.opacity = "1"), 100);
-          }
-
-        } catch (err) {
-          article.innerHTML = "<p>Failed to load article.</p>";
-          console.error("Error loading article:", err);
-        }
-      }
-
-      function updateShareLinks() {
-        const currentUrl = window.location.href;
-        const shareBar = document.querySelector(".share-this-article");
-        if (!shareBar) return;
-
-        const facebook = shareBar.querySelector(".facebook");
-        const email = shareBar.querySelector(".email");
-        const twitter = shareBar.querySelector(".twitter");
-        const whatsapp = shareBar.querySelector(".whatsapp");
-
-        if (facebook) facebook.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}`;
-        if (email) email.href = `mailto:?subject=Check%20out%20this%20article&body=${encodeURIComponent(currentUrl)}`;
-        if (twitter) twitter.href = `https://twitter.com/intent/tweet?url=${encodeURIComponent(currentUrl)}&text=Check%20out%20this%20article`;
-        if (whatsapp) whatsapp.href = `https://api.whatsapp.com/send?text=Check%20out%20this%20article%20${encodeURIComponent(currentUrl)}`;
-      }
-
-      function copyLink() {
-        const copiedMessage = document.getElementById("copiedText");
-
-        navigator.clipboard.writeText(window.location.href)
-          .then(() => {
-            copiedMessage.classList.add("show");
-            setTimeout(() => copiedMessage.classList.remove("show"), 2000);
+      if (articleFile) {
+        fetch(articleFile)
+          .then(response => {
+            if (!response.ok) throw new Error("Article not found");
+            return response.text();
           })
-          .catch(err => console.error("Failed to copy:", err));
+          .then(data => {
+            articleContainer.innerHTML = data;
+            shareDiv.style.display = "flex"; 
+
+            const tempDiv = document.createElement("div");
+            tempDiv.innerHTML = data;
+
+            const titleMeta = tempDiv.querySelector('meta[name="title"]');
+            const descMeta = tempDiv.querySelector('meta[name="description"]');
+            const imageMeta = tempDiv.querySelector('meta[name="image"]');
+
+            const title = titleMeta ? titleMeta.content : "Healtharticles – Reliable health and wellness info";
+            const description = descMeta ? descMeta.content : "Evidence-based medical, health, nutrition, and fitness articles.";
+            let image = imageMeta ? imageMeta.content : "default.jpg";
+
+            if (!image.startsWith("http")) {
+              image = siteBase + image;
+            }
+
+            const fullURL = window.location.href;
+            document.title = title;
+
+            updateOrCreateMeta("name", "description", description);
+            updateOrCreateMeta("property", "og:title", title);
+            updateOrCreateMeta("property", "og:description", description);
+            updateOrCreateMeta("property", "og:image", image);
+            updateOrCreateMeta("property", "og:url", fullURL);
+            updateOrCreateMeta("property", "og:type", "article");
+            updateOrCreateMeta("name", "twitter:card", "summary_large_image");
+            updateOrCreateMeta("name", "twitter:title", title);
+            updateOrCreateMeta("name", "twitter:description", description);
+            updateOrCreateMeta("name", "twitter:image", image);
+            updateOrCreateMeta("name", "twitter:url", fullURL);
+
+            const encodedURL = encodeURIComponent(fullURL);
+            const encodedTitle = encodeURIComponent(title);
+
+            document.querySelector(".facebook").href =
+              `https://www.facebook.com/sharer/sharer.php?u=${encodedURL}`;
+            document.querySelector(".twitter").href =
+              `https://twitter.com/intent/tweet?url=${encodedURL}&text=${encodedTitle}`;
+            document.querySelector(".whatsapp").href =
+              `https://api.whatsapp.com/send?text=${encodedTitle}%20${encodedURL}`;
+            document.querySelector(".email").href =
+              `mailto:?subject=${encodedTitle}&body=${encodedTitle}%0A${encodedURL}`;
+
+            const copyBtn = document.querySelector(".copy");
+            const copiedText = document.getElementById("copiedText");
+
+            copyBtn.addEventListener("click", () => {
+              navigator.clipboard.writeText(fullURL).then(() => {
+                copiedText.classList.add("show");
+                setTimeout(() => copiedText.classList.remove("show"), 1500);
+              });
+            });
+
+          })
+          .catch(() => {
+            articleContainer.innerHTML = `
+              <h2>Oops!</h2>
+              <p>We couldn&#39;t load that article. Please check back later.</p>
+            `;
+            document.title = "Healtharticles – Article not found";
+            shareDiv.style.display = "none";
+          });
+
+      } else {
+        articleContainer.innerHTML = `
+          <h2>Welcome to Healtharticles</h2>
+          <p>Select a topic to explore evidence-based health information.</p>
+        `;
+        document.title = "Healtharticles – Medical, health, nutrition, and fitness information";
+        shareDiv.style.display = "none";
       }
 
-      document.addEventListener("DOMContentLoaded", () => {
-        const params = new URLSearchParams(window.location.search);
-        const slug = params.get("article") || "default-article";
-        loadArticle(slug);
+      function updateOrCreateMeta(attrType, attrName, content) {
+        let tag = document.querySelector(`meta[${attrType}="${attrName}"]`);
+        if (tag) {
+          tag.setAttribute("content", content);
+        } else {
+          tag = document.createElement("meta");
+          tag.setAttribute(attrType, attrName);
+          tag.setAttribute("content", content);
+          document.head.appendChild(tag);
+        }
+      }
 
-        const copyBtn = document.querySelector(".copy");
-        if (copyBtn) copyBtn.addEventListener("click", copyLink);
-      });
+    });
     </script>
 
   </body>
