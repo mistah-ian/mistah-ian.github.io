@@ -11,9 +11,21 @@ article {
     padding-top: 60px; 
 }
 
-i {
-    font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands", sans-serif;
-    font-weight: 900;
+i.fa, i.fas, i.fab, i.far, i.fal, i.fad {
+  font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands";
+  font-weight: 900;
+  font-style: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+i.fa::before, i.fas::before, i.fab::before {
+  font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands", sans-serif;
+}
+
+i:not(.fa):not(.fas):not(.fab):not(.far):not(.fal):not(.fad) {
+  font-family: sans-serif;
+  font-style: italic;
 }
 
 a {
