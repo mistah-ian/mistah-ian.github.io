@@ -693,17 +693,24 @@
             updateOrCreateMeta("name", "twitter:image", image);
             updateOrCreateMeta("name", "twitter:url", fullURL);
 
+            const shareBar = document.querySelector(".share-this-article");
+            const facebookLink = shareBar.querySelector("a.facebook");
+            const twitterLink = shareBar.querySelector("a.twitter");
+            const whatsappLink = shareBar.querySelector("a.whatsapp");
+            const emailLink = shareBar.querySelector("a.email");
+
             const encodedURL = encodeURIComponent(fullURL);
             const encodedTitle = encodeURIComponent(title);
+            const encodedImage = encodeURIComponent(image);
 
-            document.querySelector(".facebook").href =
-              `https://www.facebook.com/sharer/sharer.php?u=${encodedURL}`;
-            document.querySelector(".twitter").href =
-              `https://twitter.com/intent/tweet?url=${encodedURL}&text=${encodedTitle}`;
-            document.querySelector(".whatsapp").href =
-              `https://api.whatsapp.com/send?text=${encodedTitle}%20${encodedURL}`;
-            document.querySelector(".email").href =
-              `mailto:?subject=${encodedTitle}&body=${encodedTitle}%0A${encodedURL}`;
+            facebookLink.href = `https://www.facebook.com/sharer/sharer.php?u=${encodedURL}`;
+            twitterLink.href = `https://twitter.com/intent/tweet?url=${encodedURL}&text=${encodedTitle}`;
+            whatsappLink.href = `https://api.whatsapp.com/send?text=${encodedTitle}%20${encodedURL}`;
+            emailLink.href = `mailto:?subject=${encodedTitle}&body=${encodedTitle}%0A${encodedURL}`;
+            const pinterestLink = shareBar.querySelector("a.pinterest");
+            if (pinterestLink) {
+              pinterestLink.href = `https://pinterest.com/pin/create/button/?url=${encodedURL}&media=${encodedImage}&description=${encodedTitle}`;
+            }
 
             const copyBtn = document.querySelector(".copy");
             const copiedText = document.getElementById("copiedText");
