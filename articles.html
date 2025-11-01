@@ -711,7 +711,7 @@
             copyBtn.addEventListener("click", () => {
               navigator.clipboard.writeText(fullURL).then(() => {
                 copiedText.classList.add("show");
-                setTimeout(() => copiedText.classList.remove("show"), 1500);
+                setTimeout(() => copiedText.classList.remove("show"), 750);
               });
             });
 
