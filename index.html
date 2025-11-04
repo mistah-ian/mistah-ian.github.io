@@ -13,9 +13,18 @@
 
     <title>Healtharticles: Medical, health, nutrition, and fitness information</title>
 
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css"
+      integrity="sha384-M9Aq+3MYz1n2KAcfZw6BzD2CGODb1p5Vr4DfNMSHWuJQ8yCjS5+bxSpgL8cbN4OZ"
+      crossorigin="anonymous"
+    />
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="articles.css">
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4226418454910857"
      crossorigin="anonymous"></script>
@@ -412,7 +421,7 @@
 
         <h2 class="recommended-text"><strong>RECOMMENDED</strong></h2>
 
-        <a href="articles.html?article=article1.html">
+        <a href="articles.html?article=The 8 Must-Use Vitamins for Healthy Hair, Skin, and Nails.html">
           <button>
             <h3><strong>Do Teeth Whitening Strips Work</strong></h3>
             <p>Teeth whitening strips are a popular at-home option for brightening your smile. They&#39;re thin, flexible pieces of plastic coated with a whitening gel that sticks directly to the surface of your teeth.</p>
@@ -729,15 +738,5 @@
 
 </html>
 
-<script>
-      function copyLink() {
-        const url = "https://healtharticles.shop/article1.html";
-        navigator.clipboard.writeText(url).then(() => {
-          const copied = document.getElementById("copiedText");
-          copied.classList.add("show");
-          setTimeout(() => {
-            copied.classList.remove("show");
-          }, 1000); 
-        });
-      }
-    </script>
+
+    
