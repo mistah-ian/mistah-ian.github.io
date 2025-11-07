@@ -1,3 +1,56 @@
+.share-this-article {
+    display: none;
+    margin-top: 20px;
+}
+
+.share-this-article-text {
+    font-size: small;
+    margin-right: 10px;
+    margin-left: 15px;
+}
+
+.share-this-article i, .copy {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    color: grey;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.share-this-article i:hover {
+    color: navy;
+    transform: scale(1.15);
+}
+
+.share-this-article a {
+    text-decoration: none;
+    background: none;
+    font-size: x-large;
+    margin-right: 5px;
+}
+
+.copy { 
+    background: none;
+    border: none;
+    font-size: 25px;
+}
+
+.copied {
+    margin-top: 10px;
+    font-size: small;
+    color: black;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.copied.show {
+    opacity: 1;
+}
+
+/* #region everything */
 body {
     margin: 0;
     background-color: white;
@@ -9,6 +62,19 @@ article {
     min-height: 100vh;
     margin: 0 auto;
     padding-top: 60px; 
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    color: inherit;
+    background: none;
 }
 
 i.fa, i.fas, i.far, i.fal, i.fad {
@@ -43,20 +109,9 @@ i:not(.fa):not(.fas):not(.fab):not(.far):not(.fal):not(.fad) {
     font-family: "Font Awesome 6 Brands";
   }
 }
+/* #endregion */
 
-a {
-    text-decoration: none;
-    cursor: pointer;
-    color: inherit;
-}
-
-button {
-    font-family: inherit;
-    cursor: pointer;
-    color: inherit;
-    background: none;
-}
-
+/* #region header-part */
 header {
     display: flex;
     align-items: center;
@@ -140,10 +195,12 @@ header button:hover {
 .header-subscribe button:hover {
     border-color: orange;
 }
+/* #endregion */
 
+/* #region subscribe-popup */
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .modal {
@@ -256,12 +313,9 @@ header button:hover {
 body.modal-open {
   overflow: hidden;
 }
+/* #endregion */
 
-body.no-scroll {
-  overflow: hidden;
-  height: 100vh;
-}
-
+/* #region hamburger-menu */
 .hamburger-menu {
     position: fixed;
     left: -100%; 
@@ -364,203 +418,13 @@ body.no-scroll {
     border: none;
 }
 
-.follow-us-on {
-    background-color: #dde9fc;
-    padding-top: 10px;
-    padding-bottom: 30px;
-    padding-left: 5%;
-    padding-right: 5%;
+body.no-scroll {
+  overflow: hidden;
+  height: 100vh;
 }
+/* #endregion */
 
-.follow-us-on-text {
-    display: flex;
-    justify-content: center;
-    padding-bottom: 5px;
-}
-
-.follow-us-on-icons {
-    display: flex;
-    justify-content: space-around;
-}
-
-.follow-us-on-icons a:hover {
-    color: orange;
-    transform: scale(1.15);
-}
-
-.follow-us-on-icons button {
-    display: inline-block;
-    font-size: xx-large;
-    color: black;
-    transition: all 0.3s ease;
-    border: none;
-}
-
-footer {
-    background-color: navy;
-    padding-bottom: 40px;
-    color: white;
-    padding-top: 30px;
-}
-
-footer button {
-    border: none;
-}
-
-footer button:hover {
-    color: orange;
-}
-
-footer .footer-logo {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding-bottom: 30px;
-}
-
-footer .about-contact-advertise {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-footer .footer-logo button {
-    font-size: x-large;
-    font-weight: bold;
-}
-
-footer .about-contact-advertise button {
-    font-size: medium;
-    text-decoration: underline;
-}
-
-.share-this-article {
-    display: none;
-    margin-top: 20px;
-}
-
-.share-this-article-text {
-    font-size: small;
-    margin-right: 10px;
-    margin-left: 15px;
-}
-
-.share-this-article i, .copy {
-    width: 35px;
-    height: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    color: grey;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.share-this-article i:hover {
-    color: navy;
-    transform: scale(1.15);
-}
-
-.share-this-article a {
-    text-decoration: none;
-    background: none;
-    font-size: x-large;
-    margin-right: 5px;
-}
-
-.copy { 
-    background: none;
-    border: none;
-    font-size: 25px;
-}
-
-.copied {
-    margin-top: 10px;
-    font-size: small;
-    color: black;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-.copied.show {
-    opacity: 1;
-}
-
-.sources {
-    margin-top: 30px;
-}
-
-.sources details {
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    padding: 10px 15px;
-    background: #f2f7ff;
-    cursor: pointer;
-}
-
-.sources summary {
-    font-weight: bold;
-    list-style: none;
-}
-
-.sources summary::marker {
-    display: none; 
-}
-
-summary::after {
-    content: " ▼";
-    font-size: 0.9rem;
-    color: rgb(90, 89, 89);
-    transition: transform 0.2s ease;
-}
-
-details[open] summary::after {
-    content: " ▲";
-}
-
-.sources .sources-list {
-    list-style-type: decimal;
-    padding-left: 20px;
-    margin-top: 10px;
-}
-
-.sources-list li {
-    margin-bottom: 8px;
-}
-
-.sources-list a {
-    color: blue;
-    text-decoration: none;
-}
-
-.sources-list a:hover {
-    text-decoration: underline;
-}
-
-.how-we-reviewed .actual-name {
-    color: grey;
-    font-size: small;
-}
-
-.how-we-reviewed h3 {
-    margin-bottom: 10px;
-    margin-top: 25px;
-}
-
-.how-we-reviewed-notes {
-    margin-top: 0;
-}
-
-.how-we-reviewed div {
-    line-height: 0.75;
-    margin-left: 20px;
-}
-
-.how-we-reviewed .written-by {
-    margin-bottom: 30px;
-    margin-top: 30px;
-}
-
+/* #region learn-more */
 .learn-more {
     font-weight: bold;
     margin-top: 20px;
@@ -586,7 +450,15 @@ details[open] summary::after {
     transform: scale(1.05) translateX(8px);
     text-decoration: underline;
 }
+/* #endregion */
 
+/* #region in-article-toc */
+.in-article-toc details {
+    background-color: pink;
+}
+/* #endregion */
+
+/* #region related-articles */
 .related-text {
     text-decoration: none;
     margin-bottom: 5px;
@@ -616,34 +488,14 @@ details[open] summary::after {
     margin-bottom: 5px;
 }
 
-.read-more-one, .read-more-two, .read-more-three {
-    color: blue;
-}
-
-.read-more-one, .read-more-two {
-    border-bottom: 1px solid navy; 
-}
-
-.read-more-one span, .read-more-two span {
-    margin-bottom: 15px;
-}
-
-.read-more-one span, .read-more-two span, .read-more-three span {
-    display: inline-block;
-}
-
-.read-more-one span:hover, .read-more-two span:hover, .read-more-three span:hover {
-    text-decoration: underline;
-    cursor: pointer;
-    transform: scale(1.05) translateX(2px);
-}
-
 .related-articles button h3:hover {
     color: blue;
     cursor: pointer;
     transform: scale(1.05) translateX(18px);
 }
+/* #endregion */
 
+/* #region recommended-articles */
 .recommended-text {
     text-decoration: none;
     margin-bottom: 5px;
@@ -685,6 +537,160 @@ details[open] summary::after {
     cursor: pointer;
     transform: scale(1.05) translateX(18px);
 }
+/* #endregion */
+
+/* #region sources-list */
+.sources {
+    margin-top: 30px;
+}
+
+.sources details {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 10px 15px;
+    background: #f2f7ff;
+    cursor: pointer;
+}
+
+.sources summary {
+    font-weight: bold;
+    list-style: none;
+}
+
+.sources summary::marker {
+    display: none; 
+}
+
+.sources summary::after {
+    content: " ▼";
+    font-size: 0.9rem;
+    color: rgb(90, 89, 89);
+    transition: transform 0.2s ease;
+}
+
+.sources details[open] summary::after {
+    content: " ▲";
+}
+
+.sources .sources-list {
+    list-style-type: decimal;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.sources .sources-list li {
+    margin-bottom: 8px;
+}
+
+.sources .sources-list a {
+    color: blue;
+    text-decoration: none;
+}
+
+.sources .sources-list a:hover {
+    text-decoration: underline;
+}
+/* #endregion */
+
+/* #region how-we-reviewed */
+.how-we-reviewed .actual-name {
+    color: grey;
+    font-size: small;
+}
+
+.how-we-reviewed h3 {
+    margin-bottom: 10px;
+    margin-top: 25px;
+}
+
+.how-we-reviewed-notes {
+    margin-top: 0;
+}
+
+.how-we-reviewed div {
+    line-height: 0.75;
+    margin-left: 20px;
+}
+
+.how-we-reviewed .written-by {
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+/* #endregion */
+
+/* #region follow-us-on */
+.follow-us-on {
+    background-color: #dde9fc;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.follow-us-on-text {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5px;
+}
+
+.follow-us-on-icons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.follow-us-on-icons a:hover {
+    color: orange;
+    transform: scale(1.15);
+}
+
+.follow-us-on-icons button {
+    display: inline-block;
+    font-size: xx-large;
+    color: black;
+    transition: all 0.3s ease;
+    border: none;
+}
+/* #endregion */
+
+/* #region footer */
+footer {
+    background-color: navy;
+    padding-bottom: 40px;
+    color: white;
+    padding-top: 30px;
+}
+
+footer button {
+    border: none;
+}
+
+footer button:hover {
+    color: orange;
+}
+
+footer .footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-bottom: 30px;
+}
+
+footer .about-contact-advertise {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+footer .footer-logo button {
+    font-size: x-large;
+    font-weight: bold;
+}
+
+footer .about-contact-advertise button {
+    font-size: medium;
+    text-decoration: underline;
+}
+/* #endregion */
 
 @media screen and (min-width: 991px) {
     article {
