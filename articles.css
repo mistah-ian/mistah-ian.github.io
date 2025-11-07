@@ -509,6 +509,85 @@ body.no-scroll {
 }
 /* #endregion */
 
+/* #region subscribe-mid-article */
+.modal-mid-article {
+    background-color: #dde9fc;
+    border-radius: 5%; 
+}
+
+.modal-mid-article .actual-modal-content-article {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    text-align: center;  
+}
+
+.modal-mid-article .actual-modal-content-article h3 {
+    font-size: x-large;
+    margin-bottom: 0;
+    margin-top: 30px;
+}
+
+.modal-mid-article .actual-modal-content-article .subscription-form-caption-article {
+    margin-top: 10px;
+    font-size: large;
+    margin-bottom: 30px;
+}
+
+.modal-mid-article .actual-modal-content-article input {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid rgb(187, 187, 187);
+    margin-bottom: 25px;
+}
+
+.modal-mid-article .actual-modal-content-article #submit-subscribe-article {
+    background-color: navy;
+    color: white;
+    width: 60%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border: 2px solid navy; 
+    border-radius: 10%;
+}
+
+.modal-mid-article .actual-modal-content-article #thank-you-message-article {
+    display:none; 
+    color:navy; 
+    font-weight: bolder;
+    font-size: x-large;
+    margin-bottom: 40px;
+    margin-top: 0;
+}
+
+.modal-mid-article .actual-modal-content-article #already-subscribed-article {
+    display:none; 
+    color:navy; 
+    font-weight: bolder;
+    font-size: x-large;
+    margin-bottom: 40px;
+    margin-top: 0;
+}
+
+.modal-mid-article .actual-modal-content-article #email-error-article {
+    display: none; 
+    color: red;
+    font-size: small;
+    margin-top: -20px;
+    margin-bottom: 30px;
+}
+
+.modal-mid-article .actual-modal-content-article .privacy-important-caption-article {
+    margin-bottom: 30px;
+}
+
+.modal-mid-article .actual-modal-content-article #submit-subscribe-article:hover {
+    border-color: orange;
+    color: orange;
+}
+/* #endregion */
+
 /* #region related-articles */
 .related-text {
     text-decoration: none;
@@ -830,6 +909,11 @@ footer .about-contact-advertise button {
     footer .footer-logo button {
         font-size: xx-large;
         padding-top: 30px;
+    }
+    .modal-article, .modal-mid-article {
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
