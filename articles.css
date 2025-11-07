@@ -454,7 +454,56 @@ body.no-scroll {
 
 /* #region in-article-toc */
 .in-article-toc details {
-    background-color: pink;
+  background-color: #dde9fc;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-left: 5%; 
+  padding-right: 8%;
+}
+
+.in-article-toc summary {
+  list-style: none;
+  cursor: pointer;
+  font-size: large;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+}
+
+.in-article-toc summary:hover {
+  color: rgb(2, 131, 141);
+}
+
+.in-article-toc summary::-webkit-details-marker, .in-article-toc summary::marker {
+  display: none;
+}
+
+.in-article-toc summary::before {
+  order: 2; 
+  flex-shrink: 0; 
+  font-size: xx-large;
+  text-align: right;
+  content: '+'; 
+}
+
+.in-article-toc details[open] summary::before {
+  content: '-';
+}
+
+.in-article-toc ul {
+  margin-top: 10px;
+}
+
+.in-article-toc a {
+    display: block; 
+    margin-bottom: 15px; 
+    color: blue;
+    text-decoration: none;
+}
+
+.in-article-toc a:hover {
+  text-decoration: underline;
 }
 /* #endregion */
 
@@ -547,42 +596,51 @@ body.no-scroll {
 .sources details {
     border: 1px solid #ddd;
     border-radius: 6px;
-    padding: 10px 15px;
-    background: #f2f7ff;
-    cursor: pointer;
+    background-color: #f2f7ff;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 5%; 
+    padding-right: 8%;
 }
 
 .sources summary {
-    font-weight: bold;
     list-style: none;
+    cursor: pointer;
+    font-size: large;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
 }
 
-.sources summary::marker {
+.sources summary:hover {
+  color: rgb(2, 131, 141);
+}
+
+.sources summary::-webkit-details-marker, .sources summary::marker {
     display: none; 
 }
 
-.sources summary::after {
-    content: " ▼";
+.sources summary::before {
     font-size: 0.9rem;
     color: rgb(90, 89, 89);
-    transition: transform 0.2s ease;
+    order: 2; 
+    flex-shrink: 0; 
+    text-align: right;
+    content: '+'; 
 }
 
-.sources details[open] summary::after {
-    content: " ▲";
+.sources details[open] summary::before {
+    content: '-';
 }
 
-.sources .sources-list {
-    list-style-type: decimal;
-    padding-left: 20px;
+.sources ul {
     margin-top: 10px;
 }
 
-.sources .sources-list li {
-    margin-bottom: 8px;
-}
-
 .sources .sources-list a {
+    display: block; 
+    margin-bottom: 15px; 
     color: blue;
     text-decoration: none;
 }
