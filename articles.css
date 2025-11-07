@@ -454,11 +454,13 @@ body.no-scroll {
 
 /* #region in-article-toc */
 .in-article-toc details {
-  background-color: #dde9fc;
-  padding-top: 2%;
-  padding-bottom: 2%;
-  padding-left: 5%; 
-  padding-right: 8%;
+    border: 1px solid #ddd;
+    border-radius: 5%;
+    background-color: #f2f7ff;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 2.5%; 
+    padding-right: 10%;
 }
 
 .in-article-toc summary {
@@ -595,12 +597,12 @@ body.no-scroll {
 
 .sources details {
     border: 1px solid #ddd;
-    border-radius: 6px;
+    border-radius: 10%;
     background-color: #f2f7ff;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    padding-left: 5%; 
-    padding-right: 8%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 2.5%; 
+    padding-right: 5%;
 }
 
 .sources summary {
@@ -622,7 +624,7 @@ body.no-scroll {
 }
 
 .sources summary::before {
-    font-size: 0.9rem;
+    font-size: x-large;
     color: rgb(90, 89, 89);
     order: 2; 
     flex-shrink: 0; 
@@ -638,14 +640,14 @@ body.no-scroll {
     margin-top: 10px;
 }
 
-.sources .sources-list a {
+.sources a {
     display: block; 
     margin-bottom: 15px; 
     color: blue;
     text-decoration: none;
 }
 
-.sources .sources-list a:hover {
+.sources a:hover {
     text-decoration: underline;
 }
 /* #endregion */
