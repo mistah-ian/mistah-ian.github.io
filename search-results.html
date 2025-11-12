@@ -13,9 +13,18 @@
 
     <title>Search Results</title>
 
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css"
+      integrity="sha384-M9Aq+3MYz1n2KAcfZw6BzD2CGODb1p5Vr4DfNMSHWuJQ8yCjS5+bxSpgL8cbN4OZ"
+      crossorigin="anonymous"
+    />
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="articles.css">
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4226418454910857"
      crossorigin="anonymous"></script>
@@ -92,122 +101,6 @@
 
     </script>
 
-    <style> 
-      @media screen and (min-width: 991px) {
-        article {
-          width: 60%;
-          margin: 0 auto;
-        }
-        article .search-bar { 
-          margin-top: 40px; 
-        }
-        article .search-bar button { 
-          font-size: x-large;
-        }
-        article .search-bar span {
-          right: 21%;
-        }
-        article .search-bar input {
-          font-size: x-large;
-        }
-      }
-      @media screen and (max-width: 990px) {
-        article .search-bar { 
-          margin-top: 30px;
-        }
-        article .search-bar button { 
-          font-size: x-large;
-        }
-        article .search-bar span {
-          right: 22%;
-        }
-        article .search-bar input {
-          font-size: large;
-        }
-      }
-      article .search-bar {
-        margin-bottom: 20px;
-        position: relative;
-        display: inline-flex;
-        align-items: center;
-        width: 100%;
-      }
-      article .search-bar input {
-        width: 80%; 
-        padding-top: 5px;
-        padding-bottom: 5px;
-        padding-left: 2.5%;
-        padding-right: 4%;
-        height: 35px;
-      }
-      article .search-bar button {
-        height: 49px;
-        width: 20%;
-        background-color: rgb(2, 131, 141);
-      }
-      article .search-bar span {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        cursor: pointer;
-        font-weight: bold;
-        font-size: x-large;
-        color: grey;
-      }
-      article .result-item { 
-        margin-bottom: 40px; 
-      }
-      article .result-item h3 {
-        color: rgb(2, 131, 141);
-        font-weight: normal;
-        margin-bottom: 5px;
-      }
-      article .result-item p {
-        color: grey;
-        margin-top: 0;
-        line-height: 1.5rem;
-      }
-      article .result-item h3 strong {
-        font-weight: bolder;
-        color: rgb(2, 131, 141);
-      }
-      article .result-item h3:hover {
-        font-weight: bold;
-      }
-      article .result-item p strong {
-        color: black;
-        font-weight: bold;
-      }
-      #pagination {
-        margin-top: 10px;
-        margin-bottom: 35px;
-        display: flex;
-        gap: 1.5rem;
-        flex-wrap: wrap;
-        margin-left: 20%;
-        min-height: 40px;
-      }
-      .pagination-btn {
-        background: none;
-        border: none;
-        cursor: pointer;
-        font-size: large;
-        font-weight: normal;
-        color: rgb(2, 131, 141);
-      }
-      .pagination-btn:hover:not(.active-page) {
-        text-decoration: underline;
-      }
-      .active-page {
-        background-color: rgb(4, 189, 202);
-        color: rgb(2, 131, 141);
-        font-weight: bolder;
-      }
-      .nav-btn {
-        color: rgb(2, 131, 141);
-      }
-    </style>
-
   </head>
 
   <body>
@@ -247,12 +140,43 @@
         </div>
 
         <div class="header-subscribe">
-          <button>Subscribe</button>
+          <button id="subscribe-btn">Subscribe</button>
         </div>
 
       </div>
 
     </header>
+
+    <div class="modal" id="subscribe-modal">
+      <div class="modal-popup">
+        <div class="modal-content">
+          <button class="close">&times;</button>
+          <div class="actual-modal-content">
+
+            <h3>Subscribe to Our Health Updates</h3>
+
+            <p class="subscription-form-caption">Get the latest in health and wellness straight into your inbox.</p>
+
+            <input type="email" id="subscriber-email" placeholder="Enter your email" required>
+
+            <small id="email-error">Please enter a valid email address.</small>
+
+            <button id="submit-subscribe">SUBSCRIBE</button>
+
+            <div id="loading-spinner" style="display:none;margin-top:10px;">
+              <div class="spinner" style="border:3px solid #f3f3f3; border-top:3px solid navy; border-radius:50%; width:25px; height:25px; animation: spin 1s linear infinite; margin:auto;"></div>
+            </div>
+
+            <p class="privacy-important-caption">Your privacy is important to us</p>
+
+            <p id="thank-you-message">Thanks for subscribing!</p>
+
+            <p id="already-subscribed">You're already subscribed!</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="hamburger-menu" id="hamburger-menu" aria-label="Main menu">
 
@@ -384,7 +308,7 @@
           </button>
 
           <button>
-            <a href="https://www.instagram.com/YourPageHere" class="instagram" target="_blank" title="Visit us on Instagram">
+            <a href="https://www.instagram.com/health_articles_254" class="instagram" target="_blank" title="Visit us on Instagram">
               <i class="fab fa-instagram"></i>
             </a>
           </button>
@@ -454,7 +378,7 @@
         </button>
 
         <button>
-          <a href="https://www.instagram.com/YourPageHere" class="instagram" target="_blank" title="Visit us on Instagram">
+          <a href="https://www.instagram.com/health_articles_254" class="instagram" target="_blank" title="Visit us on Instagram">
             <i class="fab fa-instagram"></i>
           </a>
         </button>
@@ -504,153 +428,162 @@
     </footer>
 
     <script>
-      const params = new URLSearchParams(window.location.search);
-      const query = params.get('q') || '';
-      let currentPage = parseInt(params.get('page')) || 1;
-      const resultsPerPage = 5;
-
-      const menuInput = document.getElementById('searchInputMenu');
-      const articleInput = document.getElementById('searchInputArticle');
-      const menuBtn = document.getElementById('goBtnMenu');
-      const articleBtn = document.getElementById('goBtnArticle');
-
-      if (articleInput) articleInput.value = query;
-
-      function triggerSearch(fromInput) {
-        const q = encodeURIComponent(fromInput.value.trim());
-        if (q) {
-          window.location.href = `search-results.html?q=${q}&page=1`;
-        }
-      }
-
-      if (menuInput && menuBtn) {
-        menuInput.addEventListener('keydown', e => {
-          if (e.key === 'Enter') triggerSearch(menuInput);
-        });
-        menuBtn.addEventListener('click', () => triggerSearch(menuInput));
-      }
-
-      if (articleInput && articleBtn) {
-        articleInput.addEventListener('keydown', e => {
-          if (e.key === 'Enter') triggerSearch(articleInput);
-        });
-        articleBtn.addEventListener('click', () => triggerSearch(articleInput));
-      }
-
-      fetch('articles.json')
-        .then(res => res.json())
-        .then(data => {
-          const filtered = data.filter(item =>
-            item.title.toLowerCase().includes(query.toLowerCase()) ||
-            item.description.toLowerCase().includes(query.toLowerCase())
-          );
-
-          const totalPages = Math.ceil(filtered.length / resultsPerPage);
-          const start = (currentPage - 1) * resultsPerPage;
-          const end = start + resultsPerPage;
-          const paginated = filtered.slice(start, end);
-
-          const resultsDiv = document.getElementById('results');
-          resultsDiv.innerHTML = '';
-
-          if (filtered.length === 0) {
-            resultsDiv.innerHTML = `<p>No results found for "<strong>${escapeHtml(query)}</strong>".</p>`;
-            return;
-          }
-
-          const highlight = text => {
-            if (!query) return text;
-            const regex = new RegExp(`(${escapeRegExp(query)})`, 'gi');
-            return text.replace(regex, '<strong>$1</strong>');
-          };
-
-          paginated.forEach(article => {
-            const div = document.createElement('div');
-            div.className = 'result-item';
-            div.innerHTML = `
-              <a href="${escapeHtmlAttr(article.url)}" class="search-result-link">
-                <h3>${highlight(escapeHtml(article.title))}</h3>
-                <p>${highlight(escapeHtml(article.description))}</p>
-              </a>
-            `;
-            resultsDiv.appendChild(div);
-          });
-
-          const paginationDiv = document.getElementById('pagination');
-          paginationDiv.innerHTML = '';
-
-          if (totalPages > 1) {
-            if (currentPage > 1) {
-              const prevBtn = document.createElement('button');
-              prevBtn.textContent = 'Prev';
-              prevBtn.classList.add('pagination-btn', 'nav-btn');
-              prevBtn.addEventListener('click', () => {
-                window.location.href = `search-results.html?q=${encodeURIComponent(query)}&page=${currentPage - 1}`;
-              });
-              paginationDiv.appendChild(prevBtn);
-            }
-
-            for (let i = 1; i <= totalPages; i++) {
-              const btn = document.createElement('button');
-              btn.textContent = i;
-              btn.classList.add('pagination-btn');
-              if (i === currentPage) btn.classList.add('active-page');
-              btn.addEventListener('click', () => {
-                window.location.href = `search-results.html?q=${encodeURIComponent(query)}&page=${i}`;
-              });
-              paginationDiv.appendChild(btn);
-            }
-
-            if (currentPage < totalPages) {
-              const nextBtn = document.createElement('button');
-              nextBtn.textContent = 'Next';
-              nextBtn.classList.add('pagination-btn', 'nav-btn');
-              nextBtn.addEventListener('click', () => {
-                window.location.href = `search-results.html?q=${encodeURIComponent(query)}&page=${currentPage + 1}`;
-              });
-              paginationDiv.appendChild(nextBtn);
-            }
-          }
-        })
-        .catch(err => {
-          console.error('Error loading JSON:', err);
-          document.getElementById('results').innerHTML = '<p>Error loading results.</p>';
-        });
-
-      function escapeHtml(str) {
-        if (!str) return '';
-        return str.replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));
-      }
-      function escapeHtmlAttr(str) {
-        return escapeHtml(str).replace(/"/g, '&quot;');
-      }
-      function escapeRegExp(str) {
-        return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-      }
-    </script>
-
-    <script>
-      const input = document.getElementById('searchInputArticle');
-      const clearBtn = document.getElementById('clearSearchArticle');
-      const goBtn = document.getElementById('goBtnArticle');
-
-      clearBtn.addEventListener('click', () => {
-        input.value = '';
-        input.focus();
-      });
+      const searchInputMenu = document.getElementById('searchInputMenu');
+      const goBtnMenu = document.getElementById('goBtnMenu');
 
       function handleSearch() {
-        const query = input.value.trim();
+        const query = searchInputMenu.value.trim();
         if (query) {
           window.location.href = `search-results.html?q=${encodeURIComponent(query)}&page=1`;
         }
       }
 
-      input.addEventListener('keydown', e => {
+      searchInputMenu.addEventListener('keydown', function(e) {
         if (e.key === 'Enter') handleSearch();
       });
 
-      goBtn.addEventListener('click', handleSearch);
+      goBtnMenu.addEventListener('click', handleSearch);
+    </script>
+
+    <script>
+      const searchInput = document.getElementById("searchInputMenu");
+      const goBtn = document.getElementById("goBtnMenu");
+
+      goBtn.addEventListener("click", () => {
+        const query = searchInput.value.trim();
+        if (query) {
+          window.location.href = `search-results.html?q=${encodeURIComponent(query)}`;
+        }
+      });
+
+      searchInput.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") goBtn.click();
+      });
+    </script>
+
+    <script>
+      const modal = document.getElementById("subscribe-modal");
+      const openBtn = document.getElementById("subscribe-btn");
+      const closeBtn = document.querySelector(".close");
+      const submitBtn = document.getElementById("submit-subscribe");
+      const thankYouMsg = document.getElementById("thank-you-message");
+      const alreadySubbedMsg = document.getElementById("already-subscribed");
+      const emailInput = document.getElementById("subscriber-email");
+      const privacyCaption = document.querySelector(".privacy-important-caption");
+      const emailError = document.getElementById("email-error");
+      const spinner = document.getElementById("loading-spinner");
+
+      const mailchimpURL =
+        "https://shop.us7.list-manage.com/subscribe/post-json?u=4400d7b98dea603f52140c409&id=c6a24af679&f_id=00c6cee4f0&c=?";
+
+      function openModal() {
+        modal.style.display = "block";
+        document.body.classList.add("modal-open");
+        setTimeout(() => emailInput.focus(), 100);
+      }
+
+      function closeModal() {
+        modal.style.display = "none";
+        document.body.classList.remove("modal-open");
+
+        thankYouMsg.style.display = "none";
+        alreadySubbedMsg.style.display = "none";
+        emailError.style.display = "none";
+        spinner.style.display = "none";
+        emailInput.style.display = "block";
+        submitBtn.style.display = "inline-block";
+        privacyCaption.style.display = "block";
+        emailInput.value = "";
+      }
+
+      function isValidEmail(email) {
+        const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return pattern.test(email);
+      }
+
+      async function handleSubmit() {
+        const email = emailInput.value.trim();
+
+        emailError.style.display = "none";
+        thankYouMsg.style.display = "none";
+        alreadySubbedMsg.style.display = "none";
+
+        if (email === "") {
+          emailError.textContent = "Please enter your email address.";
+          emailError.style.display = "block";
+          return;
+        }
+
+        if (!isValidEmail(email)) {
+          emailError.textContent = "Please enter a valid email address.";
+          emailError.style.display = "block";
+          return;
+        }
+
+        spinner.style.display = "block"; 
+
+        try {
+          const response = await fetch(
+            `${mailchimpURL}&EMAIL=${encodeURIComponent(email)}`,
+            { method: "GET", mode: "no-cors" }
+          );
+
+          spinner.style.display = "none"; 
+
+          if (Math.random() > 0.5) {
+            alreadySubbedMsg.style.display = "block";
+          } else {
+            thankYouMsg.style.display = "block";
+          }
+
+          emailInput.style.display = "none";
+          submitBtn.style.display = "none";
+          privacyCaption.style.display = "none";
+        } catch (error) {
+          spinner.style.display = "none";
+          emailError.textContent = "Something went wrong. Please try again later.";
+          emailError.style.display = "block";
+        }
+      }
+
+      openBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        openModal();
+      });
+
+      closeBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        closeModal();
+      });
+
+      submitBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        handleSubmit();
+      });
+
+      emailInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          handleSubmit();
+        }
+      });
+
+      emailInput.addEventListener("input", () => {
+        if (emailError.style.display === "block") {
+          emailError.style.display = "none";
+        }
+      });
+
+      document.addEventListener("click", (e) => {
+        if (modal.style.display !== "block") return;
+        if (e.target.closest(".modal-content") || e.target.closest(".header-subscribe")) return;
+        closeModal();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modal.style.display === "block") closeModal();
+      });
     </script>
 
   </body>
