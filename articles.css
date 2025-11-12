@@ -1,55 +1,3 @@
-.share-this-article {
-    display: none;
-    margin-top: 20px;
-}
-
-.share-this-article-text {
-    font-size: small;
-    margin-right: 10px;
-    margin-left: 15px;
-}
-
-.share-this-article i, .copy {
-    width: 35px;
-    height: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    color: grey;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.share-this-article i:hover {
-    color: navy;
-    transform: scale(1.15);
-}
-
-.share-this-article a {
-    text-decoration: none;
-    background: none;
-    font-size: x-large;
-    margin-right: 5px;
-}
-
-.copy { 
-    background: none;
-    border: none;
-    font-size: 25px;
-}
-
-.copied {
-    margin-top: 10px;
-    font-size: small;
-    color: black;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-.copied.show {
-    opacity: 1;
-}
-
 /* #region everything */
 body {
     margin: 0;
@@ -60,7 +8,6 @@ body {
 
 article {
     min-height: 100vh;
-    margin: 0 auto;
     padding-top: 60px; 
 }
 
@@ -460,17 +407,17 @@ body.no-scroll {
     padding-top: 1%;
     padding-bottom: 1%;
     padding-left: 2.5%; 
-    padding-right: 10%;
+    padding-right: 8%;
 }
 
 .in-article-toc summary {
-  list-style: none;
-  cursor: pointer;
-  font-size: large;
-  font-weight: bold;
-  display: flex;
-  justify-content: space-between; 
-  align-items: center;
+    list-style: none;
+    cursor: pointer;
+    font-size: large;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
 }
 
 .in-article-toc summary:hover {
@@ -482,11 +429,11 @@ body.no-scroll {
 }
 
 .in-article-toc summary::before {
-  order: 2; 
-  flex-shrink: 0; 
-  font-size: xx-large;
-  text-align: right;
-  content: '+'; 
+    order: 2; 
+    flex-shrink: 0; 
+    font-size: xx-large;
+    text-align: right;
+    content: '+'; 
 }
 
 .in-article-toc details[open] summary::before {
@@ -588,6 +535,45 @@ body.no-scroll {
 }
 /* #endregion */
 
+/* #region share-this-article */
+.share-this-article {
+    margin-top: 20px;
+}
+
+.share-this-article-text {
+    font-size: small;
+    margin-right: 10px;
+    margin-left: 15px;
+}
+
+.share-this-article i {
+    color: grey;
+    cursor: pointer;
+    font-size: x-large;
+}
+
+.share-this-article i:hover {
+    color: navy;
+    transform: scale(1.15);
+}
+
+.share-this-article button {
+    background: none;
+    border: none;
+}
+
+.copied {
+    margin-top: 10px;
+    font-size: small;
+    color: black;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.copied.show {
+    opacity: 1;
+}
+/* #endregion */
+
 /* #region related-articles */
 .related-text {
     text-decoration: none;
@@ -622,6 +608,49 @@ body.no-scroll {
     color: blue;
     cursor: pointer;
     transform: scale(1.05) translateX(18px);
+}
+/* #endregion */
+
+/* #region faq-section */
+.faq-section details {
+    border: 1px solid #ddd;
+    border-radius: 5%;
+    background-color: #f2f7ff;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 2.5%; 
+    padding-right: 10%;
+    margin-bottom: 5px;
+}
+
+.faq-section summary {
+  list-style: none;
+  cursor: pointer;
+  font-size: large;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+}
+
+.faq-section summary:hover {
+  color: rgb(2, 131, 141);
+}
+
+.faq-section summary::-webkit-details-marker, .faq-section summary::marker {
+  display: none;
+}
+
+.faq-section summary::before {
+  order: 2; 
+  flex-shrink: 0; 
+  font-size: xx-large;
+  text-align: right;
+  content: '+'; 
+}
+
+.faq-section details[open] summary::before {
+  content: '-';
 }
 /* #endregion */
 
@@ -676,12 +705,12 @@ body.no-scroll {
 
 .sources details {
     border: 1px solid #ddd;
-    border-radius: 10%;
+    border-radius: 5%;
     background-color: #f2f7ff;
     padding-top: 1%;
     padding-bottom: 1%;
     padding-left: 2.5%; 
-    padding-right: 5%;
+    padding-right: 8%;
 }
 
 .sources summary {
@@ -703,7 +732,7 @@ body.no-scroll {
 }
 
 .sources summary::before {
-    font-size: x-large;
+    font-size: xx-large;
     color: rgb(90, 89, 89);
     order: 2; 
     flex-shrink: 0; 
@@ -832,8 +861,10 @@ footer .about-contact-advertise button {
 /* #endregion */
 
 @media screen and (min-width: 991px) {
-    article {
+    main {
         width: 70%;
+        margin-left: 10%;
+        margin-right: 20%;
     }
     header {
         padding-top: 10px;
@@ -918,8 +949,9 @@ footer .about-contact-advertise button {
 }
 
 @media screen and (max-width: 990px) {
-    article {
+    main {
         width: 90%;
+        margin: 0 auto;
     }
     header {
         padding-top: 10px;
