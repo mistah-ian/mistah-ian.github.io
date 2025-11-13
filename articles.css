@@ -169,7 +169,8 @@ header button:hover {
 
 .modal-content {
     background: #dde9fc;
-    border-radius: 10px; 
+    border-radius: 5%; 
+    position: relative;
 }
 
 .actual-modal-content {
@@ -177,13 +178,15 @@ header button:hover {
     flex-direction: column;
     align-items: center; 
     justify-content: center;
-    text-align: center;  
+    text-align: center;
+    padding-top: 30px;
+    padding-left: 1%;
+    padding-right: 1%;
 }
 
 .actual-modal-content h3 {
     font-size: x-large;
     margin-bottom: 0;
-    margin-top: 10px;
 }
 
 .actual-modal-content .subscription-form-caption {
@@ -197,25 +200,35 @@ header button:hover {
     align-items: center;
     justify-content: center;
     font-size: 50px;
-    color: grey;
-    border: none;
+    color: black;
+    background-color: white;
+    border: 1.5px solid black;
+    border-top: none;
+    border-right: none;
+    border-top-right-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 40px;
 }
 
 .actual-modal-content input {
     width: 80%;
     padding: 10px;
-    border: 1px solid rgb(187, 187, 187);
+    border: 2px solid black;
     margin-bottom: 25px;
 }
 
 .actual-modal-content #submit-subscribe {
-    background-color: navy;
-    color: white;
-    width: 80%;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    font-size: large;
+    width: 50%;
     padding-top: 10px;
     padding-bottom: 10px;
-    border: 2px solid navy; 
-    border-radius: 10px;
+    border: 2px solid black; 
+    border-radius: 10%;
 }
 
 .actual-modal-content #thank-you-message {
@@ -249,11 +262,12 @@ header button:hover {
 }
 
 .actual-modal-content #submit-subscribe:hover {
-    border-color: orange;
-    color: orange;
+    border-color: navy;
+    color: navy;
 }
 
 .modal-content .close:hover {
+    border-color: navy;
     color: navy;
 }
 
@@ -866,6 +880,13 @@ footer .about-contact-advertise button {
         margin-left: 10%;
         margin-right: 20%;
     }
+    .modal-content {
+        width: 50%;
+        height: 50%;
+    }
+    .actual-modal-content input {
+        font-size: large;
+    }
     header {
         padding-top: 10px;
         padding-bottom: 10px;
@@ -952,6 +973,13 @@ footer .about-contact-advertise button {
     main {
         width: 90%;
         margin: 0 auto;
+    }
+    .modal-content {
+        width: 80%;
+        height: 50%;
+    }
+    .actual-modal-content input {
+        font-size: medium;
     }
     header {
         padding-top: 10px;
