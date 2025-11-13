@@ -86,10 +86,12 @@
 
         if (header && menu) {
           const headerHeight = header.offsetHeight;
+          const extraTOCoffset = 30;
+
           menu.style.top = headerHeight + "px";
           menu.style.height = `calc(100% - ${headerHeight}px)`;
           
-          document.documentElement.style.scrollPaddingTop = headerHeight + "px";
+          document.documentElement.style.scrollPaddingTop = (headerHeight + extraTOCoffset) + "px";
         }
       }
 
@@ -150,7 +152,7 @@
           <button class="close">&times;</button>
           <div class="actual-modal-content">
 
-            <h3>Subscribe to Our Health Updates</h3>
+            <h3>Sign Up for Our Health Updates for Free</h3>
 
             <p class="subscription-form-caption">Get the latest in health and wellness straight into your inbox.</p>
 
