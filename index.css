@@ -6,10 +6,11 @@ body {
     color: black;
 }
 
-article {
+main {
     min-height: 100vh;
     margin: 0 auto;
-    padding-top: 60px; 
+    margin-top: 80px; 
+    width: 90%;
 }
 
 a {
@@ -25,20 +26,18 @@ button {
     background: none;
 }
 
+i[class*="fa-"] { 
+    font-style: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
 i.fa, i.fas, i.far, i.fal, i.fad {
-  font-family: "Font Awesome 6 Free" !important;
-  font-weight: 900;
-  font-style: normal;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 6 Free" !important;
 }
 
 i.fab {
-  font-family: "Font Awesome 6 Brands" !important;
-  font-weight: 400;
-  font-style: normal;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 6 Brands" !important;
 }
 
 i:not(.fa):not(.fas):not(.fab):not(.far):not(.fal):not(.fad) {
@@ -71,6 +70,8 @@ header {
     justify-content: space-between;
     padding-top: 10px;
     padding-bottom: 10px;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
     background-color: navy;
     color: white;
     position: fixed;
@@ -80,62 +81,41 @@ header {
     z-index: 100000;
 }
 
-.header-left {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    gap: 7.5px;
-    margin-left: 2.5%;
+header button:hover, header a:hover {
+    color: orange;
 }
 
-.header-right {
+.header-left, .header-right {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    gap: 5px;
-    margin-right: 2.5%;
 }
 
 .header-centre {
     display: none;
 }
 
-.header-centre button {
-    border: none;
-    max-width: 150px;
-}
-
-.header-centre button a {
-    font-size: large;
-}
-
-header button:hover {
-    color: orange;
+.header-centre a {
+    font-weight: bold;
+    text-align: center;
 }
 
 .hamburger button {
     font-size: x-large;
     border: none;
+    margin-right: 0.3em;
 }
 
-.header-logo button {
-    font-size: 20px;
+.header-logo a {
+    font-size: x-large;
     font-weight: bold;
-    border: none;
 }
 
 .search-box button {
     border: none;
 }
 
-.search-box button svg {
-    width: 20px;
-    height: 20px;
-    fill: white;
-}
-
-.search-box button:hover svg {
-    fill: orange; 
+.search-box button i {
+    font-size: large;
 }
 
 .header-subscribe button {
@@ -143,6 +123,7 @@ header button:hover {
     border: 2px solid white; 
     background-color: transparent; 
     font-size: small;
+    margin-left: 0.5em;
 }
 
 .header-subscribe button:hover {
@@ -151,11 +132,6 @@ header button:hover {
 /* #endregion */
 
 /* #region subscribe-popup */
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
 .modal {
     display: none; 
     position: fixed;
@@ -190,6 +166,13 @@ header button:hover {
     padding-right: 1%;
 }
 
+.actual-modal-content form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .actual-modal-content h3 {
     font-size: x-large;
     margin-bottom: 0;
@@ -207,8 +190,8 @@ header button:hover {
     justify-content: center;
     font-size: 50px;
     color: black;
-    background-color: white;
-    border: 1.5px solid black;
+    background-color: rgb(2, 131, 141);
+    border: 2px solid black;
     border-top: none;
     border-right: none;
     border-top-right-radius: 50%;
@@ -216,6 +199,21 @@ header button:hover {
     top: 0;
     right: 0;
     height: 40px;
+}
+
+.actual-modal-content #loading-spinner {
+    display: none;
+    margin-top: 10px;
+}
+
+.actual-modal-content .spinner {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid navy;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    animation: spin 1s linear infinite;
+    margin: auto;
 }
 
 .actual-modal-content input {
@@ -226,7 +224,7 @@ header button:hover {
 }
 
 .actual-modal-content #submit-subscribe {
-    background-color: white;
+    background-color: rgb(2, 131, 141);
     color: black;
     font-weight: bold;
     font-size: large;
@@ -238,29 +236,37 @@ header button:hover {
 }
 
 .actual-modal-content #thank-you-message {
-    display:none; 
-    color:navy; 
+    display: none; 
+    color: navy; 
     font-weight: bolder;
     font-size: x-large;
     margin-bottom: 40px;
     margin-top: 0;
 }
 
+.actual-modal-content #thank-you-message:focus {
+    outline: none;
+}
+
 .actual-modal-content #already-subscribed {
-    display:none; 
-    color:navy; 
+    display: none; 
+    color: navy; 
     font-weight: bolder;
     font-size: x-large;
     margin-bottom: 40px;
     margin-top: 0;
+}
+
+.actual-modal-content #already-subscribed:focus {
+    outline: none;
 }
 
 .actual-modal-content #email-error {
     display: none; 
     color: red;
     font-size: small;
-    margin-top: -20px;
-    margin-bottom: 30px;
+    margin-top: -15px;
+    margin-bottom: 20px;
 }
 
 .actual-modal-content .privacy-important-caption {
@@ -269,12 +275,14 @@ header button:hover {
 
 .actual-modal-content #submit-subscribe:hover {
     border-color: navy;
-    color: navy;
+    background-color: navy;
+    color: white;
 }
 
 .modal-content .close:hover {
     border-color: navy;
-    color: navy;
+    background-color: navy;
+    color: white;
 }
 
 body.modal-open {
@@ -299,39 +307,76 @@ body.modal-open {
     left: 0; 
 }
 
+.hamburger-menu a {
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.hamburger-menu a:hover {
+    color: rgb(2, 131, 141);
+}
+
+.hamburger-menu hr { 
+    border: none; 
+    height: 1px; 
+    background-color: rgb(180, 180, 180);
+}
+
 .hamburger-menu .search-bar {
     display: flex;
 }
 
 .hamburger-menu .search-bar input {
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 20px;
     padding: 5px;
-    width: 60%;
+    flex-grow: 1;
     height: 20px;
     margin-left: 5%;
 }
 
 .hamburger-menu .search-bar button {
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 20px;
     height: 34px;
     width: 20%;
     margin-right: 5%;
     background-color: rgb(2, 131, 141);
+    border: 2px solid black;
 }
 
-.hamburger-menu div {
-    margin-left: 3%;
-    margin-right: 5%;
-    padding-top: 10px;
-    padding-bottom: 10px;
+.hamburger-menu .search-bar button:hover {
+    background-color: navy;
+    color: white;
+    border-color: navy;
 }
 
-.hamburger-menu div a {
-    display: flex;
-    justify-content: space-between;
-    font-weight: bold;
+#suggestions-container-menu {
+    position: absolute; 
+    width: 80%; 
+    display: none;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    background-color: white;
+    z-index: 10;
+    border-radius: 1%;
+    margin-top: -15px;
+    margin-left: 5%;
+}
+
+.suggestion-item-menu {
+    padding: 15px 3%;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+.suggestion-item-menu:hover {
+    background-color: #f0f0f0;
 }
 
 .hamburger-menu .about-contact-advertise-hamburger {
@@ -341,48 +386,49 @@ body.modal-open {
     margin-bottom: 5px;
 }
 
-.hamburger-menu .about-contact-advertise-hamburger button {
-    font-size: small;
-    border-color: black;
-    border-radius: 20%;
-}
-
-.hamburger-menu .about-contact-advertise-hamburger button:hover {
-    color: orange;
-    border-color: orange;
-}
-
-.hamburger-menu .about-contact-advertise-hamburger button a {
+.hamburger-menu .about-contact-advertise-hamburger a {
     font-weight: normal;
+    border: 1px solid black;
+    padding: 5px;
+    font-size: small;
+    display: inline-block;
+    width: fit-content;
+    border-radius: 20%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.hamburger-menu .about-contact-advertise-hamburger a:hover {
+    border: 1px solid rgb(2, 131, 141);
 }
 
 .hamburger-menu .follow-us-on-hamburger {
-    margin-bottom: 80px;
+    margin-bottom: 50px;
+    margin-top: 30px;
+    background-color: rgb(2, 131, 141);
 }
 
-.hamburger-menu .follow-us-on-hamburger-text {
-    display: flex;
-    justify-content: center;
-    padding-bottom: 0;
-    padding-top: 0;
+.hamburger-menu .follow-us-on-hamburger p {
+    text-align: center;
+    font-weight: bold;
+    padding-top: 20px;
 }
 
 .hamburger-menu .follow-us-on-hamburger-icons {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    min-height: 100px; 
 }
 
-.hamburger-menu .follow-us-on-hamburger-icons a:hover {
-    color: orange;
-    transform: scale(1.15);
-}
-
-.hamburger-menu .follow-us-on-hamburger-icons button {
-    display: inline-block;
+.hamburger-menu .follow-us-on-hamburger-icons a {
     font-size: x-large;
     color: black;
     transition: all 0.3s ease;
-    border: none;
+}
+
+.hamburger-menu .follow-us-on-hamburger-icons a:hover {
+    color: navy;
+    transform: scale(1.15);
 }
 
 body.no-scroll {
@@ -393,8 +439,8 @@ body.no-scroll {
 
 /* #region this-just-in */
 .this-just-in hr {
-    height: 0.5px;
-    background-color: navy;
+    height: 0.1px;
+    background-color: black;
     margin-top: -15px;
     margin-bottom: 10px;
 }
@@ -419,7 +465,7 @@ body.no-scroll {
 }
 
 .this-just-in .this-just-in-completes figure img:hover {
-    opacity: 0.5;
+    opacity: 0.75;
 }
 
 .this-just-in .this-just-in-completes figure div {
@@ -442,21 +488,19 @@ body.no-scroll {
     align-items: center;
 }
 
-.discover-by .discover-by-top-part button {
-    height: fit-content;
-    border: none;
+.discover-by .discover-by-top-part a {
     font-size: large;
     font-weight: bold;
     color: navy;
 }
 
-.discover-by .discover-by-top-part button:hover {
-    color: orange;
+.discover-by .discover-by-top-part a:hover {
+    color: rgb(2, 131, 141);
 }
 
 .discover-by hr {
-    height: 0.5px;
-    background-color: navy;
+    height: 0.1px;
+    background-color: black;
     margin-top: -15px;
     margin-bottom: 10px;
 }
@@ -480,7 +524,7 @@ body.no-scroll {
 }
 
 .discover-by .discover-by-completes figure img:hover {
-    opacity: 0.5;
+    opacity: 0.75;
 }
 
 .discover-by .discover-by-completes figure div {
@@ -495,8 +539,8 @@ body.no-scroll {
 
 /* #region recommended */
 .recommended hr {
-    height: 0.5px;
-    background-color: navy;
+    height: 0.1px;
+    background-color: black;
     margin-top: -15px;
     margin-bottom: 10px;
 }
@@ -524,7 +568,7 @@ body.no-scroll {
 }
 
 .recommended .recommended-completes figure img:hover {
-    opacity: 0.5;
+    opacity: 0.75;
 }
 
 .recommended .recommended-completes figure div {
@@ -543,21 +587,19 @@ body.no-scroll {
     align-items: center;
 }
 
-.popular-topics .popular-topics-top-part button {
-    height: fit-content;
-    border: none;
+.popular-topics .popular-topics-top-part a {
     font-size: large;
     font-weight: bold;
     color: navy;
 }
 
-.popular-topics .popular-topics-top-part button:hover {
-    color: orange;
+.popular-topics .popular-topics-top-part a:hover {
+    color: rgb(2, 131, 141);
 }
 
 .popular-topics hr {
-    height: 0.5px;
-    background-color: navy;
+    height: 0.1px;
+    background-color: black;
     margin-top: -15px;
     margin-bottom: 10px;
 }
@@ -581,7 +623,7 @@ body.no-scroll {
 }
 
 .popular-topics .popular-topics-completes figure img:hover {
-    opacity: 0.5;
+    opacity: 0.75;
 }
 
 .popular-topics .popular-topics-completes figure div {
@@ -606,13 +648,22 @@ body.no-scroll {
     flex-direction: column;
     align-items: center; 
     justify-content: center;
-    text-align: center;  
+    text-align: center;
+    padding-top: 15px;
+    padding-left: 3%;
+    padding-right: 3%;  
+}
+
+.actual-modal-content-article form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .actual-modal-content-article h3 {
     font-size: x-large;
     margin-bottom: 0;
-    margin-top: 30px;
 }
 
 .actual-modal-content-article .subscription-form-caption-article {
@@ -621,20 +672,37 @@ body.no-scroll {
     margin-bottom: 30px;
 }
 
+.actual-modal-content-article #loading-spinner-article {
+    display: none;
+    margin-top: 10px;
+}
+
+.actual-modal-content-article .spinner-article {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid navy;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    animation: spin 1s linear infinite;
+    margin: auto;
+}
+
 .actual-modal-content-article input {
     width: 80%;
     padding: 10px;
-    border: 1px solid rgb(187, 187, 187);
     margin-bottom: 25px;
+    border: 2px solid black;
 }
 
 .actual-modal-content-article #submit-subscribe-article {
-    background-color: navy;
-    color: white;
-    width: 60%;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    border: 2px solid navy; 
+    background-color: rgb(2, 131, 141);
+    color: black;
+    font-weight: bold;
+    font-size: large;
+    width: 50%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 2px solid black; 
     border-radius: 10%;
 }
 
@@ -647,6 +715,10 @@ body.no-scroll {
     margin-top: 0;
 }
 
+.actual-modal-content-article #thank-you-message-article:focus {
+    outline: none;
+}
+
 .actual-modal-content-article #already-subscribed-article {
     display:none; 
     color:navy; 
@@ -656,12 +728,16 @@ body.no-scroll {
     margin-top: 0;
 }
 
+.actual-modal-content-article #already-subscribed-article:focus {
+    outline: none;
+}
+
 .actual-modal-content-article #email-error-article {
     display: none; 
     color: red;
     font-size: small;
-    margin-top: -20px;
-    margin-bottom: 30px;
+    margin-top: -15px;
+    margin-bottom: 20px;
 }
 
 .actual-modal-content-article .privacy-important-caption-article {
@@ -669,8 +745,9 @@ body.no-scroll {
 }
 
 .actual-modal-content-article #submit-subscribe-article:hover {
-    border-color: orange;
-    color: orange;
+    border-color: navy;
+    background-color: navy;
+    color: white;
 }
 /* #endregion */
 
@@ -680,163 +757,119 @@ body.no-scroll {
     padding-top: 10px;
     padding-bottom: 30px;
     padding-left: 5%;
-    padding-right: 5%;
+    padding-right: 5%;   
 }
 
-.follow-us-on-text {
-    display: flex;
-    justify-content: center;
-    padding-bottom: 5px;
+.follow-us-on p {
+    text-align: center;
     font-weight: bold;
-    color: white;
 }
 
 .follow-us-on-icons {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.follow-us-on-icons a {
+    font-size: x-large;
+    transition: all 0.3s ease;
 }
 
 .follow-us-on-icons a:hover {
-    color: orange;
+    color: navy;
     transform: scale(1.15);
-}
-
-.follow-us-on-icons button {
-    display: inline-block;
-    font-size: xx-large;
-    color: white;
-    border: none;
 }
 /* #endregion */
 
 /* #region footer */
 footer {
     background-color: navy;
-    padding-bottom: 40px;
     color: white;
     padding-top: 30px;
+    padding-bottom: 50px;
 }
 
-footer button {
-    border: none;
-}
-
-footer button:hover {
+footer a:hover {
     color: orange;
 }
 
 footer .footer-logo {
     display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding-bottom: 30px;
+    justify-content: center;
+    font-size: x-large;
+    font-weight: bold;
+    margin-bottom: 35px;
 }
 
 footer .about-contact-advertise-footer {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    padding-left: 2%;
+    padding-right: 2%;
 }
 
-footer .footer-logo button {
-    font-size: x-large;
-    font-weight: bold;
+footer .about-contact-advertise-footer a {
+    border: 1px solid white;
+    display: inline-block;
+    width: fit-content;
+    padding: 5px;
+    border-radius: 20%;
 }
 
-footer .about-contact-advertise-footer button {
-    font-size: medium;
-    text-decoration: underline;
+footer .about-contact-advertise-footer a:hover {
+    border: 1px solid orange;
 }
 /* #endregion */
 
 @media screen and (min-width: 991px) {
-    article {
+    main {
         width: 80%;
+        margin-top: 90px;
     }
     .modal-content {
         width: 50%;
-        height: 50%;
     }
     .actual-modal-content input {
         font-size: large;
     }
     header {
-        padding-top: 10px;
-        padding-bottom: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: space-around; 
-    }
-    .header-left {
         display: flex;
         align-items: center;
         justify-content: space-around;
     }
     .header-centre {
-        display: flex;      
-        flex: 1;          
-        justify-content: space-around; 
-    }
-    .header-right {
         display: flex;
+        flex-grow: 1;
         align-items: center;
         justify-content: space-around;
     }
     .hamburger button {
-        font-size: 30px;
+        font-size: xx-large;
     }
-    .search-box button svg {
-        width: 25px;
-        height: 25px;
+    .header-logo a {
+        font-size: xx-large;
     }
     .header-subscribe button {
-        font-size: 15px;
+        font-size: medium;
     }
     .hamburger-menu {
         width: 50%;
     }
-    .header-logo button a {
-        font-size: x-large;
-    }
-    .hamburger-menu .search-bar input, button {
-        font-size: large;
-    }
-    .hamburger-menu .follow-us-on-icons button {
-        font-size: xx-large;
-    }
-    .hamburger-menu .follow-us-on-text {
-        font-size: x-large;
-    }
-    .hamburger-menu .follow-us-on-icons {
-        gap: 10px;
-    }
-    .hamburger-menu div a div {
-        font-size: x-large;
-    }
-    .about-contact-advertise a {
+    .hamburger-menu .search-bar input, .hamburger-menu .search-bar button {
         font-size: large;
     }
     .follow-us-on-icons {
         display: flex;
         justify-content: center;
-        gap: 30px;
-    }
-    .follow-us-on-icons button {
-        font-size: 40px;
+        gap: 5%;
     }   
-    footer {
+    footer .about-contact-advertise-footer {
         display: flex;
-        justify-content: space-around; 
         align-items: center;
-        padding-bottom: 10px;
-        padding-top: 10px;
-    }
-    footer .about-contact-advertise {
-        gap: 5rem;
-    }
-    footer .footer-logo button {
-        font-size: xx-large;
-        padding-top: 30px;
+        justify-content: center;
+        gap: 5%;
     }
     .this-just-in .this-just-in-completes {
         column-gap: 5%;
@@ -850,12 +883,12 @@ footer .about-contact-advertise-footer button {
         grid-template-columns: repeat(2, 1fr); 
     }
     .recommended .recommended-completes figure div {
-        padding-left: 10px;
+        padding-left: 2.5%;
     }
     .popular-topics .popular-topics-completes {
         grid-template-columns: repeat(4, 1fr);
     }
-    .modal-article, .modal-mid-article {
+    .modal-article {
         width: 50%;
         margin-left: auto;
         margin-right: auto;
@@ -863,23 +896,11 @@ footer .about-contact-advertise-footer button {
 }
 
 @media screen and (max-width: 990px) {
-    article {
-        width: 90%;
-    }
-    header {
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-    .hamburger-menu .about-contact-advertise button {
-        border: none;
-        text-decoration: underline;
-    }
-    .hamburger-menu .search-bar input, button {
+    .hamburger-menu .search-bar input, .hamburger-menu .search-bar button {
         font-size: medium;
     }
     .modal-content {
         width: 80%;
-        height: 50%;
     }
     .actual-modal-content input {
         font-size: medium;
