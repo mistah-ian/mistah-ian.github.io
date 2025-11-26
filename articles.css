@@ -26,6 +26,13 @@ button {
     background: none;
 }
 
+article img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 5%;
+}
+
 i[class*="fa-"] { 
     font-style: normal;
     text-rendering: auto;
@@ -135,6 +142,7 @@ header button:hover, header a:hover {
 .modal {
     display: none; 
     position: fixed;
+    top: 0;
     z-index: 1000;
     width: 100%;
     height: 100%;
@@ -427,7 +435,7 @@ body.modal-open {
 }
 
 .hamburger-menu .follow-us-on-hamburger-icons a:hover {
-    color: navy;
+    color: orange;
     transform: scale(1.15);
 }
 
@@ -450,7 +458,7 @@ body.no-scroll {
 }
 
 .learn-more a {
-    background-color: #fbfbfd;
+    background-color: #f2f7ff;
     margin-bottom: 15px;
     border: 1px solid #ddd;
     padding-left: 3%;
@@ -788,7 +796,7 @@ mark {
 }
 
 .share-this-article i:hover {
-    color: orange;
+    color: rgb(2, 131, 141);
     transform: scale(1.15);
 }
 
@@ -1060,6 +1068,7 @@ mark {
     padding-bottom: 30px;
     padding-left: 5%;
     padding-right: 5%;   
+    margin-top: 60px;
 }
 
 .follow-us-on p {
@@ -1079,7 +1088,7 @@ mark {
 }
 
 .follow-us-on-icons a:hover {
-    color: navy;
+    color: orange;
     transform: scale(1.15);
 }
 /* #endregion */
@@ -1179,7 +1188,7 @@ footer .about-contact-advertise-footer a:hover {
         gap: 5%;
     }
     .modal-article, .modal-mid-article {
-        width: 50%;
+        width: 75%;
         margin-left: auto;
         margin-right: auto;
     }
