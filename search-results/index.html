@@ -433,7 +433,7 @@
             body.classList.remove("no-scroll");
           }
           
-          window.location.href = `search-results.html?q=${encodeURIComponent(query)}&page=1`;
+          window.location.href = `/search-results/search-results.html?q=${encodeURIComponent(query)}&page=1`;
         }
 
         function showSuggestions(query) {
@@ -693,7 +693,7 @@
           mainInput.value = initialQuery; 
         }
 
-        fetch('articles.json')
+        fetch('/articles.json')
           .then(res => res.json())
           .then(data => {
 
