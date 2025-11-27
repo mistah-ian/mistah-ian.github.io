@@ -10,6 +10,8 @@
     <meta name="keywords" content="Medicine, medical, health, nutrition, fitness"> 
 
     <title>Healtharticles: Medical, health, nutrition, and fitness information</title>
+
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
     
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
@@ -38,7 +40,7 @@
         </div>
 
         <div class="header-logo">
-          <a href="/index.html">healtharticles</a>
+          <a href="/">healtharticles</a>
         </div>
 
       </div>
@@ -252,7 +254,10 @@
           <figure>
             <a href="/the-8-must-use-vitamins-for-healthy-hair-skin-and-nails/">
               <img src="/images/the-8-must-use-vitamins-for-healthy-hair-skin-and-nails-thumbnail.png" loading="lazy" alt="A picture with a vitamin supplement for healthy hair, skin, and nails">
-              <div><h2>The 8 Must-Use Vitamins for Healthy Hair, Skin, and Nails</h2></div>
+              <div>
+                <h2>The 8 Must-Use Vitamins for Healthy Hair, Skin, and Nails</h2>
+                <p>Unlock Your Radiance: The Secret to Glowing Hair, Skin, and Nails.</p>
+              </div>
             </a>
           </figure>
 
@@ -293,15 +298,15 @@
 
           <figure>
             <a href="#">
-              <img src="/images/product-reviews-page-logo.avif" loading="lazy" alt="Product reviews page logo featuring a hair brush, and supplements in their bottles">
-              <div><h2>The 8 Must-Use Vitamins for Healthy Hair, Skin, and Nails</h2></div>
+              <img src="/images/fitness-page-logo.avif" loading="lazy" alt="Fitness page logo featuring a person working out in the gym">
+              <div><h2>Fitness</h2></div>
             </a>
           </figure>
 
           <figure>
             <a href="#">
-              <img src="/images/mental-health-page-logo.avif" loading="lazy" alt="Mental health page logo featuring a drawing of a brain being worked on">
-              <div><h2>The 8 Must-Use Vitamins for Healthy Hair, Skin, and Nails</h2></div>
+              <img src="/images/fitness-page-logo.avif" loading="lazy" alt="Fitness page logo featuring a person working out in the gym">
+              <div><h2>Fitness</h2></div>
             </a>
           </figure>
           
@@ -473,7 +478,7 @@
         <a href="https://www.reddit.com/user/health_articles_254/" class="reddit" target="_blank" title="Follow us on Reddit">
           <i class="fab fa-reddit-alien"></i>
         </a>
-
+ 
       </div>
 
     </div>
@@ -481,7 +486,8 @@
     <footer>
 
       <div class="footer-logo">
-        <a href="/index.html">healtharticles</a>
+        <a href="/"><img src="/images/favicon-32x32.png" alt="Healtharticles logo"></a>
+        <a href="/">healtharticles</a>
       </div>
 
       <div class="about-contact-advertise-footer">
@@ -605,7 +611,7 @@
             body.classList.remove("no-scroll");
           }
           
-          window.location.href = `/search-results/index.html?q=${encodeURIComponent(query)}&page=1`;
+          window.location.href = `/search-results/?q=${encodeURIComponent(query)}&page=1`;
         }
 
         function showSuggestions(query) {
