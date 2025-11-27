@@ -13,6 +13,10 @@ main {
     width: 90%;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 a {
     text-decoration: none;
     cursor: pointer;
@@ -31,6 +35,20 @@ article img {
     height: auto;
     object-fit: contain;
     border-radius: 5%;
+}
+
+.no-indent {
+    padding-left: 5%;
+    list-style-position: outside; 
+}
+
+.no-indent li h2 {
+    display: block;
+}
+
+.bolded-list-style-type li::marker {
+    font-weight: bold;
+    font-size: 20px;
 }
 
 i[class*="fa-"] { 
@@ -353,7 +371,7 @@ body.modal-open {
     margin-bottom: 20px;
     height: 34px;
     width: 20%;
-    margin-right: 5%;
+    margin-right: 10%;
     background-color: rgb(2, 131, 141);
     border: 2px solid black;
 }
@@ -447,14 +465,12 @@ body.no-scroll {
 
 /* #region learn-more */
 .learn-more {
-    margin-left: 10%;
     margin-top: 30px;
 }
 
 .learn-more .learn-more-text {
     font-weight: bold;
     font-size: large;
-    margin-left: -5%;
 }
 
 .learn-more a {
@@ -465,7 +481,7 @@ body.no-scroll {
     padding-top: 2%;
     padding-bottom: 1%;
     display: inline-block;
-    width: 100%;
+    width: 95%;
     border-radius: 5%;
 }
 
@@ -560,6 +576,7 @@ body.no-scroll {
     border-radius: 5%; 
     margin-bottom: 50px;
     margin-top: 50px;
+    margin-left: -5%;
 }
 
 .actual-modal-content-article {
@@ -779,10 +796,11 @@ mark {
 
 /* #region share-this-article */
 .share-this-article {
-    margin-top: 10px;
+    margin-top: 30px;
     display: flex;
     flex-direction: row;
     margin-left: 5%;
+    margin-bottom: 40px;
 }
 
 .share-this-article p {
@@ -841,7 +859,7 @@ mark {
     padding-top: 2%;
     padding-bottom: 1%;
     display: inline-block;
-    width: 100%;
+    width: 95%;
     border-radius: 5%;
 }
 
@@ -939,7 +957,7 @@ mark {
     padding-top: 2%;
     padding-bottom: 1%;
     display: inline-block;
-    width: 100%;
+    width: 95%;
     border-radius: 5%;
 }
 
@@ -1035,7 +1053,8 @@ mark {
 /* #region how-we-reviewed */
 .how-we-reviewed {
     margin-left: 5%;
-    margin-bottom: 40px;
+    margin-right: 5%;
+    padding-bottom: 10px;
 }
 
 .how-we-reviewed .how-we-reviewed-notes {
@@ -1066,10 +1085,10 @@ mark {
 .follow-us-on {
     background-color: rgb(2, 131, 141);
     padding-top: 10px;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
     padding-left: 5%;
     padding-right: 5%;   
-    margin-top: 60px;
+    margin-top: 20px;
 }
 
 .follow-us-on p {
@@ -1079,8 +1098,8 @@ mark {
 
 .follow-us-on-icons {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
+    gap: 10%;
 }
 
 .follow-us-on-icons a {
@@ -1108,10 +1127,16 @@ footer a:hover {
 
 footer .footer-logo {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     font-size: x-large;
     font-weight: bold;
     margin-bottom: 35px;
+}
+
+footer .footer-logo img {
+    margin-bottom: 10px;
 }
 
 footer .about-contact-advertise-footer {
@@ -1141,6 +1166,9 @@ footer .about-contact-advertise-footer a:hover {
         margin-left: 10%;
         margin-right: 30%;
         margin-top: 90px;
+    }
+    .no-indent {
+        padding-left: 2.5%;
     }
     #suggestions-container {
         width: 50%; 
@@ -1177,6 +1205,9 @@ footer .about-contact-advertise-footer a:hover {
     .hamburger-menu .search-bar input, .hamburger-menu .search-bar button {
         font-size: large;
     }
+    .follow-us-on {
+        padding-bottom: 30px; 
+    }
     .follow-us-on-icons {
         display: flex;
         justify-content: center;
@@ -1190,12 +1221,15 @@ footer .about-contact-advertise-footer a:hover {
     }
     .modal-article, .modal-mid-article {
         width: 75%;
-        margin-left: auto;
-        margin-right: auto;
+        margin-left: 11%;
+        margin-right: 14%;
     }
 }
 
 @media screen and (max-width: 990px) {
+    article h1 {
+        font-size: 28px;
+    }
     .hamburger-menu .search-bar input, .hamburger-menu .search-bar button {
         font-size: medium;
     }
@@ -1205,4 +1239,13 @@ footer .about-contact-advertise-footer a:hover {
     .actual-modal-content input {
         font-size: medium;
     }  
+    .hamburger-menu .about-contact-advertise-hamburger a {
+        font-size: xx-small;
+    }
+    .follow-us-on-icons {
+        min-height: 100px;
+    }
+    footer .about-contact-advertise-footer a {
+        font-size: small;
+    }
 }
