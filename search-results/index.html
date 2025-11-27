@@ -11,6 +11,8 @@
 
     <title>Search Results</title>
 
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
+
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
@@ -38,7 +40,7 @@
         </div>
 
         <div class="header-logo">
-          <a href="/index.html">healtharticles</a>
+          <a href="/">healtharticles</a>
         </div>
 
       </div>
@@ -309,7 +311,8 @@
     <footer>
 
       <div class="footer-logo">
-        <a href="/index.html">healtharticles</a>
+        <a href="/"><img src="/images/favicon-32x32.png" alt="Healtharticles logo"></a>
+        <a href="/">healtharticles</a>
       </div>
 
       <div class="about-contact-advertise-footer">
@@ -433,7 +436,7 @@
             body.classList.remove("no-scroll");
           }
           
-          window.location.href = `/search-results/index.html?q=${encodeURIComponent(query)}&page=1`;
+          window.location.href = `/search-results/?q=${encodeURIComponent(query)}&page=1`;
         }
 
         function showSuggestions(query) {
