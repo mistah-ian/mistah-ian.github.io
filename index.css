@@ -6,6 +6,10 @@ body {
     color: black;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 main {
     min-height: 100vh;
     margin: 0 auto;
@@ -135,6 +139,7 @@ header button:hover, header a:hover {
 .modal {
     display: none; 
     position: fixed;
+    top: 0;
     z-index: 1000;
     width: 100%;
     height: 100%;
@@ -345,7 +350,7 @@ body.modal-open {
     margin-bottom: 20px;
     height: 34px;
     width: 20%;
-    margin-right: 5%;
+    margin-right: 10%;
     background-color: rgb(2, 131, 141);
     border: 2px solid black;
 }
@@ -427,7 +432,7 @@ body.modal-open {
 }
 
 .hamburger-menu .follow-us-on-hamburger-icons a:hover {
-    color: navy;
+    color: orange;
     transform: scale(1.15);
 }
 
@@ -461,6 +466,7 @@ body.no-scroll {
     width: 100%;
     height: auto;
     object-fit: cover;
+    object-position: 50% 50%;
     border-radius: 5% 5% 0 0;
 }
 
@@ -469,7 +475,7 @@ body.no-scroll {
 }
 
 .this-just-in .this-just-in-completes figure div {
-    text-align: center;
+    padding-left: 2.5%;
     margin-top: -4px;
     margin-bottom: 20px;
     padding-top: 0.5px;
@@ -486,10 +492,11 @@ body.no-scroll {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 20px;
 }
 
 .discover-by .discover-by-top-part a {
-    font-size: large;
+    font-size: medium;
     font-weight: bold;
     color: navy;
 }
@@ -507,7 +514,7 @@ body.no-scroll {
 
 .discover-by .discover-by-completes {
     display: grid;
-    column-gap: 5%;
+    column-gap: 10%;
     grid-template-columns: repeat(2, 1fr);
 }
 
@@ -516,10 +523,18 @@ body.no-scroll {
     margin-right: 0;
 }
 
+.discover-by .discover-by-completes figure a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .discover-by .discover-by-completes figure img {
-    width: 100%;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
+    object-position: 50% 50%;
     object-fit: cover;
 }
 
@@ -545,6 +560,10 @@ body.no-scroll {
     margin-bottom: 10px;
 }
 
+.recommended h1 {
+    margin-top: 20px;
+}
+
 .recommended .recommended-completes {
     display: grid;
     grid-template-columns: 1fr;
@@ -558,12 +577,15 @@ body.no-scroll {
 .recommended .recommended-completes figure a {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .recommended .recommended-completes figure img {
-    width: 40%;
-    height: auto;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
+    object-position: 50% 50%;
     border-radius: 5%;
 }
 
@@ -585,10 +607,11 @@ body.no-scroll {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 20px;
 }
 
 .popular-topics .popular-topics-top-part a {
-    font-size: large;
+    font-size: medium;
     font-weight: bold;
     color: navy;
 }
@@ -615,11 +638,19 @@ body.no-scroll {
     margin-right: 0;
 }
 
+.popular-topics .popular-topics-completes figure a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .popular-topics .popular-topics-completes figure img {
-    width: 100%;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border-radius: 5%;
     object-fit: cover;
+    object-position: 50% 50%;
 }
 
 .popular-topics .popular-topics-completes figure img:hover {
@@ -755,7 +786,7 @@ body.no-scroll {
 .follow-us-on {
     background-color: rgb(2, 131, 141);
     padding-top: 10px;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
     padding-left: 5%;
     padding-right: 5%;   
 }
@@ -767,8 +798,8 @@ body.no-scroll {
 
 .follow-us-on-icons {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
+    gap: 10%;
 }
 
 .follow-us-on-icons a {
@@ -777,7 +808,7 @@ body.no-scroll {
 }
 
 .follow-us-on-icons a:hover {
-    color: navy;
+    color: orange;
     transform: scale(1.15);
 }
 /* #endregion */
@@ -796,10 +827,16 @@ footer a:hover {
 
 footer .footer-logo {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     font-size: x-large;
     font-weight: bold;
     margin-bottom: 35px;
+}
+
+footer .footer-logo img {
+    margin-bottom: 10px;
 }
 
 footer .about-contact-advertise-footer {
@@ -824,6 +861,12 @@ footer .about-contact-advertise-footer a:hover {
 /* #endregion */
 
 @media screen and (min-width: 991px) {
+    main section h1 {
+        font-size: x-large;
+    }
+    main section h2 {
+        font-size: 21px;
+    }
     main {
         width: 80%;
         margin-top: 90px;
@@ -859,6 +902,9 @@ footer .about-contact-advertise-footer a:hover {
     }
     .hamburger-menu .search-bar input, .hamburger-menu .search-bar button {
         font-size: large;
+    }
+    .follow-us-on {
+        padding-bottom: 30px; 
     }
     .follow-us-on-icons {
         display: flex;
@@ -896,6 +942,12 @@ footer .about-contact-advertise-footer a:hover {
 }
 
 @media screen and (max-width: 990px) {
+    main section h1 {
+        font-size: 21px;
+    }
+    main section h2 {
+        font-size: large;
+    }
     .hamburger-menu .search-bar input, .hamburger-menu .search-bar button {
         font-size: medium;
     }
@@ -904,5 +956,14 @@ footer .about-contact-advertise-footer a:hover {
     }
     .actual-modal-content input {
         font-size: medium;
+    } 
+    .hamburger-menu .about-contact-advertise-hamburger a {
+        font-size: xx-small;
+    }
+    .follow-us-on-icons {
+        min-height: 100px;
+    }
+    footer .about-contact-advertise-footer a {
+        font-size: small;
     }
 }
