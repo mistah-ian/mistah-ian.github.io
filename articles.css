@@ -463,56 +463,6 @@ body.no-scroll {
 }
 /* #endregion */
 
-/* #region learn-more */
-.learn-more {
-    margin-top: 30px;
-}
-
-.learn-more .learn-more-text {
-    font-weight: bold;
-    font-size: large;
-}
-
-.learn-more a {
-    background-color: #f2f7ff;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    padding-left: 3%;
-    padding-top: 2%;
-    padding-bottom: 1%;
-    display: inline-block;
-    width: 95%;
-    border-radius: 5%;
-}
-
-.learn-more a h3 {
-    margin-top: 0;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
-
-.learn-more a p {
-    margin-top: 0;
-    margin-bottom: 6px;
-}
-
-.learn-more .read-more {
-    color: blue;
-}
-
-.learn-more .read-more:hover {
-    text-decoration: underline;
-}
-
-.learn-more h3:hover {
-    color: rgb(2, 131, 141);
-}
-
-.learn-more a:hover {
-    border: 1px solid rgb(2, 131, 141);
-}
-/* #endregion */
-
 /* #region in-article-toc */
 .in-article-toc details {
     border: 1px solid #ddd;
@@ -836,61 +786,6 @@ mark {
 }
 /* #endregion */
 
-/* #region related-articles */
-.related-articles h2 {
-    color: navy;
-    font-weight: bold;
-    margin-top: 40px; 
-}
-
-.related-articles hr { 
-    margin-top: -15px;
-    margin-bottom: 20px;
-    border: none; 
-    height: 0.1px; 
-    background-color: navy;
-}
-
-.related-articles a {
-    background-color: #f2f7ff;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    padding-left: 3%;
-    padding-top: 2%;
-    padding-bottom: 1%;
-    display: inline-block;
-    width: 95%;
-    border-radius: 5%;
-}
-
-.related-articles a h3 {
-    margin-top: 0;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
-
-.related-articles a p {
-    margin-top: 0;
-    margin-bottom: 6px;
-}
-
-.related-articles .read-more {
-    color: blue;
-}
-
-.related-articles .read-more:hover {
-    text-decoration: underline;
-}
-
-.related-articles h3:hover {
-    color: rgb(2, 131, 141);
-}
-
-.related-articles a:hover {
-    border: 1px solid rgb(2, 131, 141);
-}
-/* #endregion */
-
 /* #region faq-section */
 .faq-section details {
     border: 0.1px solid grey;
@@ -934,58 +829,53 @@ mark {
 }
 /* #endregion */
 
-/* #region recommended-articles */
-.recommended-articles h2 {
-    color: navy;
-    font-weight: bold;
-    margin-top: 40px; 
-}
-
-.recommended-articles hr { 
+/* #region recommended */
+.recommended hr {
+    height: 0.1px;
+    background-color: black;
     margin-top: -15px;
-    margin-bottom: 20px;
-    border: none; 
-    height: 0.1px; 
-    background-color: navy;
+    margin-bottom: 10px;
 }
 
-.recommended-articles a {
-    background-color: #f2f7ff;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    padding-left: 3%;
-    padding-top: 2%;
-    padding-bottom: 1%;
-    display: inline-block;
-    width: 95%;
+.recommended h1 {
+    margin-top: 20px;
+}
+
+.recommended .recommended-completes {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.recommended .recommended-completes figure {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.recommended .recommended-completes figure a {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.recommended .recommended-completes figure img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    object-position: 50% 50%;
     border-radius: 5%;
 }
 
-.recommended-articles a h3 {
-    margin-top: 0;
-    margin-bottom: 8px;
-    font-weight: bold;
+.recommended .recommended-completes figure img:hover {
+    opacity: 0.75;
 }
 
-.recommended-articles a p {
-    margin-top: 0;
-    margin-bottom: 6px;
+.recommended .recommended-completes figure div {
+    padding-left: 20px;
 }
 
-.recommended-articles .read-more {
-    color: blue;
-}
-
-.recommended-articles .read-more:hover {
-    text-decoration: underline;
-}
-
-.recommended-articles h3:hover {
+.recommended .recommended-completes figure div h2:hover {
     color: rgb(2, 131, 141);
-}
-
-.recommended-articles a:hover {
-    border: 1px solid rgb(2, 131, 141);
 }
 /* #endregion */
 
@@ -1224,6 +1114,19 @@ footer .about-contact-advertise-footer a:hover {
         margin-left: 11%;
         margin-right: 14%;
     }
+    .recommended h1 {
+        font-size: x-large;
+    }
+    .recommended h2 {
+        font-size: 21px;
+    }
+    .recommended .recommended-completes {
+        column-gap: 5%;
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    .recommended .recommended-completes figure div {
+        padding-left: 2.5%;
+    }
 }
 
 @media screen and (max-width: 990px) {
@@ -1247,5 +1150,11 @@ footer .about-contact-advertise-footer a:hover {
     }
     footer .about-contact-advertise-footer a {
         font-size: small;
+    }
+    .recommended h1 {
+        font-size: 21px;
+    }
+    .recommended h2 {
+        font-size: large;
     }
 }
