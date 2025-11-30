@@ -602,75 +602,69 @@ body.no-scroll {
 }
 /* #endregion */
 
-/* #region popular-topics */
-.popular-topics .popular-topics-top-part {
+/* #region trending-topics */
+.trending-topics .trending-topics-top-part {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
 }
 
-.popular-topics .popular-topics-top-part a {
+.trending-topics .trending-topics-top-part a {
     font-size: medium;
     font-weight: bold;
     color: navy;
 }
 
-.popular-topics .popular-topics-top-part a:hover {
+.trending-topics .trending-topics-top-part a:hover {
     color: rgb(2, 131, 141);
 }
 
-.popular-topics hr {
+.trending-topics hr {
     height: 0.1px;
     background-color: black;
     margin-top: -15px;
     margin-bottom: 10px;
 }
 
-.popular-topics .popular-topics-completes {
+.trending-topics .trending-topics-completes {
     display: grid;
-    column-gap: 5%;
     grid-template-columns: repeat(2, 1fr);
+    column-gap: 5%;
+    row-gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 70px;
 }
 
-.popular-topics .popular-topics-completes figure {
-    margin-left: 0;
-    margin-right: 0;
-}
-
-.popular-topics .popular-topics-completes figure a {
+.trending-topics .trending-topics-completes a {
+    color: black;
+    border: 1px solid black;
+    background-color: #dde9fc;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-}
-
-.popular-topics .popular-topics-completes figure img {
-    width: 150px;
-    height: 150px;
-    border-radius: 5%;
-    object-fit: cover;
-    object-position: 50% 50%;
-}
-
-.popular-topics .popular-topics-completes figure img:hover {
-    opacity: 0.75;
-}
-
-.popular-topics .popular-topics-completes figure div {
+    justify-content: center;
     text-align: center;
-    margin-top: -15px;
+    border-radius: 20%;
+    min-height: 80px;
+    font-size: larger;
+    font-weight: bold;
 }
 
-.popular-topics .popular-topics-completes figure div h2:hover {
-    color: rgb(2, 131, 141);
+.trending-topics .trending-topics-completes a:hover {
+    background-color: rgb(2, 131, 141);
 }
 /* #endregion */
 
 /* #region subscribe-article */
+.modal-article-hr {
+    height: 0.1px;
+    background-color: black;
+}
+
 .modal-article {
     background-color: #dde9fc;
     border-radius: 5%; 
+    margin-top: 20px;
     margin-bottom: 50px;
 }
 
@@ -931,8 +925,9 @@ footer .about-contact-advertise-footer a:hover {
     .recommended .recommended-completes figure div {
         padding-left: 2.5%;
     }
-    .popular-topics .popular-topics-completes {
+    .trending-topics .trending-topics-completes {
         grid-template-columns: repeat(4, 1fr);
+        row-gap: 30px;
     }
     .modal-article {
         width: 50%;
