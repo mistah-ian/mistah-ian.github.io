@@ -452,12 +452,12 @@
         
         <h1>Can Men Grow their Hair at a Faster Rate?</h1>
 
-          <p>The question of whether men can grow their hair faster than women, or if they can significantly accelerate their natural growth rate, is a common one. On average, human head hair grows at a consistent rate of about <strong>$0.5$ inches ($1.25$ cm) per month</strong>, and this rate is largely determined by genetics, not sex.</p>
+          <p>The question of whether men can grow their hair faster than women, or if they can significantly accelerate their natural growth rate, is a common one. On average, human head hair grows at a consistent rate of about <strong>0.5 inches (1.25 cm) per month</strong>, and this rate is largely determined by genetics, not sex.</p>
           <p>While the actual speed of growth (millimeters per day) is generally the same for both men and women, men often perceive their hair to grow faster. This perception is mainly due to two factors:</p>
           <p>First, men often keep their hair much shorter, so the growth of half an inch is a far more noticeable percentage increase on a one-inch haircut than it is on long hair. Second, men's hair growth characteristics—such as thicker diameter and higher density—can create the illusion of more rapid growth.</p>
           <p>However, the key biological difference between men and women's hair is not the growth rate itself, but the duration of the <strong>Anagen (Growth) Phase</strong> of the hair cycle. Women typically have a longer Anagen phase, allowing their hair to reach significantly greater lengths before shedding.</p>
             <ul>
-              <li><strong>Average Growth Rate:</strong> $\approx 0.5$ inches ($1.25$ cm) per month.</li>
+              <li><strong>Average Growth Rate:</strong> approx 0.5 inches (1.25 cm) per month.</li>
               <li><strong>Key Factor:</strong> The duration of the Anagen phase.</li>
               <li><strong>Hormonal Influence:</strong> Estrogen prolongs the Anagen phase in women.</li>
               <li><strong>Testosterone Influence:</strong> Can shorten the Anagen phase in men (via DHT).</li>
@@ -1178,10 +1178,23 @@
         const articleContainer = document.querySelector("article");
         const shareDiv = document.querySelector(".share-this-article");
         
+        function openModal() {
+            const modal = document.getElementById("subscribe-modal");
+            if (modal) {
+                modal.style.display = "block";
+                document.body.classList.add("modal-open");
+
+                const emailInput = document.getElementById("subscriber-email");
+                if (emailInput) {
+                    setTimeout(() => emailInput.focus(), 100);
+                }
+            }
+        }
+
         if (articleContainer) {
           const hasModalFlag = articleContainer.querySelector('#show-modal-flag');
           
-          if (hasModalFlag && typeof openModal === 'function') {
+          if (hasModalFlag) { 
               openModal(); 
           }
         }
@@ -1210,4 +1223,3 @@
   </body>
 
 </html>
-
