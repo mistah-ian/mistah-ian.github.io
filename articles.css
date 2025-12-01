@@ -526,7 +526,10 @@ body.no-scroll {
     border-radius: 5%; 
     margin-bottom: 50px;
     margin-top: 50px;
-    margin-left: -5%;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    text-align: center;
 }
 
 .actual-modal-content-article {
@@ -849,21 +852,16 @@ mark {
 .recommended .recommended-completes figure {
     margin-left: 0;
     margin-right: 0;
-}
-
-.recommended .recommended-completes figure a {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    background-color: #dde9fc;
+    border-radius: 5%;
 }
 
 .recommended .recommended-completes figure img {
-    width: 150px;
-    height: 150px;
+    width: 100%;
+    height: auto;
     object-fit: cover;
     object-position: 50% 50%;
-    border-radius: 5%;
+    border-radius: 5% 5% 0 0;
 }
 
 .recommended .recommended-completes figure img:hover {
@@ -871,7 +869,11 @@ mark {
 }
 
 .recommended .recommended-completes figure div {
-    padding-left: 20px;
+    padding-left: 2.5%;
+    margin-top: -4px;
+    margin-bottom: 20px;
+    padding-top: 0.5px;
+    padding-bottom: 0.5px;
 }
 
 .recommended .recommended-completes figure div h2:hover {
@@ -1111,8 +1113,8 @@ footer .about-contact-advertise-footer a:hover {
     }
     .modal-article, .modal-mid-article {
         width: 75%;
-        margin-left: 11%;
-        margin-right: 14%;
+        margin-left: auto;
+        margin-right: auto;
     }
     .recommended h1 {
         font-size: x-large;
@@ -1123,9 +1125,6 @@ footer .about-contact-advertise-footer a:hover {
     .recommended .recommended-completes {
         column-gap: 5%;
         grid-template-columns: repeat(2, 1fr); 
-    }
-    .recommended .recommended-completes figure div {
-        padding-left: 2.5%;
     }
 }
 
