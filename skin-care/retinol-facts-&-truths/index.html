@@ -19,7 +19,7 @@
     <meta property="og:type" content="article"> 
     <meta property="og:url" content="https://healtharticles.shop/skin-care/retinol-facts-&-truths/">
 
-    <meta property="og:image" content="https://www.healtharticles.shop/images/retinol-facts-&-truths-media.png">
+    <meta property="og:image" content="https://www.healtharticles.shop/images/retinol-facts-&-truths-image.jpg">
     <meta property="og:image:width" content="1200"> 
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="A picture showing retinol anti-aging face-mask-sheet">
@@ -308,7 +308,7 @@
             <p>It is important to note that because retinol works by changing cell behavior, it takes time, often <strong>3 to 6 months</strong>, to see significant results.</p>
             <p>Proper application technique is essential to minimize irritation and maximize benefits.</p>
 
-          <img src="/images/retinol-facts-&-truths-image-1.avif"loading="lazy" alt="A picture showing retinol anti-aging face-mask-sheet">
+          <img src="/images/retinol-facts-&-truths-image.jpg"loading="lazy" alt="A picture showing retinol anti-aging face-mask-sheet">
 
           <h2 id="heading-two">Key Benefits of Using Retinol</h2>
             <p>Retinol is a multitasking ingredient that addresses multiple skin concerns simultaneously, making it a staple in many dermatologists' recommendations.</p>
@@ -344,7 +344,7 @@
 
           <h2 id="heading-four">Essential Application Tips for Beginners</h2>
             <p>To successfully navigate the retinization period and minimize irritation, dermatologists recommend a "start low and go slow" approach:</p>
-            <p>1. <strong>Start with a Low Concentration:</strong> Begin with the lowest over-the-counter strength (e.g., $0.25\% - 0.5\%$) and only increase after your skin tolerates it for several months.</p>
+            <p>1. <strong>Start with a Low Concentration:</strong> Begin with the lowest over-the-counter strength (e.g., 0.25% - 0.5%) and only increase after your skin tolerates it for several months.</p>
             <p>2. <strong>Use Infrequently:</strong> Apply retinol only <strong>2-3 nights per week</strong> initially. Gradually increase application frequency as your skin tolerance builds.</p>
             <p>3. <strong>Apply at Night:</strong> Retinol is <strong>photounstable</strong> (breaks down in sunlight), so it must be applied as part of your evening routine.</p>
 
@@ -383,7 +383,7 @@
             <p>Retinol is just one member of the retinoid family. The effectiveness of any retinoid depends on how many steps it takes to convert to the active form, retinoic acid, in the skin:</p>
             <p>1. <strong>Retinoic Acid (Tretinoin):</strong> <strong>Active Form.</strong> Requires zero conversion steps. This is prescription-strength, fastest, and most potent, but also the most irritating.</p>
             <p>2. <strong>Retinaldehyde (Retinal):</strong> Requires one conversion step. It is faster and more potent than retinol, but less irritating than retinoic acid. Increasingly popular in advanced OTC products.</p>
-            <p>3. <strong>Retinol:</strong> Requires two conversion steps (Retinol $\to$ Retinaldehyde $\to$ Retinoic Acid). It is the standard OTC option, slower acting, but significantly less irritating.</p>
+            <p>3. <strong>Retinol:</strong> Requires two conversion steps (Retinol to Retinaldehyde to Retinoic Acid). It is the standard OTC option, slower acting, but significantly less irritating.</p>
 
           <h2 id="heading-seven">Precautions and Who Should Avoid Retinol</h2>
             <p>While safe for most, certain individuals should avoid retinol or consult a dermatologist before use:</p>
@@ -473,7 +473,7 @@
 
           <figure>
             <a href="/cold-&-flu-management/10-tips-to-get-rid-of-a-cold-quickly/">
-              <img src="/images/10-tips-to-get-rid-of-a-cold-quickly-thumbnail.png" loading="lazy" alt="A picture showing a young woman sneeze into tissue paper with an ill-expression">
+              <img src="/images/10-tips-to-get-rid-of-a-cold-quickly-image.jpg" loading="lazy" alt="A picture showing a young woman sneeze into tissue paper with an ill-expression">
               <div>
                 <h2>10 Tips to Get Rid of a Cold Quickly</h2>
                 <p>Don't suffer any longer! Discover 10 highly effective tips and home remedies for how to get rid of a cold quickly and shorten your recovery time fast.</p>
@@ -483,7 +483,7 @@
 
           <figure>
             <a href="/nutrition/is-it-true-that-the-carnivore-diet-causes-haemorrhoids/">
-              <img src="/images/is-it-true-that-the-carnivore-diet-causes-haemorrhoids-thumbnail.png" loading="lazy" alt="A picture showing a close-up cutting of a fillet-steak">
+              <img src="/images/is-it-true-that-the-carnivore-diet-causes-haemorrhoids-image.jpg" loading="lazy" alt="A picture showing a close-up cutting of a fillet-steak">
               <div>
                 <h2>Is it True that the Carnivore Diet Causes Haemorrhoids?</h2>
                 <p>Does the Carnivore Diet really cause haemorrhoids? We dive into the science to uncover the truth about fiber, constipation, and this meat-only diet myth. Find out here.</p>
@@ -493,7 +493,7 @@
 
           <figure>
             <a href="/hair-&-beauty-products/the-8-must-use-vitamins-for-healthy-hair-skin-&-nails/">
-              <img src="/images/the-8-must-use-vitamins-for-healthy-hair-skin-&-nails-thumbnail.png" loading="lazy" alt="A picture showing a woman with healthy hair, glowing skin, and strong nails">
+              <img src="/images/the-8-must-use-vitamins-for-healthy-hair-skin-&-nails-image.jpg" loading="lazy" alt="A picture showing a woman with healthy hair, glowing skin, and strong nails">
               <div>
                 <h2>The 8 Must-Use Vitamins for Healthy Hair, Skin, & Nails</h2>
                 <p>Stop guessing! We reveal the 8 Must-Use Vitamins proven to deliver noticeable results for healthy hair, skin, and nails. Your inner beauty guide starts here.</p>
@@ -1056,10 +1056,23 @@
         const articleContainer = document.querySelector("article");
         const shareDiv = document.querySelector(".share-this-article");
         
+        function openModal() {
+            const modal = document.getElementById("subscribe-modal");
+            if (modal) {
+                modal.style.display = "block";
+                document.body.classList.add("modal-open");
+
+                const emailInput = document.getElementById("subscriber-email");
+                if (emailInput) {
+                    setTimeout(() => emailInput.focus(), 100);
+                }
+            }
+        }
+
         if (articleContainer) {
           const hasModalFlag = articleContainer.querySelector('#show-modal-flag');
           
-          if (hasModalFlag && typeof openModal === 'function') {
+          if (hasModalFlag) { 
               openModal(); 
           }
         }
@@ -1088,4 +1101,3 @@
   </body>
 
 </html>
-
