@@ -269,7 +269,7 @@
           <p>While there is no single "cure" for sleep issues, adopting a comprehensive approach that targets your environment, daily habits, and evening routines can significantly improve sleep quality and duration. The goal is to regulate your body's natural sleep-wake cycle, known as the <strong>circadian rhythm</strong>.</p>
           <p>The tips below are drawn from behavioral science and sleep medicine, covering everything from managing light exposure to optimizing your bedroom for rest.</p>
           <p>If sleep troubles persist for more than a few weeks despite following these tips, it is crucial to consult a healthcare professional to rule out underlying conditions like sleep apnea or restless legs syndrome.</p>
-          <p>The key to better sleep is **consistency** in routine and environment.</p>
+          <p>The key to better sleep is <strong>consistency</strong> in routine and environment.</p>
 
           <img src="/images/the-15-proven-tips-&-tricks-to-sleep-better-at-night-image-1.avif"loading="lazy" alt="A picture showing a woman sleeping on a bed">
 
@@ -1041,10 +1041,23 @@
         const articleContainer = document.querySelector("article");
         const shareDiv = document.querySelector(".share-this-article");
         
+        function openModal() {
+            const modal = document.getElementById("subscribe-modal");
+            if (modal) {
+                modal.style.display = "block";
+                document.body.classList.add("modal-open");
+
+                const emailInput = document.getElementById("subscriber-email");
+                if (emailInput) {
+                    setTimeout(() => emailInput.focus(), 100);
+                }
+            }
+        }
+
         if (articleContainer) {
           const hasModalFlag = articleContainer.querySelector('#show-modal-flag');
           
-          if (hasModalFlag && typeof openModal === 'function') {
+          if (hasModalFlag) { 
               openModal(); 
           }
         }
@@ -1071,6 +1084,5 @@
     </script>
 
   </body>
-
 
 </html>
