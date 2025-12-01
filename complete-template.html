@@ -292,6 +292,8 @@
 
           </div>
 
+          <img src="/images/-image.jpg"loading="lazy" alt="">
+
           <p></p>
           <p></p>
           <p></p>
@@ -304,8 +306,6 @@
             <p></p>
             <p></p>
             <p></p>
-
-          <img src="/images/image.avif"loading="lazy" alt="">
 
           <h2 id="heading-two"></h2>
             <p></p>
@@ -352,7 +352,7 @@
           <h2 id="heading-four"></h2>
             <p></p>
             <p></p>
-              <ul>
+              <ul style="list-style-type: disc;">
                 <li></li>
                 <li></li>
                 <li></li>
@@ -410,21 +410,6 @@
 
           </section>
 
-          <div class="sources">
-
-            <details>
-
-              <summary>Sources</summary>
-              <ul>
-                <li><a href="https://ods.od.nih.gov/factsheets/Biotin-HealthProfessional/" target="_blank">Biotin: Fact sheet for health professionals. (2022)</a></li>
-                <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9495646/" target="_blank">Boo YC. (2022). Ascorbic acid (vitamin C) as a cosmeceutical to increase dermal collagen for skin antiaging purposes: Emerging combination therapies.</a></li>
-                <li><a href="https://www.cureus.com/articles/96462-collagen-structure-synthesis-and-its-applications-a-systematic-review" target="_blank">Shenoy, M, et al. (2022). Collagen structure, synthesis, and its applications: A systematic review.</a></li>
-              </ul>
-              
-            </details>
-
-          </div>
-
           <div class="how-we-reviewed">
 
             <h3>How we reviewed this article:</h3>
@@ -443,6 +428,21 @@
 
           </div>
 
+          <div class="sources">
+
+            <details>
+
+              <summary>Sources</summary>
+              <ul>
+                <li><a href="https://ods.od.nih.gov/factsheets/Biotin-HealthProfessional/" target="_blank">Biotin: Fact sheet for health professionals. (2022)</a></li>
+                <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9495646/" target="_blank">Boo YC. (2022). Ascorbic acid (vitamin C) as a cosmeceutical to increase dermal collagen for skin antiaging purposes: Emerging combination therapies.</a></li>
+                <li><a href="https://www.cureus.com/articles/96462-collagen-structure-synthesis-and-its-applications-a-systematic-review" target="_blank">Shenoy, M, et al. (2022). Collagen structure, synthesis, and its applications: A systematic review.</a></li>
+              </ul>
+              
+            </details>
+
+          </div>
+
       </article>
 
       <div class="recommended">
@@ -454,7 +454,7 @@
 
           <figure>
             <a href="/nutrition/is-it-true-that-the-carnivore-diet-causes-haemorrhoids/">
-              <img src="/images/is-it-true-that-the-carnivore-diet-causes-haemorrhoids-thumbnail.png" loading="lazy" alt="A picture showing a close-up cutting of a fillet-steak">
+              <img src="/images/is-it-true-that-the-carnivore-diet-causes-haemorrhoids-image.jpg" loading="lazy" alt="A picture showing a close-up cutting of a fillet-steak">
               <div>
                 <h2>Is it True that the Carnivore Diet Causes Haemorrhoids?</h2>
                 <p>Does the Carnivore Diet really cause haemorrhoids? We dive into the science to uncover the truth about fiber, constipation, and this meat-only diet myth. Find out here.</p>
@@ -464,7 +464,7 @@
 
           <figure>
             <a href="/skin-care/retinol-facts-&-truths/">
-              <img src="/images/retinol-facts-&-truths-thumbnail.png" loading="lazy" alt="A picture showing retinol anti-aging face-mask-sheet">
+              <img src="/images/retinol-facts-&-truths-image.jpg" loading="lazy" alt="A picture showing retinol anti-aging face-mask-sheet">
               <div>
                 <h2>Retinol: Facts & Truths</h2>
                 <p>Discover the unvarnished Facts & Truths about Retinol. Learn the real science behind this anti-aging powerhouse, including benefits, side effects, and application myths.</p>
@@ -474,7 +474,7 @@
 
           <figure>
             <a href="/hair-&-beauty-products/the-8-must-use-vitamins-for-healthy-hair-skin-&-nails/">
-              <img src="/images/the-8-must-use-vitamins-for-healthy-hair-skin-&-nails-thumbnail.png" loading="lazy" alt="A picture showing a woman with healthy hair, glowing skin, and strong nails">
+              <img src="/images/the-8-must-use-vitamins-for-healthy-hair-skin-&-nails-image.jpg" loading="lazy" alt="A picture showing a woman with healthy hair, glowing skin, and strong nails">
               <div>
                 <h2>The 8 Must-Use Vitamins for Healthy Hair, Skin, & Nails</h2>
                 <p>Stop guessing! We reveal the 8 Must-Use Vitamins proven to deliver noticeable results for healthy hair, skin, and nails. Your inner beauty guide starts here.</p>
@@ -483,11 +483,11 @@
           </figure>
 
           <figure>
-            <a href="/mental-health/the-15-proven-tips-&-tricks-to-sleep-better-at-night/">
-              <img src="/images/the-15-proven-tips-&-tricks-to-sleep-better-at-night-thumbnail.png" loading="lazy" alt="A picture showing a woman sleeping on a bed">
+            <a href="/cold-&-flu-management/10-tips-to-get-rid-of-a-cold-quickly/">
+              <img src="/images/10-tips-to-get-rid-of-a-cold-quickly-image.jpg" loading="lazy" alt="A picture showing a young woman sneeze into tissue paper with an ill-expression">
               <div>
-                <h2>The 15 Proven Tips & Tricks to Sleep Better at Night</h2>
-                <p>Stop tossing and turning! Discover 15 proven tips & tricks to help you sleep better at night, fall asleep faster, and enjoy deep, restorative rest starting tonight.</p>
+                <h2>10 Tips to Get Rid of a Cold Quickly</h2>
+                <p>Don't suffer any longer! Discover 10 highly effective tips and home remedies for how to get rid of a cold quickly and shorten your recovery time fast.</p>
               </div>
             </a>
           </figure>
@@ -1037,10 +1037,23 @@
         const articleContainer = document.querySelector("article");
         const shareDiv = document.querySelector(".share-this-article");
         
+        function openModal() {
+            const modal = document.getElementById("subscribe-modal");
+            if (modal) {
+                modal.style.display = "block";
+                document.body.classList.add("modal-open");
+
+                const emailInput = document.getElementById("subscriber-email");
+                if (emailInput) {
+                    setTimeout(() => emailInput.focus(), 100);
+                }
+            }
+        }
+
         if (articleContainer) {
           const hasModalFlag = articleContainer.querySelector('#show-modal-flag');
           
-          if (hasModalFlag && typeof openModal === 'function') {
+          if (hasModalFlag) { 
               openModal(); 
           }
         }
