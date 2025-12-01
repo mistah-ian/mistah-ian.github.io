@@ -19,7 +19,7 @@
     <meta property="og:type" content="article"> 
     <meta property="og:url" content="https://healtharticles.shop/nutrition/is-it-true-that-the-carnivore-diet-causes-haemorrhoids/">
 
-    <meta property="og:image" content="https://www.healtharticles.shop/images/is-it-true-that-the-carnivore-diet-causes-haemorrhoids-media.png">
+    <meta property="og:image" content="https://www.healtharticles.shop/images/is-it-true-that-the-carnivore-diet-causes-haemorrhoids-image.jpg">
     <meta property="og:image:width" content="1200"> 
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="A picture showing a close-up cutting of a fillet-steak">
@@ -296,7 +296,7 @@
             <p>The most common cause of this pressure is <strong>straining to pass hard stools</strong>. </p>
             <p>Dietary fiber, found primarily in fruits, vegetables, and whole grains, performs two vital functions for bowel health: it adds <strong>bulk</strong> to the stool and helps it <strong>retain water</strong>. These actions result in softer, larger stools that pass easily, which prevents the straining that leads to haemorrhoids.</p>
 
-          <img src="/images/is-it-true-that-the-carnivore-diet-causes-haemorrhoids-image-1.avif"loading="lazy" alt="A picture showing a close-up cutting of a fillet-steak">
+          <img src="/images/is-it-true-that-the-carnivore-diet-causes-haemorrhoids-image.jpg"loading="lazy" alt="A picture showing a close-up cutting of a fillet-steak">
 
           <h2 id="heading-two">The Role of Fiber on Stool Consistency</h2>
             <p>Fiber is the indigestible part of plant foods that passes mostly intact through the stomach and small intestine.</p>
@@ -428,7 +428,7 @@
 
           <figure>
             <a href="/cold-&-flu-management/10-tips-to-get-rid-of-a-cold-quickly/">
-              <img src="/images/10-tips-to-get-rid-of-a-cold-quickly-thumbnail.png" loading="lazy" alt="A picture showing a young woman sneeze into tissue paper with an ill-expression">
+              <img src="/images/10-tips-to-get-rid-of-a-cold-quickly-image.jpg" loading="lazy" alt="A picture showing a young woman sneeze into tissue paper with an ill-expression">
               <div>
                 <h2>10 Tips to Get Rid of a Cold Quickly</h2>
                 <p>Don't suffer any longer! Discover 10 highly effective tips and home remedies for how to get rid of a cold quickly and shorten your recovery time fast.</p>
@@ -438,7 +438,7 @@
 
           <figure>
             <a href="/skin-care/retinol-facts-&-truths/">
-              <img src="/images/retinol-facts-&-truths-thumbnail.png" loading="lazy" alt="A picture showing retinol anti-aging face-mask-sheet">
+              <img src="/images/retinol-facts-&-truths-image.jpg" loading="lazy" alt="A picture showing retinol anti-aging face-mask-sheet">
               <div>
                 <h2>Retinol: Facts & Truths</h2>
                 <p>Discover the unvarnished Facts & Truths about Retinol. Learn the real science behind this anti-aging powerhouse, including benefits, side effects, and application myths.</p>
@@ -448,7 +448,7 @@
 
           <figure>
             <a href="/hair-&-beauty-products/the-8-must-use-vitamins-for-healthy-hair-skin-&-nails/">
-              <img src="/images/the-8-must-use-vitamins-for-healthy-hair-skin-&-nails-thumbnail.png" loading="lazy" alt="A picture showing a woman with healthy hair, glowing skin, and strong nails">
+              <img src="/images/the-8-must-use-vitamins-for-healthy-hair-skin-&-nails-image.jpg" loading="lazy" alt="A picture showing a woman with healthy hair, glowing skin, and strong nails">
               <div>
                 <h2>The 8 Must-Use Vitamins for Healthy Hair, Skin, & Nails</h2>
                 <p>Stop guessing! We reveal the 8 Must-Use Vitamins proven to deliver noticeable results for healthy hair, skin, and nails. Your inner beauty guide starts here.</p>
@@ -1011,10 +1011,23 @@
         const articleContainer = document.querySelector("article");
         const shareDiv = document.querySelector(".share-this-article");
         
+        function openModal() {
+            const modal = document.getElementById("subscribe-modal");
+            if (modal) {
+                modal.style.display = "block";
+                document.body.classList.add("modal-open");
+
+                const emailInput = document.getElementById("subscriber-email");
+                if (emailInput) {
+                    setTimeout(() => emailInput.focus(), 100);
+                }
+            }
+        }
+
         if (articleContainer) {
           const hasModalFlag = articleContainer.querySelector('#show-modal-flag');
           
-          if (hasModalFlag && typeof openModal === 'function') {
+          if (hasModalFlag) { 
               openModal(); 
           }
         }
