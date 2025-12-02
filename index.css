@@ -350,7 +350,7 @@ body.modal-open {
     margin-bottom: 20px;
     height: 34px;
     width: 20%;
-    margin-right: 10%;
+    margin-right: 5%;
     background-color: rgb(2, 131, 141);
     border: 2px solid black;
 }
@@ -479,7 +479,7 @@ body.no-scroll {
     margin-top: -4px;
     margin-bottom: 20px;
     padding-top: 0.5px;
-    padding-bottom: 0.5px;
+    padding-bottom: 0;
 }
 
 .this-just-in .this-just-in-completes figure div h2:hover {
@@ -593,7 +593,7 @@ body.no-scroll {
     margin-top: -4px;
     margin-bottom: 20px;
     padding-top: 0.5px;
-    padding-bottom: 0.5px;
+    padding-bottom: 0;
 }
 
 .recommended .recommended-completes figure div h2:hover {
@@ -943,6 +943,9 @@ footer .about-contact-advertise-footer a:hover {
     main section h2 {
         font-size: large;
     }
+    .hamburger-menu {
+        width: 100%;
+    }
     .hamburger-menu .search-bar input, .hamburger-menu .search-bar button {
         font-size: medium;
     }
@@ -953,7 +956,7 @@ footer .about-contact-advertise-footer a:hover {
         font-size: medium;
     } 
     .hamburger-menu .about-contact-advertise-hamburger a {
-        font-size: xx-small;
+        font-size: x-small;
     }
     .follow-us-on-icons {
         min-height: 100px;
