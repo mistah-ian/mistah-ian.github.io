@@ -654,6 +654,87 @@ body.no-scroll {
 }
 /* #endregion */
 
+/* #region health-conditions */
+.health-conditions-letter-navigations {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    justify-content: space-around;
+    position: fixed;
+    height: 100%;
+    overflow-y: auto;
+    left: 2%;
+    background-color: #dde9fc;
+    width: 15%;
+}
+
+.health-conditions-letter-navigations a {
+    height: 80px;
+    border: 1px solid black;
+    font-weight: bold;
+    flex-grow: 0;
+    font-size: large;
+    background-color: white;
+    text-align: center;
+}
+
+.health-conditions-letter-navigations a:hover {
+    background-color: rgb(2, 131, 141);
+    border: 1px solid rgb(2, 131, 141);
+}
+
+.health-conditions-topics-starting-with {
+    margin-left: 20%;
+}
+
+.health-conditions-topics-starting-with hr {
+    height: 1px;
+    background-color: black;
+    margin-top: -15px;
+    margin-bottom: 10px;
+}
+
+.health-conditions-topics-starting-with div {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    margin-bottom: 40px;
+}
+
+.health-conditions .health-conditions-completes figure {
+    background-color: #dde9fc;
+    border-radius: 5%;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+
+.health-conditions .health-conditions-completes figure img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: 50% 50%;
+    border-radius: 5% 5% 0 0;
+}
+
+.health-conditions .health-conditions-completes figure img:hover {
+    opacity: 0.75;
+}
+
+.health-conditions .health-conditions-completes figure div {
+    padding-left: 2.5%;
+    margin-top: -4px;
+    margin-bottom: 20px;
+    padding-top: 0.5px;
+    padding-bottom: 0;
+}
+
+.health-conditions .health-conditions-completes figure div h2:hover {
+    color: rgb(2, 131, 141);
+}
+/* #endregion */
+
 /* #region subscribe-article */
 .modal-article-hr {
     height: 0.1px;
@@ -868,6 +949,9 @@ footer .about-contact-advertise-footer a:hover {
         width: 80%;
         margin-top: 90px;
     }
+    .hamburger-pages-main-title {
+        font-size: x-large;
+    }
     .modal-content {
         width: 50%;
     }
@@ -956,7 +1040,7 @@ footer .about-contact-advertise-footer a:hover {
         font-size: medium;
     } 
     .hamburger-menu .about-contact-advertise-hamburger a {
-        font-size: x-small;
+        font-size: small;
     }
     .follow-us-on-icons {
         min-height: 100px;
