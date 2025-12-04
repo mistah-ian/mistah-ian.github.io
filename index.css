@@ -661,7 +661,7 @@ body.no-scroll {
     row-gap: 20px;
     position: fixed;
     overflow-y: auto;
-    left: 2%;
+    left: 1%;
     background-color: navy;
     width: 15%;
     padding: 20px 2.5% 20px 2.5%;
@@ -678,13 +678,14 @@ body.no-scroll {
 }
 
 .health-conditions-letter-navigations::-webkit-scrollbar {
-    width: 15px; 
+    width: 20px;
 }
 
 .health-conditions-letter-navigations::-webkit-scrollbar-thumb {
     background-color: white; 
     border-radius: 10px; 
     border: 1px solid navy;
+    cursor: pointer;
 }
 
 .health-conditions-letter-navigations a {
@@ -705,12 +706,11 @@ body.no-scroll {
 
 .health-conditions-topics-starting-with {
     margin-left: 28%;
-    color: blue;
 }
 
 .health-conditions-topics-starting-with hr {
     height: 1px;
-    background-color: blue;
+    background-color: black;
     margin-top: -15px;
     margin-bottom: 20px;
 }
@@ -719,15 +719,15 @@ body.no-scroll {
     display: flex;
     flex-direction: column;
     row-gap: 25px;
-    margin-bottom: 40px;
+    margin-bottom: 45px;
 }
 
 .health-conditions-topics-starting-with div a:hover {
-    color: orange;
+    color: blue;
 }
 
 .health-conditions-topics-starting-with h3 {
-    font-size: large;
+    font-size: medium;
 }
 
 .health-conditions .health-conditions-completes figure {
