@@ -659,46 +659,75 @@ body.no-scroll {
     display: flex;
     flex-direction: column;
     row-gap: 20px;
-    justify-content: space-around;
     position: fixed;
-    height: 100%;
     overflow-y: auto;
-    left: 2%;
-    background-color: #dde9fc;
+    left: 5%;
+    background-color: navy;
     width: 15%;
+    padding: 20px 2.5% 20px 2.5%;
+    max-height: 500px; 
+    height: auto;
+    border-bottom: 5px solid navy;
+    border-top: 5px solid navy;
+    border-right: 5px solid navy;
+    scrollbar-width: auto;
+}
+
+.health-conditions-unstick {
+    position: absolute !important; 
+}
+
+.health-conditions-letter-navigations::-webkit-scrollbar {
+    width: 10px; 
+}
+
+.health-conditions-letter-navigations::-webkit-scrollbar-thumb {
+    background-color: white; 
+    border-radius: 10px; 
+    border: 1px solid navy;
 }
 
 .health-conditions-letter-navigations a {
-    height: 80px;
-    border: 1px solid black;
     font-weight: bold;
-    flex-grow: 0;
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
     font-size: large;
+    color: navy;
     background-color: white;
     text-align: center;
+    border: 1px solid navy;
 }
 
 .health-conditions-letter-navigations a:hover {
-    background-color: rgb(2, 131, 141);
-    border: 1px solid rgb(2, 131, 141);
+    border: 1px solid orange;
+    color: orange;
 }
 
 .health-conditions-topics-starting-with {
-    margin-left: 20%;
+    margin-left: 28%;
+    color: blue;
 }
 
 .health-conditions-topics-starting-with hr {
     height: 1px;
-    background-color: black;
+    background-color: blue;
     margin-top: -15px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .health-conditions-topics-starting-with div {
     display: flex;
     flex-direction: column;
-    row-gap: 15px;
+    row-gap: 25px;
     margin-bottom: 40px;
+}
+
+.health-conditions-topics-starting-with div a:hover {
+    color: orange;
+}
+
+.health-conditions-topics-starting-with h3 {
+    font-size: large;
 }
 
 .health-conditions .health-conditions-completes figure {
