@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css" crossorigin="anonymous"/>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="index.css">
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4226418454910857"
      crossorigin="anonymous"></script>
@@ -245,35 +245,35 @@
     <main>
 
       <div class="health-conditions-letter-navigations">
-        <a href="">A</a>
-        <a href="">B</a>
-        <a href="">C</a>
-        <a href="">D</a>
-        <a href="">E</a>
-        <a href="">F</a>
-        <a href="">G</a>
-        <a href="">H</a>
-        <a href="">I</a>
-        <a href="">J</a>
-        <a href="">K</a>
-        <a href="">L</a>
-        <a href="">M</a>
-        <a href="">N</a>
-        <a href="">O</a>
-        <a href="">P</a>
-        <a href="">Q</a>
-        <a href="">R</a>
-        <a href="">S</a>
-        <a href="">T</a>
-        <a href="">U</a>
-        <a href="">V</a>
-        <a href="">W</a>
-        <a href="">X</a>
-        <a href="">Y</a>
-        <a href="">Z</a>
+        <a href="#health-conditions-A">A</a>
+        <a href="#health-conditions-B">B</a>
+        <a href="#health-conditions-C">C</a>
+        <a href="#health-conditions-D">D</a>
+        <a href="#health-conditions-E">E</a>
+        <a href="#health-conditions-F">F</a>
+        <a href="#health-conditions-G">G</a>
+        <a href="#health-conditions-H">H</a>
+        <a href="#health-conditions-I">I</a>
+        <a href="#health-conditions-J">J</a>
+        <a href="#health-conditions-K">K</a>
+        <a href="#health-conditions-L">L</a>
+        <a href="#health-conditions-M">M</a>
+        <a href="#health-conditions-N">N</a>
+        <a href="#health-conditions-O">O</a>
+        <a href="#health-conditions-P">P</a>
+        <a href="#health-conditions-Q">Q</a>
+        <a href="#health-conditions-R">R</a>
+        <a href="#health-conditions-S">S</a>
+        <a href="#health-conditions-T">T</a>
+        <a href="#health-conditions-U">U</a>
+        <a href="#health-conditions-V">V</a>
+        <a href="#health-conditions-W">W</a>
+        <a href="#health-conditions-X">X</a>
+        <a href="#health-conditions-Y">Y</a>
+        <a href="#health-conditions-Z">Z</a>
       </div>
 
-      <div class="health-conditions-topics-starting-with health-conditions-A">
+      <div class="health-conditions-topics-starting-with" id="health-conditions-A">
 
         <h3>TOPICS STARTING WITH "A"</h3>
         <hr>
@@ -288,7 +288,7 @@
 
       </div>
 
-      <div class="health-conditions-topics-starting-with health-conditions-B">
+      <div class="health-conditions-topics-starting-with" id="health-conditions-B">
 
         <h3>TOPICS STARTING WITH "B"</h3>
         <hr>
@@ -303,7 +303,7 @@
 
       </div>
 
-      <div class="health-conditions-topics-starting-with health-conditions-C">
+      <div class="health-conditions-topics-starting-with" id="health-conditions-C">
 
         <h3>TOPICS STARTING WITH "C"</h3>
         <hr>
@@ -318,9 +318,9 @@
 
       </div>
 
-      <div class="health-conditions-topics-starting-with health-conditions-C">
+      <div class="health-conditions-topics-starting-with" id="health-conditions-D">
 
-        <h3>TOPICS STARTING WITH "C"</h3>
+        <h3>TOPICS STARTING WITH "D"</h3>
         <hr>
 
         <div>
@@ -333,9 +333,9 @@
 
       </div>
 
-      <div class="health-conditions-topics-starting-with health-conditions-C">
+      <div class="health-conditions-topics-starting-with" id="health-conditions-E">
 
-        <h3>TOPICS STARTING WITH "C"</h3>
+        <h3>TOPICS STARTING WITH "E"</h3>
         <hr>
 
         <div>
@@ -348,9 +348,9 @@
 
       </div>
 
-      <div class="health-conditions-topics-starting-with health-conditions-C">
+      <div class="health-conditions-topics-starting-with" id="health-conditions-F">
 
-        <h3>TOPICS STARTING WITH "C"</h3>
+        <h3>TOPICS STARTING WITH "F"</h3>
         <hr>
 
         <div>
@@ -363,9 +363,9 @@
 
       </div>
 
-      <div class="health-conditions-topics-starting-with health-conditions-C">
+      <div class="health-conditions-topics-starting-with" id="health-conditions-G">
 
-        <h3>TOPICS STARTING WITH "C"</h3>
+        <h3>TOPICS STARTING WITH "G"</h3>
         <hr>
 
         <div>
@@ -378,9 +378,9 @@
 
       </div>
 
-      <div class="health-conditions-topics-starting-with health-conditions-C">
+      <div class="health-conditions-topics-starting-with" id="health-conditions-H">
 
-        <h3>TOPICS STARTING WITH "C"</h3>
+        <h3>TOPICS STARTING WITH "H"</h3>
         <hr>
 
         <div>
@@ -954,6 +954,44 @@
         
       });
     </script>
+    
+    <script>
+      function handleStickySidebar() {
+    const nav = document.querySelector('.health-conditions-letter-navigations');
+    // Anchor to the highest element the nav should not overlap
+    const topStoppingElement = document.getElementById('subscribe-modal-article'); 
+    
+    // Check if the required elements exist before continuing
+    if (!nav || !topStoppingElement) return;
+
+    // --- 1. Get the vertical position where the stopping element starts ---
+    // This gives us the distance from the top of the page (document) to the top of the div.
+    const stoppingElementTop = topStoppingElement.offsetTop;
+    
+    // --- 2. Calculate the height of the fixed navigation div ---
+    const navHeight = nav.offsetHeight;
+    
+    // --- 3. Determine the STOP point (when the nav should unstick) ---
+    /* The nav must unstick before its bottom edge overlaps the stopping element.
+       STOP POINT = Top of Stopping Element - Height of the Nav Div - Space for Clearance
+    */
+    const clearance = 100; // Add a small gap (e.g., 20px) between the nav and the element below it
+    const stopPoint = stoppingElementTop - navHeight - clearance;
+    
+    // --- 4. Check the current scroll position and toggle the class ---
+    if (window.scrollY >= stopPoint) {
+        // UNSTICK: Lock the element into the page content
+        nav.classList.add('health-conditions-unstick');
+    } else {
+        // STICK: Keep the element fixed to the viewport
+        nav.classList.remove('health-conditions-unstick');
+    }
+}
+
+// Attach the function to the scroll and load events
+window.addEventListener('scroll', handleStickySidebar);
+window.addEventListener('load', handleStickySidebar);
+    </script>
 
   </body>
 
@@ -961,4 +999,3 @@
 
 
     
-
