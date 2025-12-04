@@ -661,7 +661,7 @@ body.no-scroll {
     row-gap: 20px;
     position: fixed;
     overflow-y: auto;
-    left: 5%;
+    left: 2%;
     background-color: navy;
     width: 15%;
     padding: 20px 2.5% 20px 2.5%;
@@ -678,7 +678,7 @@ body.no-scroll {
 }
 
 .health-conditions-letter-navigations::-webkit-scrollbar {
-    width: 10px; 
+    width: 15px; 
 }
 
 .health-conditions-letter-navigations::-webkit-scrollbar-thumb {
