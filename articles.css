@@ -23,6 +23,14 @@ a {
     color: inherit;
 }
 
+.about-contact-advertise-explicit-links {
+    color: blue;
+}
+
+.about-contact-advertise-explicit-links:hover {
+    text-decoration: underline;
+}
+
 button {
     font-family: inherit;
     cursor: pointer;
@@ -37,9 +45,38 @@ article img {
     border-radius: 5%;
 }
 
+article ul {
+    list-style-type: disc;
+}
+
+article table {
+    border-collapse: collapse; 
+    width: 100%; 
+    border: 1px solid black;
+}
+
+article table th {
+    border: 1px solid black; 
+    padding: 1%; 
+    text-align: center;
+}
+
+article table td {
+    border: 1px solid black; 
+    padding: 1%; 
+    text-align: center;
+}
+
+article .sticky-notes {
+    padding: 5%; 
+    border: 1px solid gray; 
+    background-color: #e7e7e7;
+}
+
 .no-indent {
     padding-left: 5%;
     list-style-position: outside; 
+    list-style-type: decimal;
 }
 
 .no-indent li h2 {
@@ -179,6 +216,7 @@ header button:hover, header a:hover {
     background: #dde9fc;
     border-radius: 5%; 
     position: relative;
+    width: 80%;
 }
 
 .actual-modal-content {
@@ -247,6 +285,7 @@ header button:hover, header a:hover {
     padding: 10px;
     border: 2px solid black;
     margin-bottom: 25px;
+    font-size: medium; 
 }
 
 .actual-modal-content #submit-subscribe {
@@ -320,7 +359,7 @@ body.modal-open {
 .hamburger-menu {
     position: fixed;
     left: -100%; 
-    width: 80%;
+    width: 100%;
     height: 100%;
     background-color: #dde9fc;
     z-index: 999;
@@ -364,6 +403,7 @@ body.modal-open {
     flex-grow: 1;
     height: 20px;
     margin-left: 5%;
+    font-size: medium;
 }
 
 .hamburger-menu .search-bar button {
@@ -374,6 +414,7 @@ body.modal-open {
     margin-right: 5%;
     background-color: rgb(2, 131, 141);
     border: 2px solid black;
+    font-size: medium;
 }
 
 .hamburger-menu .search-bar button:hover {
@@ -406,26 +447,24 @@ body.modal-open {
 }
 
 .hamburger-menu .about-contact-advertise-hamburger {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-left: 5%;
+    margin-right: 5%;
+    column-gap: 5%;
+    row-gap: 20px;
     margin-top: 30px;
     margin-bottom: 5px;
 }
 
 .hamburger-menu .about-contact-advertise-hamburger a {
     font-weight: normal;
-    border: 1px solid black;
-    padding: 5px;
-    font-size: small;
-    display: inline-block;
-    width: fit-content;
-    border-radius: 20%;
-    margin-left: 0;
-    margin-right: 0;
-}
-
-.hamburger-menu .about-contact-advertise-hamburger a:hover {
-    border: 1px solid rgb(2, 131, 141);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;            
+    justify-content: center;   
+    align-items: center;
 }
 
 .hamburger-menu .follow-us-on-hamburger {
@@ -524,8 +563,8 @@ body.no-scroll {
 .modal-article {
     background-color: #dde9fc;
     border-radius: 5%; 
+    margin-top: 20px;
     margin-bottom: 50px;
-    margin-top: 50px;
     display: flex;
     align-items: center; 
     justify-content: center;
@@ -842,6 +881,11 @@ mark {
 
 .recommended h1 {
     margin-top: 20px;
+    font-size: 21px;
+}
+
+.recommended h2 {
+    font-size: large;
 }
 
 .recommended .recommended-completes {
@@ -979,8 +1023,8 @@ mark {
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 5%;
-    padding-right: 5%;   
-    margin-top: 20px;
+    padding-right: 5%; 
+    margin-top: 40px;  
 }
 
 .follow-us-on p {
@@ -1032,23 +1076,17 @@ footer .footer-logo img {
 }
 
 footer .about-contact-advertise-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding-left: 2%;
-    padding-right: 2%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-left: 5%;
+    margin-right: 5%;
+    column-gap: 5%;
+    row-gap: 20px;
 }
 
 footer .about-contact-advertise-footer a {
-    border: 1px solid white;
-    display: inline-block;
-    width: fit-content;
-    padding: 5px;
-    border-radius: 20%;
-}
-
-footer .about-contact-advertise-footer a:hover {
-    border: 1px solid orange;
+    text-align: center;
+    font-size: small;
 }
 /* #endregion */
 
@@ -1106,13 +1144,13 @@ footer .about-contact-advertise-footer a:hover {
         gap: 5%;
     }   
     footer .about-contact-advertise-footer {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 5%;
+        grid-template-columns: repeat(5, 1fr);
     }
-    .modal-article, .modal-mid-article {
-        width: 75%;
+    footer .about-contact-advertise-footer a {
+        font-size: medium;
+    }
+    .modal-article {
+        width: 50%;
         margin-left: auto;
         margin-right: auto;
     }
@@ -1132,31 +1170,7 @@ footer .about-contact-advertise-footer a:hover {
     article h1 {
         font-size: 28px;
     }
-    .hamburger-menu {
-        width: 100%;
-    }
-    .hamburger-menu .search-bar input, .hamburger-menu .search-bar button {
-        font-size: medium;
-    }
-    .modal-content {
-        width: 80%;
-    }
-    .actual-modal-content input {
-        font-size: medium;
-    }  
-    .hamburger-menu .about-contact-advertise-hamburger a {
-        font-size: x-small;
-    }
     .follow-us-on-icons {
         min-height: 100px;
-    }
-    footer .about-contact-advertise-footer a {
-        font-size: small;
-    }
-    .recommended h1 {
-        font-size: 21px;
-    }
-    .recommended h2 {
-        font-size: large;
     }
 }
