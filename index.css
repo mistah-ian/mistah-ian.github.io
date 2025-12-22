@@ -512,8 +512,10 @@ body.no-scroll {
 }
 
 .this-just-in .this-just-in-completes figure img {
-    width: 100%;
-    height: auto;
+    max-width: 100%;
+    aspect-ratio: 900 / 600; 
+    height: auto; 
+    display: block;
     object-fit: cover;
     object-position: 50% 50%;
     border-radius: 5% 5% 0 0;
@@ -624,8 +626,10 @@ body.no-scroll {
 }
 
 .recommended .recommended-completes figure img {
-    width: 100%;
-    height: auto;
+    max-width: 100%;
+    aspect-ratio: 900 / 600; 
+    height: auto; 
+    display: block;
     object-fit: cover;
     object-position: 50% 50%;
     border-radius: 5% 5% 0 0;
