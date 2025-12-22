@@ -502,19 +502,18 @@ body.no-scroll {
 .this-just-in .this-just-in-completes {
     display: grid;
     grid-template-columns: 1fr;
-    justify-items: center;
 }
 
 .this-just-in .this-just-in-completes figure {
-    width: 400px;
     margin-left: 0;
     margin-right: 0;
     background-color: #dde9fc;
     border-radius: 5%;
-    overflow: hidden;
 }
 
 .this-just-in .this-just-in-completes figure img {
+    width: 100%;
+    height: auto;
     object-fit: cover;
     object-position: 50% 50%;
     border-radius: 5% 5% 0 0;
