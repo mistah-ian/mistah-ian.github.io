@@ -502,18 +502,19 @@ body.no-scroll {
 .this-just-in .this-just-in-completes {
     display: grid;
     grid-template-columns: 1fr;
+    justify-items: center;
 }
 
 .this-just-in .this-just-in-completes figure {
+    width: 400px;
     margin-left: 0;
     margin-right: 0;
     background-color: #dde9fc;
     border-radius: 5%;
+    overflow: hidden;
 }
 
 .this-just-in .this-just-in-completes figure img {
-    width: 100%;
-    height: auto;
     object-fit: cover;
     object-position: 50% 50%;
     border-radius: 5% 5% 0 0;
@@ -580,8 +581,6 @@ body.no-scroll {
 }
 
 .discover-by .discover-by-completes figure img {
-    width: 150px;
-    height: 150px;
     border-radius: 50%;
     object-position: 50% 50%;
     object-fit: cover;
@@ -946,6 +945,15 @@ footer .about-contact-advertise-footer {
 footer .about-contact-advertise-footer a {
     text-align: center;
     font-size: small;
+}
+
+footer .footer-medical-disclaimer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 /* #endregion */
 
@@ -2479,7 +2487,8 @@ footer .about-contact-advertise-footer a {
         gap: 5%;
     }   
     footer .about-contact-advertise-footer {
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(6, 1fr);
+        column-gap: 2.5%;
     }
     footer .about-contact-advertise-footer a {
         font-size: medium;
