@@ -2,7 +2,7 @@
 body {
     margin: 0;
     background-color: white;
-    font-family: 'Montserrat', sans-serif;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     color: black;
 }
 
@@ -1088,6 +1088,15 @@ footer .about-contact-advertise-footer a {
     text-align: center;
     font-size: small;
 }
+
+footer .footer-medical-disclaimer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
 /* #endregion */
 
 @media screen and (min-width: 991px) {
@@ -1144,7 +1153,8 @@ footer .about-contact-advertise-footer a {
         gap: 5%;
     }   
     footer .about-contact-advertise-footer {
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(6, 1fr);
+        column-gap: 2.5%;
     }
     footer .about-contact-advertise-footer a {
         font-size: medium;
