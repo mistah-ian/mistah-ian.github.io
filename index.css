@@ -51,37 +51,6 @@ button {
     background: none;
 }
 
-i[class*="fa-"] { 
-    font-style: normal;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-}
-
-i.fa, i.fas, i.far, i.fal, i.fad {
-    font-family: "Font Awesome 6 Free" !important;
-}
-
-i.fab {
-    font-family: "Font Awesome 6 Brands" !important;
-}
-
-i:not(.fa):not(.fas):not(.fab):not(.far):not(.fal):not(.fad) {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-style: italic;
-}
-
-.fab.fa-x-twitter::before {
-  content: "\e61b"; 
-  font-family: "Font Awesome 6 Brands";
-}
-
-@supports not (content: "\e61b") {
-  .fab.fa-x-twitter::before {
-    content: "\f099"; 
-    font-family: "Font Awesome 6 Brands";
-  }
-}
-
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
