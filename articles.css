@@ -976,7 +976,7 @@ mark {
 }
 
 .how-we-reviewed .actual-name {
-    color: grey;
+    font-weight: bold;
     font-size: small;
 }
 
