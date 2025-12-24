@@ -36,11 +36,14 @@ a {
 }
 
 .about-contact-advertise-explicit-links {
-    color: blue;
+    color: darkblue;
+    text-decoration: underline;
+    font-weight: bold;
 }
 
 .about-contact-advertise-explicit-links:hover {
-    text-decoration: underline;
+    color: navy; 
+    text-decoration: none;
 }
 
 .about-contact-advertise-hr {
