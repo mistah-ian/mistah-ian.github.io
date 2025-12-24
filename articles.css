@@ -776,13 +776,7 @@ mark {
     margin-right: 10px;
 }
 
-.share-this-article i {
-    color: grey;
-    cursor: pointer;
-    font-size: x-large;
-}
-
-.share-this-article i:hover {
+.share-this-article button:hover {
     color: rgb(2, 131, 141);
     transform: scale(1.15);
 }
@@ -906,6 +900,7 @@ mark {
 /* #region sources-list */
 .sources {
     margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .sources details {
