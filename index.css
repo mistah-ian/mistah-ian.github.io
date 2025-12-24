@@ -2037,7 +2037,8 @@ footer .footer-medical-disclaimer {
 
 /* #region vitamins-and-supplements */
 .vitamins-and-supplements-heading {
-    height: 100px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     margin-top: -20px;
     margin-bottom: 30px;
     position: relative;
@@ -2052,10 +2053,9 @@ footer .footer-medical-disclaimer {
     background-color: rgba(161, 161, 161, 0.4);
 }
 
-.vitamins-and-supplements-heading h2 {
+.vitamins-and-supplements-heading h1 {
     text-align: center;
     margin: 0;
-    font-size: x-large;
     text-shadow: 3px 3px 8px rgb(7, 6, 6);
 }
 
@@ -2111,7 +2111,7 @@ footer .footer-medical-disclaimer {
     margin-bottom: 10px;
 }
 
-.vitamins-and-supplements-recommended h1 {
+.vitamins-and-supplements-recommended .recommended-text {
     margin-top: 20px;
 }
 
@@ -2690,9 +2690,10 @@ footer .footer-medical-disclaimer {
         grid-template-columns: repeat(2, 1fr); 
     }
     .vitamins-and-supplements-heading {
-        height: 200px;
+        padding-top: 30px;
+        padding-bottom: 30px;
     }
-    .vitamins-and-supplements-heading h2 {  
+    .vitamins-and-supplements-heading h1 {  
         font-size: 50px;      
     }
     .product-reviews-featured .product-reviews-featured-completes {
