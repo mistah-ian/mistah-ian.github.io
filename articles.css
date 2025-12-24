@@ -17,6 +17,10 @@ html, body {
   overflow-x: hidden;
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
 a {
     text-decoration: none;
     cursor: pointer;
@@ -24,11 +28,14 @@ a {
 }
 
 .about-contact-advertise-explicit-links {
-    color: blue;
+    color: darkblue;
+    text-decoration: underline;
+    font-weight: bold;
 }
 
 .about-contact-advertise-explicit-links:hover {
-    text-decoration: underline;
+    color: navy; 
+    text-decoration: none;
 }
 
 button {
@@ -39,9 +46,12 @@ button {
 }
 
 article img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
+    max-width: 100%;
+    aspect-ratio: 900 / 600; 
+    height: auto; 
+    display: block;
+    object-fit: cover;
+    object-position: 50% 50%;
     border-radius: 5%;
 }
 
@@ -86,37 +96,6 @@ article .sticky-notes {
 .bolded-list-style-type li::marker {
     font-weight: bold;
     font-size: 20px;
-}
-
-i[class*="fa-"] { 
-    font-style: normal;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-}
-
-i.fa, i.fas, i.far, i.fal, i.fad {
-    font-family: "Font Awesome 6 Free" !important;
-}
-
-i.fab {
-    font-family: "Font Awesome 6 Brands" !important;
-}
-
-i:not(.fa):not(.fas):not(.fab):not(.far):not(.fal):not(.fad) {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-style: italic;
-}
-
-.fab.fa-x-twitter::before {
-  content: "\e61b"; 
-  font-family: "Font Awesome 6 Brands";
-}
-
-@supports not (content: "\e61b") {
-  .fab.fa-x-twitter::before {
-    content: "\f099"; 
-    font-family: "Font Awesome 6 Brands";
-  }
 }
 
 @keyframes spin {
@@ -174,10 +153,6 @@ header button:hover, header a:hover {
 
 .search-box button {
     border: none;
-}
-
-.search-box button i {
-    font-size: large;
 }
 
 .header-subscribe button {
@@ -262,7 +237,7 @@ header button:hover, header a:hover {
     position: absolute;
     top: 0;
     right: 0;
-    height: 40px;
+    height: 50px;
 }
 
 .actual-modal-content #loading-spinner {
@@ -352,6 +327,7 @@ header button:hover, header a:hover {
 
 body.modal-open {
   overflow: hidden;
+  height: 100vh;
 }
 /* #endregion */
 
@@ -901,8 +877,10 @@ mark {
 }
 
 .recommended .recommended-completes figure img {
-    width: 100%;
-    height: auto;
+    max-width: 100%;
+    aspect-ratio: 900 / 600; 
+    height: auto; 
+    display: block;
     object-fit: cover;
     object-position: 50% 50%;
     border-radius: 5% 5% 0 0;
