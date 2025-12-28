@@ -55,6 +55,10 @@ article img {
     border-radius: 5%;
 }
 
+article h1 {
+    font-size: 28px;
+}
+
 article ul {
     list-style-type: disc;
 }
@@ -849,13 +853,13 @@ mark {
     margin-bottom: 10px;
 }
 
-.recommended h1 {
-    margin-top: 20px;
-    font-size: 21px;
-}
-
 .recommended h2 {
     font-size: large;
+}
+
+.recommended .recommended-text {
+    margin-top: 20px;
+    font-size: 21px;
 }
 
 .recommended .recommended-completes {
@@ -1150,9 +1154,6 @@ footer .footer-medical-disclaimer {
 }
 
 @media screen and (max-width: 990px) {
-    article h1 {
-        font-size: 28px;
-    }
     .follow-us-on-icons {
         min-height: 100px;
     }
