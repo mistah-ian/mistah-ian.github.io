@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
 
+Disallow: /search-results/
+
 Sitemap: https://healtharticles.shop/sitemap.xml
