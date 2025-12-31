@@ -2021,8 +2021,6 @@ footer .footer-medical-disclaimer {
 .product-reviews-heading {
     padding-top: 30px;
     padding-bottom: 30px;
-    padding-left: 5%;
-    padding-right: 5%;
     margin-top: -20px;
     margin-bottom: 30px;
     position: relative;
@@ -2036,6 +2034,11 @@ footer .footer-medical-disclaimer {
     align-items: center;    
     justify-content: center;
     background-color: lightblue;
+}
+
+.product-reviews-heading p {
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 .product-reviews-heading h1 {
