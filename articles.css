@@ -1157,4 +1157,7 @@ footer .footer-medical-disclaimer {
         display: block;    
         overflow-x: auto;  
     }
+    article table th, article table td {
+        white-space: nowrap; 
+    }
 }
