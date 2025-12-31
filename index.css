@@ -2021,6 +2021,8 @@ footer .footer-medical-disclaimer {
 .product-reviews-heading {
     padding-top: 30px;
     padding-bottom: 30px;
+    padding-left: 5%;
+    padding-right: 5%;
     margin-top: -20px;
     margin-bottom: 30px;
     position: relative;
