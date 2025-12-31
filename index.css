@@ -21,12 +21,12 @@ main {
     width: 90%;
 }
 
-main section h1 {
-    font-size: 21px;
+main h1 {
+    font-size: 24px;
 }
 
-main section h2 {
-    font-size: large;
+main h2 {
+    font-size: 21px;
 }
 
 a {
@@ -36,7 +36,7 @@ a {
 }
 
 .about-contact-advertise-explicit-links {
-    color: darkblue;
+    color: rgb(2, 131, 141);
     text-decoration: underline;
     font-weight: bold;
 }
@@ -466,7 +466,7 @@ body.no-scroll {
 
 /* #region this-just-in */
 .this-just-in hr {
-    height: 0.1px;
+    height: 1px;
     background-color: black;
     margin-top: -15px;
     margin-bottom: 10px;
@@ -530,7 +530,7 @@ body.no-scroll {
 }
 
 .discover-by hr {
-    height: 0.1px;
+    height: 1px;
     background-color: black;
     margin-top: -15px;
     margin-bottom: 10px;
@@ -582,10 +582,6 @@ body.no-scroll {
     margin-bottom: 10px;
 }
 
-.recommended h1 {
-    margin-top: 20px;
-}
-
 .recommended .recommended-completes {
     display: grid;
     grid-template-columns: 1fr;
@@ -628,7 +624,6 @@ body.no-scroll {
 /* #region categories */
 .categories .categories-heading h1 {
     text-align: center;
-    font-size: xx-large;
     margin-bottom: 50px;
 }
 
@@ -692,7 +687,7 @@ body.no-scroll {
 }
 
 .trending-topics hr {
-    height: 0.1px;
+    height: 1px;
     background-color: black;
     margin-top: -15px;
     margin-bottom: 10px;
@@ -927,7 +922,7 @@ footer .footer-medical-disclaimer {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 20px;
     margin-left: 5%;
     margin-right: 5%;
 }
@@ -935,48 +930,30 @@ footer .footer-medical-disclaimer {
 
 /* #region cold-and-flu-management */
 .cold-and-flu-management-heading {
-    position: relative;
-    height: 200px;
-    overflow: hidden;
+    padding-top: 30px;
+    padding-bottom: 30px;
     margin-top: -20px;
     margin-bottom: 30px;
+    position: relative;
     width: 100vw;                
     left: 50%;
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
+    display: flex;
+    align-items: center;    
+    justify-content: center;
+    background-color: lightblue;
 }
 
-.cold-and-flu-management-heading img {
-    max-width: 100%;
-    aspect-ratio: 900 / 600; 
-    height: auto; 
-    display: block;
-    object-fit: cover; 
-    object-position: center top;
-}
-
-.cold-and-flu-management-heading h2 {
-    position: absolute;
-    top: 20%;      
-    right: 7.5%;  
-    margin: 0;
+.cold-and-flu-management-heading h1 {
     text-align: center;
-    font-size: x-large;
-    z-index: 2;
+    margin: 0;
     text-shadow: 3px 3px 8px rgb(7, 6, 6);
 }
 
-.cold-and-flu-management-heading::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(140, 135, 220, 0.4);
-    z-index: 1;
-}
-
 .cold-and-flu-management-featured hr {
-    height: 0.1px;
+    height: 1px;
     background-color: black;
     margin-top: -15px;
     margin-bottom: 10px;
@@ -1020,15 +997,15 @@ footer .footer-medical-disclaimer {
     color: rgb(2, 131, 141);
 }
 
+.cold-and-flu-management-recommended {
+    margin-top: 40px;
+}
+
 .cold-and-flu-management-recommended hr {
-    height: 0.1px;
+    height: 1px;
     background-color: black;
     margin-top: -15px;
     margin-bottom: 10px;
-}
-
-.cold-and-flu-management-recommended h1 {
-    margin-top: 20px;
 }
 
 .cold-and-flu-management-recommended .cold-and-flu-management-recommended-completes {
@@ -1072,49 +1049,30 @@ footer .footer-medical-disclaimer {
 
 /* #region fitness */
 .fitness-heading {
-    position: relative;
-    height: 200px;
-    overflow: hidden;
+    padding-top: 30px;
+    padding-bottom: 30px;
     margin-top: -20px;
     margin-bottom: 30px;
+    position: relative;
     width: 100vw;                
     left: 50%;
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
+    display: flex;
+    align-items: center;    
+    justify-content: center;
+    background-color: lightblue;
 }
 
-.fitness-heading img {
-    max-width: 100%;
-    aspect-ratio: 900 / 600; 
-    height: auto; 
-    display: block;
-    object-fit: cover; 
-    object-position: 80% 20%;
-}
-
-.fitness-heading h2 {
-    position: absolute;
-    top: 7.5%;      
-    left: 0;
-    right: 0;
-    margin: 0;
+.fitness-heading h1 {
     text-align: center;
-    font-size: x-large;
-    z-index: 2;
+    margin: 0;
     text-shadow: 3px 3px 8px rgb(7, 6, 6);
 }
 
-.fitness-heading::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(140, 135, 220, 0.4);
-    z-index: 1;
-}
-
 .fitness-featured hr {
-    height: 0.1px;
+    height: 1px;
     background-color: black;
     margin-top: -15px;
     margin-bottom: 10px;
@@ -1158,15 +1116,15 @@ footer .footer-medical-disclaimer {
     color: rgb(2, 131, 141);
 }
 
+.fitness-recommended {
+    margin-top: 40px;
+}
+
 .fitness-recommended hr {
-    height: 0.1px;
+    height: 1px;
     background-color: black;
     margin-top: -15px;
     margin-bottom: 10px;
-}
-
-.fitness-recommended h1 {
-    margin-top: 20px;
 }
 
 .fitness-recommended .fitness-recommended-completes {
@@ -1210,49 +1168,30 @@ footer .footer-medical-disclaimer {
 
 /* #region gut-health */
 .gut-health-heading {
-    position: relative;
-    height: 200px;
-    overflow: hidden;
+    padding-top: 30px;
+    padding-bottom: 30px;
     margin-top: -20px;
     margin-bottom: 30px;
+    position: relative;
     width: 100vw;                
     left: 50%;
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
+    display: flex;
+    align-items: center;    
+    justify-content: center;
+    background-color: lightblue;
 }
 
-.gut-health-heading img {
-    max-width: 100%;
-    aspect-ratio: 900 / 600; 
-    height: auto; 
-    display: block;
-    object-fit: cover; 
-    object-position: 50px 22.5%;
-}
-
-.gut-health-heading h2 {
-    position: absolute;
-    top: 45%;             
-    left: 5%;              
-    transform: translateY(-55%);
-    margin: 0;
+.gut-health-heading h1 {
     text-align: center;
-    font-size: x-large;
-    z-index: 2;
+    margin: 0;
     text-shadow: 3px 3px 8px rgb(7, 6, 6);
 }
 
-.gut-health-heading::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(140, 135, 220, 0.4);
-    z-index: 1;
-}
-
 .gut-health-featured hr {
-    height: 0.1px;
+    height: 1px;
     background-color: black;
     margin-top: -15px;
     margin-bottom: 10px;
@@ -1296,15 +1235,15 @@ footer .footer-medical-disclaimer {
     color: rgb(2, 131, 141);
 }
 
+.gut-health-recommended {
+    margin-top: 40px;
+}
+
 .gut-health-recommended hr {
-    height: 0.1px;
+    height: 1px;
     background-color: black;
     margin-top: -15px;
     margin-bottom: 10px;
-}
-
-.gut-health-recommended h1 {
-    margin-top: 20px;
 }
 
 .gut-health-recommended .gut-health-recommended-completes {
@@ -1348,49 +1287,30 @@ footer .footer-medical-disclaimer {
 
 /* #region hair-and-beauty-products */
 .hair-and-beauty-products-heading {
-    position: relative;
-    height: 200px;
-    overflow: hidden;
+    padding-top: 30px;
+    padding-bottom: 30px;
     margin-top: -20px;
     margin-bottom: 30px;
+    position: relative;
     width: 100vw;                
     left: 50%;
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
+    display: flex;
+    align-items: center;    
+    justify-content: center;
+    background-color: lightblue;
 }
 
-.hair-and-beauty-products-heading img {
-    max-width: 100%;
-    aspect-ratio: 900 / 600; 
-    height: auto; 
-    display: block;
-    object-fit: cover; 
-    object-position: 60px 45%;
-}
-
-.hair-and-beauty-products-heading h2 {
-    position: absolute;
-    top: 45%;             
-    left: 4%;              
-    transform: translateY(-55%);
-    margin: 0;
+.hair-and-beauty-products-heading h1 {
     text-align: center;
-    font-size: x-large;
-    z-index: 2;
+    margin: 0;
     text-shadow: 3px 3px 8px rgb(7, 6, 6);
 }
 
-.hair-and-beauty-products-heading::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(140, 135, 220, 0.4);
-    z-index: 1;
-}
-
 .hair-and-beauty-products-featured hr {
-    height: 0.1px;
+    height: 1px;
     background-color: black;
     margin-top: -15px;
     margin-bottom: 10px;
@@ -1434,15 +1354,15 @@ footer .footer-medical-disclaimer {
     color: rgb(2, 131, 141);
 }
 
+.hair-and-beauty-products-recommended {
+    margin-top: 40px;
+}
+
 .hair-and-beauty-products-recommended hr {
-    height: 0.1px;
+    height: 1px;
     background-color: black;
     margin-top: -15px;
     margin-bottom: 10px;
-}
-
-.hair-and-beauty-products-recommended h1 {
-    margin-top: 20px;
 }
 
 .hair-and-beauty-products-recommended .hair-and-beauty-products-recommended-completes {
@@ -1486,49 +1406,30 @@ footer .footer-medical-disclaimer {
 
 /* #region mental-health */
 .mental-health-heading {
-    position: relative;
-    height: 200px;
-    overflow: hidden;
+    padding-top: 30px;
+    padding-bottom: 30px;
     margin-top: -20px;
     margin-bottom: 30px;
+    position: relative;
     width: 100vw;                
     left: 50%;
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
+    display: flex;
+    align-items: center;    
+    justify-content: center;
+    background-color: lightblue;
 }
 
-.mental-health-heading img {
-    max-width: 100%;
-    aspect-ratio: 900 / 600; 
-    height: auto; 
-    display: block;
-    object-fit: cover; 
-    object-position: -10px center;
-}
-
-.mental-health-heading h2 {
-    position: absolute;
-    top: 45%;             
-    right: 7.5%;              
-    transform: translateY(-55%);
-    margin: 0;
+.mental-health-heading h1 {
     text-align: center;
-    font-size: x-large;
-    z-index: 2;
+    margin: 0;
     text-shadow: 3px 3px 8px rgb(7, 6, 6);
 }
 
-.mental-health-heading::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(140, 135, 220, 0.4);
-    z-index: 1;
-}
-
 .mental-health-featured hr {
-    height: 0.1px;
+    height: 1px;
     background-color: black;
     margin-top: -15px;
     margin-bottom: 10px;
@@ -1572,15 +1473,15 @@ footer .footer-medical-disclaimer {
     color: rgb(2, 131, 141);
 }
 
+.mental-health-recommended {
+    margin-top: 40px;
+}
+
 .mental-health-recommended hr {
-    height: 0.1px;
+    height: 1px;
     background-color: black;
     margin-top: -15px;
     margin-bottom: 10px;
-}
-
-.mental-health-recommended h1 {
-    margin-top: 20px;
 }
 
 .mental-health-recommended .mental-health-recommended-completes {
@@ -1624,49 +1525,30 @@ footer .footer-medical-disclaimer {
 
 /* #region nutrition */
 .nutrition-heading {
-    position: relative;
-    height: 200px;
-    overflow: hidden;
+    padding-top: 30px;
+    padding-bottom: 30px;
     margin-top: -20px;
     margin-bottom: 30px;
+    position: relative;
     width: 100vw;                
     left: 50%;
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
+    display: flex;
+    align-items: center;    
+    justify-content: center;
+    background-color: lightblue;
 }
 
-.nutrition-heading img {
-    max-width: 100%;
-    aspect-ratio: 900 / 600; 
-    height: auto; 
-    display: block;
-    object-fit: cover; 
-    object-position: center;
-}
-
-.nutrition-heading h2 {
-    position: absolute;
-    top: 15%;             
-    right: 5%;              
-    transform: translateY(-85%);
-    margin: 0;
+.nutrition-heading h1 {
     text-align: center;
-    font-size: x-large;
-    z-index: 2;
+    margin: 0;
     text-shadow: 3px 3px 8px rgb(7, 6, 6);
 }
 
-.nutrition-heading::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(207, 94, 91, 0.4);
-    z-index: 1;
-}
-
 .nutrition-featured hr {
-    height: 0.1px;
+    height: 1px;
     background-color: black;
     margin-top: -15px;
     margin-bottom: 10px;
@@ -1710,15 +1592,15 @@ footer .footer-medical-disclaimer {
     color: rgb(2, 131, 141);
 }
 
+.nutrition-recommended {
+    margin-top: 40px;
+}
+
 .nutrition-recommended hr {
-    height: 0.1px;
+    height: 1px;
     background-color: black;
     margin-top: -15px;
     margin-bottom: 10px;
-}
-
-.nutrition-recommended h1 {
-    margin-top: 20px;
 }
 
 .nutrition-recommended .nutrition-recommended-completes {
@@ -1762,48 +1644,30 @@ footer .footer-medical-disclaimer {
 
 /* #region sexual-and-reproductive-health */
 .sexual-and-reproductive-health-heading {
-    position: relative;
-    height: 200px;
-    overflow: hidden;
+    padding-top: 30px;
+    padding-bottom: 30px;
     margin-top: -20px;
     margin-bottom: 30px;
+    position: relative;
     width: 100vw;                
     left: 50%;
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
+    display: flex;
+    align-items: center;    
+    justify-content: center;
+    background-color: lightblue;
 }
 
-.sexual-and-reproductive-health-heading img {
-    max-width: 100%;
-    aspect-ratio: 900 / 600; 
-    height: auto; 
-    display: block;
-    object-fit: cover; 
-    object-position: -70px 70%;
-}
-
-.sexual-and-reproductive-health-heading h2 {
-    position: absolute;
-    top: 10%;             
-    right: 5%;              
-    margin: 0;
+.sexual-and-reproductive-health-heading h1 {
     text-align: center;
-    font-size: x-large;
-    z-index: 2;
+    margin: 0;
     text-shadow: 3px 3px 8px rgb(7, 6, 6);
 }
 
-.sexual-and-reproductive-health-heading::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(207, 94, 91, 0.4);
-    z-index: 1;
-}
-
 .sexual-and-reproductive-health-featured hr {
-    height: 0.1px;
+    height: 1px;
     background-color: black;
     margin-top: -15px;
     margin-bottom: 10px;
@@ -1847,15 +1711,15 @@ footer .footer-medical-disclaimer {
     color: rgb(2, 131, 141);
 }
 
+.sexual-and-reproductive-health-recommended {
+    margin-top: 40px;
+}
+
 .sexual-and-reproductive-health-recommended hr {
-    height: 0.1px;
+    height: 1px;
     background-color: black;
     margin-top: -15px;
     margin-bottom: 10px;
-}
-
-.sexual-and-reproductive-health-recommended h1 {
-    margin-top: 20px;
 }
 
 .sexual-and-reproductive-health-recommended .sexual-and-reproductive-health-recommended-completes {
@@ -1899,49 +1763,30 @@ footer .footer-medical-disclaimer {
 
 /* #region skin-care */
 .skin-care-heading {
-    position: relative;
-    height: 200px;
-    overflow: hidden;
+    padding-top: 30px;
+    padding-bottom: 30px;
     margin-top: -20px;
     margin-bottom: 30px;
+    position: relative;
     width: 100vw;                
     left: 50%;
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
+    display: flex;
+    align-items: center;    
+    justify-content: center;
+    background-color: lightblue;
 }
 
-.skin-care-heading img {
-    max-width: 100%;
-    aspect-ratio: 900 / 600; 
-    height: auto; 
-    display: block;
-    object-fit: cover; 
-    object-position: 30px 75%;
-}
-
-.skin-care-heading h2 {
-    position: absolute;
-    top: 40%;             
-    left: 5%;  
-    transform: translateY(-60%);            
-    margin: 0;
+.skin-care-heading h1 {
     text-align: center;
-    font-size: x-large;
-    z-index: 2;
+    margin: 0;
     text-shadow: 3px 3px 8px rgb(7, 6, 6);
 }
 
-.skin-care-heading::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(161, 161, 161, 0.4);
-    z-index: 1;
-}
-
 .skin-care-featured hr {
-    height: 0.1px;
+    height: 1px;
     background-color: black;
     margin-top: -15px;
     margin-bottom: 10px;
@@ -1985,15 +1830,15 @@ footer .footer-medical-disclaimer {
     color: rgb(2, 131, 141);
 }
 
+.skin-care-recommended {
+    margin-top: 40px;
+}
+
 .skin-care-recommended hr {
-    height: 0.1px;
+    height: 1px;
     background-color: black;
     margin-top: -15px;
     margin-bottom: 10px;
-}
-
-.skin-care-recommended h1 {
-    margin-top: 20px;
 }
 
 .skin-care-recommended .skin-care-recommended-completes {
@@ -2050,7 +1895,7 @@ footer .footer-medical-disclaimer {
     display: flex;
     align-items: center;    
     justify-content: center;
-    background-color: rgba(161, 161, 161, 0.4);
+    background-color: lightblue;
 }
 
 .vitamins-and-supplements-heading h1 {
@@ -2060,7 +1905,7 @@ footer .footer-medical-disclaimer {
 }
 
 .vitamins-and-supplements-featured hr {
-    height: 0.1px;
+    height: 1px;
     background-color: black;
     margin-top: -15px;
     margin-bottom: 10px;
@@ -2104,15 +1949,15 @@ footer .footer-medical-disclaimer {
     color: rgb(2, 131, 141);
 }
 
+.vitamins-and-supplements-recommended {
+    margin-top: 40px;
+}
+
 .vitamins-and-supplements-recommended hr {
-    height: 0.1px;
+    height: 1px;
     background-color: black;
     margin-top: -15px;
     margin-bottom: 10px;
-}
-
-.vitamins-and-supplements-recommended .recommended-text {
-    margin-top: 20px;
 }
 
 .vitamins-and-supplements-recommended .vitamins-and-supplements-recommended-completes {
@@ -2156,48 +2001,31 @@ footer .footer-medical-disclaimer {
 
 /* #region product-reviews */
 .product-reviews-heading {
-    position: relative;
-    height: 200px;
-    overflow: hidden;
+    padding-top: 30px;
+    padding-bottom: 30px;
     margin-top: -20px;
     margin-bottom: 30px;
+    position: relative;
     width: 100vw;                
     left: 50%;
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    justify-content: center;
+    background-color: lightblue;
 }
 
-.product-reviews-heading img {
-    max-width: 100%;
-    aspect-ratio: 900 / 600; 
-    height: auto; 
-    display: block;
-    object-fit: cover; 
-    object-position: center 50%;
-}
-
-.product-reviews-heading h2 {
-    position: absolute;
-    top: 10%;             
-    right: 5%;
-    margin: 0;
+.product-reviews-heading h1 {
     text-align: center;
-    font-size: x-large;
-    z-index: 2;
+    margin: 0;
     text-shadow: 3px 3px 8px rgb(7, 6, 6);
 }
 
-.product-reviews-heading::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(161, 161, 161, 0.4);
-    z-index: 1;
-}
-
 .product-reviews-featured hr {
-    height: 0.1px;
+    height: 1px;
     background-color: black;
     margin-top: -15px;
     margin-bottom: 10px;
@@ -2241,15 +2069,15 @@ footer .footer-medical-disclaimer {
     color: rgb(2, 131, 141);
 }
 
+.product-reviews-recommended {
+    margin-top: 40px;
+}
+
 .product-reviews-recommended hr {
-    height: 0.1px;
+    height: 1px;
     background-color: black;
     margin-top: -15px;
     margin-bottom: 10px;
-}
-
-.product-reviews-recommended h1 {
-    margin-top: 20px;
 }
 
 .product-reviews-recommended .product-reviews-recommended-completes {
@@ -2293,45 +2121,26 @@ footer .footer-medical-disclaimer {
 
 /* #region health-conditions */
 .health-conditions-heading {
-    position: relative;
-    height: 200px;
-    overflow: hidden;
+    padding-top: 30px;
+    padding-bottom: 30px;
     margin-top: -20px;
     margin-bottom: 30px;
+    position: relative;
     width: 100vw;                
     left: 50%;
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
+    display: flex;
+    align-items: center;    
+    justify-content: center;
+    background-color: lightblue;
 }
 
-.health-conditions-heading img {
-    max-width: 100%;
-    aspect-ratio: 900 / 600; 
-    height: auto; 
-    display: block;
-    object-fit: cover; 
-    object-position: center 99%;
-}
-
-.health-conditions-heading h2 {
-    position: absolute;
-    bottom: 10%; 
-    left: 0;            
-    right: 0;
-    margin: 0;
+.health-conditions-heading h1 {
     text-align: center;
-    font-size: xx-large;
-    z-index: 2;
+    margin: 0;
     text-shadow: 3px 3px 8px rgb(7, 6, 6);
-}
-
-.health-conditions-heading::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(161, 161, 161, 0.4);
-    z-index: 1;
 }
 
 .health-conditions-topics-starting-with div .actual-letter {
@@ -2364,7 +2173,7 @@ footer .footer-medical-disclaimer {
 }
 
 .health-conditions-featured hr {
-    height: 0.1px;
+    height: 1px;
     background-color: black;
     margin-top: -15px;
     margin-bottom: 10px;
@@ -2408,15 +2217,15 @@ footer .footer-medical-disclaimer {
     color: rgb(2, 131, 141);
 }
 
+.health-conditions-recommended {
+    margin-top: 40px;
+}
+
 .health-conditions-recommended hr {
-    height: 0.1px;
+    height: 1px;
     background-color: black;
     margin-top: -15px;
     margin-bottom: 10px;
-}
-
-.health-conditions-recommended h1 {
-    margin-top: 20px;
 }
 
 .health-conditions-recommended .health-conditions-recommended-completes {
@@ -2459,12 +2268,6 @@ footer .footer-medical-disclaimer {
 /* #endregion */
 
 @media screen and (min-width: 991px) {
-    main section h1 {
-        font-size: x-large;
-    }
-    main section h2 {
-        font-size: 21px;
-    }
     main {
         width: 80%;
         margin-top: 90px;
@@ -2543,16 +2346,6 @@ footer .footer-medical-disclaimer {
         column-gap: 5%;
         grid-template-columns: repeat(2, 1fr); 
     }
-    .cold-and-flu-management-heading {
-        height: 300px;
-    }
-    .cold-and-flu-management-heading img {
-        object-position: 50% 25%;
-    }
-    .cold-and-flu-management-heading h2 {  
-        right: 10%;  
-        font-size: 50px;
-    }
     .fitness-featured .fitness-featured-completes {
         column-gap: 5%;
         grid-template-columns: repeat(2, 1fr); 
@@ -2560,16 +2353,6 @@ footer .footer-medical-disclaimer {
     .fitness-recommended .fitness-recommended-completes {
         column-gap: 5%;
         grid-template-columns: repeat(2, 1fr); 
-    }
-    .fitness-heading {
-        height: 300px;
-    }
-    .fitness-heading img {
-        object-position: 80% 27.5%;
-    }
-    .fitness-heading h2 {  
-        font-size: 50px;
-        top: 2.5%;      
     }
     .gut-health-featured .gut-health-featured-completes {
         column-gap: 5%;
@@ -2579,15 +2362,6 @@ footer .footer-medical-disclaimer {
         column-gap: 5%;
         grid-template-columns: repeat(2, 1fr); 
     }
-    .gut-health-heading {
-        height: 300px;
-    }
-    .gut-health-heading img {
-        object-position: 80% 27.5%;
-    }
-    .gut-health-heading h2 {  
-        font-size: 50px;
-    }
     .hair-and-beauty-products-featured .hair-and-beauty-products-featured-completes {
         column-gap: 5%;
         grid-template-columns: repeat(2, 1fr); 
@@ -2595,15 +2369,6 @@ footer .footer-medical-disclaimer {
     .hair-and-beauty-products-recommended .hair-and-beauty-products-recommended-completes {
         column-gap: 5%;
         grid-template-columns: repeat(2, 1fr); 
-    }
-    .hair-and-beauty-products-heading {
-        height: 300px;
-    }
-    .hair-and-beauty-products-heading img {
-        object-position: 120px 60%;
-    }
-    .hair-and-beauty-products-heading h2 {  
-        font-size: 50px;
     }
     .mental-health-featured .mental-health-featured-completes {
         column-gap: 5%;
@@ -2613,15 +2378,6 @@ footer .footer-medical-disclaimer {
         column-gap: 5%;
         grid-template-columns: repeat(2, 1fr); 
     }
-    .mental-health-heading {
-        height: 300px;
-    }
-    .mental-health-heading img {
-        object-position: center 52.5%;
-    }
-    .mental-health-heading h2 {  
-        font-size: 50px;
-    }
     .nutrition-featured .nutrition-featured-completes {
         column-gap: 5%;
         grid-template-columns: repeat(2, 1fr); 
@@ -2629,18 +2385,6 @@ footer .footer-medical-disclaimer {
     .nutrition-recommended .nutrition-recommended-completes {
         column-gap: 5%;
         grid-template-columns: repeat(2, 1fr); 
-    }
-    .nutrition-heading {
-        height: 300px;
-    }
-    .nutrition-heading img {
-        object-position: center 52.5%;
-    }
-    .nutrition-heading h2 {  
-        font-size: 50px;
-        top: 45%;             
-        right: 2.5%;              
-        transform: translateY(-55%);
     }
     .sexual-and-reproductive-health-featured .sexual-and-reproductive-health-featured-completes {
         column-gap: 5%;
@@ -2650,17 +2394,6 @@ footer .footer-medical-disclaimer {
         column-gap: 5%;
         grid-template-columns: repeat(2, 1fr); 
     }
-    .sexual-and-reproductive-health-heading {
-        height: 300px;
-    }
-    .sexual-and-reproductive-health-heading img {
-        object-position: -100px 52.5%;
-    }
-    .sexual-and-reproductive-health-heading h2 {  
-        font-size: 50px;
-        top: 10%;             
-        right: 5%;              
-    }
     .skin-care-featured .skin-care-featured-completes {
         column-gap: 5%;
         grid-template-columns: repeat(2, 1fr); 
@@ -2668,18 +2401,6 @@ footer .footer-medical-disclaimer {
     .skin-care-recommended .skin-care-recommended-completes {
         column-gap: 5%;
         grid-template-columns: repeat(2, 1fr); 
-    }
-    .skin-care-heading {
-        height: 300px;
-    }
-    .skin-care-heading img {
-        object-position: 30px 65%;
-    }
-    .skin-care-heading h2 {  
-        font-size: 50px;
-        top: 30%;             
-        left: 5%;   
-        transform: translateY(-25%);            
     }
     .vitamins-and-supplements-featured .vitamins-and-supplements-featured-completes {
         column-gap: 5%;
@@ -2689,13 +2410,6 @@ footer .footer-medical-disclaimer {
         column-gap: 5%;
         grid-template-columns: repeat(2, 1fr); 
     }
-    .vitamins-and-supplements-heading {
-        padding-top: 30px;
-        padding-bottom: 30px;
-    }
-    .vitamins-and-supplements-heading h1 {  
-        font-size: 50px;      
-    }
     .product-reviews-featured .product-reviews-featured-completes {
         column-gap: 5%;
         grid-template-columns: repeat(2, 1fr); 
@@ -2704,17 +2418,6 @@ footer .footer-medical-disclaimer {
         column-gap: 5%;
         grid-template-columns: repeat(2, 1fr); 
     }
-    .product-reviews-heading {
-        height: 300px;
-    }
-    .product-reviews-heading img {
-        object-position: center 50%;
-    }
-    .product-reviews-heading h2 {  
-        font-size: 50px;
-        top: 15%;             
-        right: 5%;        
-    }
     .health-conditions-featured .health-conditions-featured-completes {
         column-gap: 5%;
         grid-template-columns: repeat(2, 1fr); 
@@ -2722,18 +2425,6 @@ footer .footer-medical-disclaimer {
     .health-conditions-recommended .health-conditions-recommended-completes {
         column-gap: 5%;
         grid-template-columns: repeat(2, 1fr); 
-    }
-    .health-conditions-heading {
-        height: 300px;
-    }
-    .health-conditions-heading img {
-        object-position: center 87.5%;
-    }
-    .health-conditions-heading h2 {  
-        font-size: 60px;            
-        bottom: 10%;
-        left: 0;            
-        right: 0;    
     }
     .modal-article {
         width: 50%;
