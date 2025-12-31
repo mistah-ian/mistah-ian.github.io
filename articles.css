@@ -21,6 +21,14 @@ html {
   scrollbar-gutter: stable;
 }
 
+main h1 {
+    font-size: 24px;
+}
+
+main h2 {
+    font-size: 21px;
+}
+
 a {
     text-decoration: none;
     cursor: pointer;
@@ -28,7 +36,7 @@ a {
 }
 
 .about-contact-advertise-explicit-links {
-    color: darkblue;
+    color: rgb(2, 131, 141);
     text-decoration: underline;
     font-weight: bold;
 }
@@ -847,19 +855,14 @@ mark {
 
 /* #region recommended */
 .recommended hr {
-    height: 0.1px;
+    height: 1px;
     background-color: black;
     margin-top: -15px;
     margin-bottom: 10px;
 }
 
-.recommended h2 {
-    font-size: large;
-}
-
-.recommended .recommended-text {
+.recommended {
     margin-top: 20px;
-    font-size: 21px;
 }
 
 .recommended .recommended-completes {
@@ -988,7 +991,6 @@ mark {
 }
 
 .how-we-reviewed div {
-    line-height: 0.5;
     margin-left: 10%;
     margin-bottom: 25px;
 }
@@ -1070,7 +1072,7 @@ footer .footer-medical-disclaimer {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 20px;
     margin-left: 5%;
     margin-right: 5%;
 }
@@ -1141,12 +1143,6 @@ footer .footer-medical-disclaimer {
         margin-left: auto;
         margin-right: auto;
     }
-    .recommended h1 {
-        font-size: x-large;
-    }
-    .recommended h2 {
-        font-size: 21px;
-    }
     .recommended .recommended-completes {
         column-gap: 5%;
         grid-template-columns: repeat(2, 1fr); 
@@ -1156,5 +1152,9 @@ footer .footer-medical-disclaimer {
 @media screen and (max-width: 990px) {
     .follow-us-on-icons {
         min-height: 100px;
+    }
+    article table {
+        display: block;    
+        overflow-x: auto;  
     }
 }
