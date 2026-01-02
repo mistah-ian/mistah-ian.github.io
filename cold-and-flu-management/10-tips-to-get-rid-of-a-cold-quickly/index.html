@@ -29,6 +29,7 @@
     <meta name="twitter:creator" content="@h_articles_254">
 
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
 
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
@@ -36,6 +37,9 @@
     <link rel="manifest" href="/site.webmanifest">
 
     <link rel="stylesheet" href="/articles.css">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4226418454910857"
+     crossorigin="anonymous"></script>
 
     <script type="application/ld+json">
     [
@@ -450,9 +454,10 @@
 
               <summary>Sources</summary>
               <ul>
-                <li><a href="https://www.cdc.gov/dotw/cold/index.html" target="_blank">The Common Cold - Centers for Disease Control and Prevention (CDC)</a></li>
-                <li><a href="https://www.mayoclinic.org/diseases-conditions/common-cold/in-depth/cold-remedies/art-20046403" target="_blank">Cold remedies: What works, what doesn't - Mayo Clinic</a></li>
-                <li><a href="https://www.nccih.nih.gov/health/taking-zinc-for-colds" target="_blank">Zinc for Colds: What the Science Says - NIH</a></li>
+                <li><a href="https://www.cdc.gov/common-cold/about/index.html" target="_blank" rel="noopener noreferrer">About Common Cold - Centers for Disease Control and Prevention (CDC)</a></li>
+                <li><a href="https://www.mayoclinic.org/diseases-conditions/common-cold/diagnosis-treatment/drc-20351611" target="_blank" rel="noopener noreferrer">Common cold: Diagnosis and treatment - Mayo Clinic</a></li>
+                <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11078591/" target="_blank" rel="noopener noreferrer">Zinc for prevention and treatment of the common cold - NIH (PubMed Central)</a></li>
+                <li><a href="https://www.lung.org/lung-health-diseases/lung-disease-lookup/facts-about-the-common-cold" target="_blank" rel="noopener noreferrer">Facts About the Common Cold - American Lung Association</a></li>
               </ul>
               
             </details>
@@ -1057,30 +1062,8 @@
     <script>
       document.addEventListener("DOMContentLoaded", function () {
 
-        const articleContainer = document.querySelector("article");
         const shareDiv = document.querySelector(".share-this-article");
         
-        function openModal() {
-            const modal = document.getElementById("subscribe-modal");
-            if (modal) {
-                modal.style.display = "block";
-                document.body.classList.add("modal-open");
-
-                const emailInput = document.getElementById("subscriber-email");
-                if (emailInput) {
-                    setTimeout(() => emailInput.focus(), 100);
-                }
-            }
-        }
-
-        if (articleContainer) {
-          const hasModalFlag = articleContainer.querySelector('#show-modal-flag');
-          
-          if (hasModalFlag) { 
-              openModal(); 
-          }
-        }
-
         if (shareDiv) {
           const fullURL = window.location.href;
           const copyBtn = shareDiv.querySelector(".copy");
