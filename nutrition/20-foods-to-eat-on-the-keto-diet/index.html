@@ -29,6 +29,7 @@
     <meta name="twitter:creator" content="@h_articles_254">
 
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
 
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
@@ -36,6 +37,9 @@
     <link rel="manifest" href="/site.webmanifest">
 
     <link rel="stylesheet" href="/articles.css">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4226418454910857"
+     crossorigin="anonymous"></script>
 
     <script type="application/ld+json">
     {
@@ -1115,30 +1119,8 @@
     <script>
       document.addEventListener("DOMContentLoaded", function () {
 
-        const articleContainer = document.querySelector("article");
         const shareDiv = document.querySelector(".share-this-article");
         
-        function openModal() {
-            const modal = document.getElementById("subscribe-modal");
-            if (modal) {
-                modal.style.display = "block";
-                document.body.classList.add("modal-open");
-
-                const emailInput = document.getElementById("subscriber-email");
-                if (emailInput) {
-                    setTimeout(() => emailInput.focus(), 100);
-                }
-            }
-        }
-
-        if (articleContainer) {
-          const hasModalFlag = articleContainer.querySelector('#show-modal-flag');
-          
-          if (hasModalFlag) { 
-              openModal(); 
-          }
-        }
-
         if (shareDiv) {
           const fullURL = window.location.href;
           const copyBtn = shareDiv.querySelector(".copy");
