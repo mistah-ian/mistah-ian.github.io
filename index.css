@@ -610,6 +610,11 @@ footer .footer-medical-disclaimer {
     margin-right: 0;
 }
 
+.discover-by .discover-by-completes figure .figure-img {
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+}
+
 .discover-by .discover-by-completes figure .figure-img img {
     width: 100%;
     height: 100%;
