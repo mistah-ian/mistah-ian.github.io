@@ -29,6 +29,12 @@ main h2 {
     font-size: 21px;
 }
 
+.ad-slot {
+  min-height: 100px; 
+  width: 100%;
+  display:block;
+}
+
 a {
     text-decoration: none;
     cursor: pointer;
@@ -770,6 +776,9 @@ footer .footer-medical-disclaimer {
     main {
         width: 80%;
         margin-top: 90px;
+    }
+    .ad-slot {
+        min-height: 250px; 
     }
     .modal-content {
         width: 50%;
