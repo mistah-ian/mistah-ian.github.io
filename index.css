@@ -540,7 +540,6 @@ footer .footer-medical-disclaimer {
     margin-left: 0;
     margin-right: 0;
     background-color: #dde9fc;
-    border-radius: 5%;
 }
 
 .this-just-in .this-just-in-completes figure .figure-img {
@@ -611,17 +610,12 @@ footer .footer-medical-disclaimer {
     margin-right: 0;
 }
 
-.discover-by .discover-by-completes figure .figure-img {
-  width: 100%;
-  aspect-ratio: 3 / 2; 
-  overflow: hidden;
-}
-
 .discover-by .discover-by-completes figure .figure-img img {
     width: 100%;
     height: 100%;
     object-fit: cover; 
     display: block;
+    border-radius: 50%;
 }
 
 .discover-by .discover-by-completes figure .figure-img img:hover {
@@ -657,7 +651,6 @@ footer .footer-medical-disclaimer {
     margin-left: 0;
     margin-right: 0;
     background-color: #dde9fc;
-    border-radius: 5%;
 }
 
 .recommended .recommended-completes figure .figure-img {
