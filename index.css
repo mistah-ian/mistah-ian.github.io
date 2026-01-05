@@ -535,27 +535,32 @@ footer .footer-medical-disclaimer {
 }
 
 .this-just-in .this-just-in-completes figure {
+    display: flex;
+    flex-direction: column;
     margin-left: 0;
     margin-right: 0;
     background-color: #dde9fc;
     border-radius: 5%;
 }
 
-.this-just-in .this-just-in-completes figure img {
-    max-width: 100%;
-    aspect-ratio: 900 / 600; 
-    height: auto; 
-    display: block;
-    object-fit: cover;
-    object-position: 50% 50%;
-    border-radius: 5% 5% 0 0;
+.this-just-in .this-just-in-completes figure .figure-img {
+  width: 100%;
+  aspect-ratio: 3 / 2; 
+  overflow: hidden;
 }
 
-.this-just-in .this-just-in-completes figure img:hover {
+.this-just-in .this-just-in-completes figure .figure-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+}
+
+.this-just-in .this-just-in-completes figure .figure-img img:hover {
     opacity: 0.75;
 }
 
-.this-just-in .this-just-in-completes figure div {
+.this-just-in .this-just-in-completes figure .figure-description {
     padding-left: 2.5%;
     margin-top: -4px;
     margin-bottom: 20px;
@@ -563,7 +568,7 @@ footer .footer-medical-disclaimer {
     padding-bottom: 0;
 }
 
-.this-just-in .this-just-in-completes figure div h2:hover {
+.this-just-in .this-just-in-completes figure .figure-description h2:hover {
     color: rgb(2, 131, 141);
 }
 /* #endregion */
@@ -600,33 +605,35 @@ footer .footer-medical-disclaimer {
 }
 
 .discover-by .discover-by-completes figure {
+    display: flex;
+    flex-direction: column;
     margin-left: 0;
     margin-right: 0;
 }
 
-.discover-by .discover-by-completes figure a {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.discover-by .discover-by-completes figure .figure-img {
+  width: 100%;
+  aspect-ratio: 3 / 2; 
+  overflow: hidden;
 }
 
-.discover-by .discover-by-completes figure img {
-    border-radius: 50%;
-    object-position: 50% 50%;
-    object-fit: cover;
+.discover-by .discover-by-completes figure .figure-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
 }
 
-.discover-by .discover-by-completes figure img:hover {
+.discover-by .discover-by-completes figure .figure-img img:hover {
     opacity: 0.75;
 }
 
-.discover-by .discover-by-completes figure div {
+.discover-by .discover-by-completes figure .figure-description {
     text-align: center;
     margin-top: -4px;
 }
 
-.discover-by .discover-by-completes figure div h2:hover {
+.discover-by .discover-by-completes figure .figure-description h2:hover {
     color: rgb(2, 131, 141);
 }
 /* #endregion */
@@ -645,27 +652,32 @@ footer .footer-medical-disclaimer {
 }
 
 .recommended .recommended-completes figure {
+    display: flex;
+    flex-direction: column;
     margin-left: 0;
     margin-right: 0;
     background-color: #dde9fc;
     border-radius: 5%;
 }
 
-.recommended .recommended-completes figure img {
-    max-width: 100%;
-    aspect-ratio: 900 / 600; 
-    height: auto; 
-    display: block;
-    object-fit: cover;
-    object-position: 50% 50%;
-    border-radius: 5% 5% 0 0;
+.recommended .recommended-completes figure .figure-img {
+  width: 100%;
+  aspect-ratio: 3 / 2; 
+  overflow: hidden;
 }
 
-.recommended .recommended-completes figure img:hover {
+.recommended .recommended-completes figure .figure-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+}
+
+.recommended .recommended-completes figure .figure-img img:hover {
     opacity: 0.75;
 }
 
-.recommended .recommended-completes figure div {
+.recommended .recommended-completes figure .figure-description {
     padding-left: 2.5%;
     margin-top: -4px;
     margin-bottom: 20px;
@@ -673,7 +685,7 @@ footer .footer-medical-disclaimer {
     padding-bottom: 0;
 }
 
-.recommended .recommended-completes figure div h2:hover {
+.recommended .recommended-completes figure .figure-description h2:hover {
     color: rgb(2, 131, 141);
 }
 /* #endregion */
